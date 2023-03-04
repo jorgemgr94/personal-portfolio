@@ -6,7 +6,7 @@ export default function Document() {
 			<Head>
 				<meta
 					name="description"
-					content={'+9 years of experience working as Software Engineer.'}
+					content={'Software Engineer with +9 years of experience.'}
 				/>
 				<meta
 					name="keywords"
@@ -14,13 +14,10 @@ export default function Document() {
 						'Software Engineer, Web Development, React, Node.js, Typescript'
 					}
 				/>
-				<meta
-					property="og:title"
-					content={'Jorge García - Software Engineer'}
-				/>
+				<meta property="og:title" content={'Jorge García'} />
 				<meta
 					property="og:description"
-					content={'+9 years of experience working as Software Engineer.'}
+					content={'Software Engineer with +9 years of experience.'}
 				/>
 				<meta property="og:type" content="website" />
 				<meta property="og:url" content="https://jorgemgr.com/" />
@@ -29,17 +26,14 @@ export default function Document() {
 					content="https://jorgemgr.com/assets/images/me.jpg"
 				/>
 				<meta name="twitter:card" content="summary_large_image" />
-				<meta
-					name="twitter:title"
-					content={'Jorge García - Software Engineer'}
-				/>
+				<meta name="twitter:title" content={'Jorge García'} />
 				<meta
 					name="twitter:description"
-					content={'+9 years of experience working as Software Engineer.'}
+					content={'Software Engineer with +9 years of experience.'}
 				/>
 				<meta
 					name="twitter:image"
-					content="https://jorgemgr.com/assets/images/me.jpg"
+					content="https://jorgemgr.com/assets/images/twitter-image.JPG"
 				/>
 				<link rel="canonical" href="https://jorgemgr.com/" />
 			</Head>
