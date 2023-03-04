@@ -1,7 +1,12 @@
+import Head from 'next/head';
 import { AiOutlineTrophy } from 'react-icons/ai';
 import { BsFillStopFill } from 'react-icons/bs';
-import { AboutData, AboutParagraph } from '../data';
-import { TechnologiesData, TechnologiesEnum } from '../data';
+import {
+	AboutData,
+	AboutParagraph,
+	TechnologiesData,
+	TechnologiesEnum
+} from '../data';
 import { formatDate, formatExperience } from '../helpers/format';
 import { PositionsData } from '../data';
 
@@ -19,7 +24,9 @@ const enum GeneralPhotos {
 function Resume() {
 	return (
 		<>
-			{/* <Seo title="Resume" /> */}
+			<Head>
+				<title>Jorge García - Resume</title>
+			</Head>
 			<section className="shadow-md place-content-center w-[216mm] my-0 mx-auto p-4 print:p-0 print:shadow-none">
 				<span
 					onClick={() => window.print()}
