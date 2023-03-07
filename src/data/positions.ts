@@ -23,7 +23,7 @@ export const positions: IPosition[] = [
 		},
 		responsibilities: [],
 		achievements: [],
-		technicalEnv: `React, Typescript, MongoDB, NodeJs, Python, PostgreSQL, Git,  GCP, AWS, Docker.`
+		technicalEnv: `React, Typescript, NextJS, Firebase, MongoDB, NodeJs, Python, PostgreSQL, Git,  GCP, AWS, Docker.`
 	},
 	{
 		name: `Full-stack Engineer / Consultant`,
@@ -48,7 +48,7 @@ export const positions: IPosition[] = [
 			`I incorporated new technologies that ensure quality and scalability; besides, they bring
 			innovation and dynamism which represents a competitive vantage.`
 		],
-		technicalEnv: `React, React Native, Typescript, MongoDB, NodeJs, Python, Php, MySQL, PostgreSQL, Git, GCP, AWS, Docker.`
+		technicalEnv: `React, React Native, NextJS, Typescript, Firebase, MongoDB, NodeJs, Python, Php, MySQL, PostgreSQL, Git, GCP, AWS, Docker.`
 	},
 	{
 		name: `Full-stack Engineer (Remote, Part time)`,
@@ -68,7 +68,7 @@ export const positions: IPosition[] = [
 			`I learned about containers (Docker), code replication (Migrations and Seeds), automated testing (Jest, RSpec),
 			DevOps (Gitlab CI/CD, Eslint) and SOLID principles.`
 		],
-		technicalEnv: `Ruby on Rails, React, Jest, Mobx, Typescript, PostgreSQL, Heroku, Git, Docker, Gitlab.`
+		technicalEnv: `Ruby on Rails, React, GCP, Jest, Mobx, Typescript, PostgreSQL, Heroku, Git, Docker, Gitlab.`
 	},
 	{
 		name: `Full-stack Engineer`,

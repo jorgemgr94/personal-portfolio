@@ -1,51 +1,109 @@
-/*
-	status = 0 -> Current Tech Stack
-	status = 1 -> Learning
-	status = 2 -> I've used
-*/
+import { Technology, TechnologyStatus } from './types';
+
+// REF: https://github.com/devicons/devicon/tree/v2.15.1/icons/
+const iconsBasePath = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons';
 const technologiesList = [
-	{ name: `Typescript`, status: 0 },
-	{ name: `React`, status: 0 },
-	{ name: `NodeJs`, status: 0 },
-	{ name: `Firebase`, status: 0 },
-	{ name: `Google Cloud Platform`, status: 0 },
-	{ name: `Jest`, status: 0 },
-	{ name: `Github`, status: 0 },
-	{ name: `RxJS`, status: 0 },
-	{ name: `Docker`, status: 0 },
+	// -- Current --------------------------------------------
+	{
+		name: `Typescript`,
+		status: TechnologyStatus.Current,
+		icon: iconsBasePath + '/typescript/typescript-original.svg',
+		yearsOfExp: '4yrs'
+	},
+	{
+		name: `React`,
+		status: TechnologyStatus.Current,
+		icon: iconsBasePath + '/react/react-original.svg',
+		yearsOfExp: '7yrs'
+	},
+	{
+		name: `NodeJs`,
+		status: TechnologyStatus.Current,
+		icon: iconsBasePath + '/nodejs/nodejs-original.svg',
+		yearsOfExp: '5yrs'
+	},
+	{
+		name: `Firebase`,
+		status: TechnologyStatus.Current,
+		icon: iconsBasePath + '/firebase/firebase-plain.svg',
+		yearsOfExp: '4yrs'
+	},
+	{
+		name: `GCP`,
+		status: TechnologyStatus.Current,
+		icon: iconsBasePath + '/googlecloud/googlecloud-original.svg',
+		yearsOfExp: '4yrs'
+	},
+	{
+		name: `Docker`,
+		status: TechnologyStatus.Current,
+		icon: iconsBasePath + '/docker/docker-original.svg',
+		yearsOfExp: '4yrs'
+	},
+	{
+		name: `Jest`,
+		status: TechnologyStatus.Current,
+		icon: iconsBasePath + '/jest/jest-plain.svg',
+		yearsOfExp: '1yrs'
+	},
+	{
+		name: `RxJS`,
+		status: TechnologyStatus.Current,
+		icon: '/assets/images/technologies/rxjs.png',
+		yearsOfExp: '2yrs'
+	},
+	{
+		name: `NextJS`,
+		status: TechnologyStatus.Current,
+		icon: '/assets/images/technologies/nextjs.png',
+		yearsOfExp: '2yrs'
+	},
+	{
+		name: `Github`,
+		status: TechnologyStatus.Current,
+		icon: iconsBasePath + '/git/git-original.svg',
+		yearsOfExp: '7yrs'
+	},
 
-	{ name: `Kubernetes`, status: 1 },
-	{ name: `Domain Driven Design (DDD)`, status: 1 },
-	{ name: `Design Patterns`, status: 1 },
-	{ name: `Systems Design (Cloud Architecture)`, status: 1 },
-	{ name: `Terraform`, status: 1 },
-	{ name: `GraphQl`, status: 1 },
-	{ name: `Golang`, status: 1 },
+	// -- Learning -------------------------------------------
+	{ name: `Kubernetes`, status: TechnologyStatus.Learning },
+	{ name: `Domain Driven Design (DDD)`, status: TechnologyStatus.Learning },
+	{ name: `Design Patterns`, status: TechnologyStatus.Learning },
+	{
+		name: `Systems Design (Cloud Architecture)`,
+		status: TechnologyStatus.Learning
+	},
+	{ name: `Terraform`, status: TechnologyStatus.Learning },
+	{ name: `GraphQl`, status: TechnologyStatus.Learning },
+	{ name: `Golang`, status: TechnologyStatus.Learning },
 
-	{ name: `AWS`, status: 2 },
-	{ name: `Python`, status: 2 },
-	{ name: `Gitlab`, status: 2 },
-	{ name: `PostgreSQL`, status: 2 },
-	{ name: `MongoDB`, status: 2 },
-	{ name: `React Native`, status: 2 },
-	{ name: `Heroku`, status: 2 },
-	{ name: `Laravel`, status: 2 },
-	{ name: `Javascript`, status: 2 },
-	{ name: `VueJS`, status: 2 },
-	{ name: `Php`, status: 2 },
-	{ name: `Android w/ Java`, status: 2 },
-	{ name: `Android w/Kotlin`, status: 2 },
-	{ name: `IOS w/ Swift`, status: 2 },
-	{ name: `MySQL`, status: 2 },
-	{ name: `MariaDB`, status: 2 },
-	{ name: `SQL Server`, status: 2 },
-	{ name: `Bash`, status: 2 },
-	{ name: `Redis`, status: 2 },
-	{ name: `Ruby on Rails`, status: 2 }
-];
+	{ name: `AWS`, status: TechnologyStatus.Used },
+	{ name: `Python`, status: TechnologyStatus.Used },
+	{ name: `Gitlab`, status: TechnologyStatus.Used },
+	{ name: `PostgreSQL`, status: TechnologyStatus.Used },
+	{ name: `MongoDB`, status: TechnologyStatus.Used },
+	{ name: `React Native`, status: TechnologyStatus.Used },
+	{ name: `Heroku`, status: TechnologyStatus.Used },
+	{ name: `Laravel`, status: TechnologyStatus.Used },
+	{ name: `Javascript`, status: TechnologyStatus.Used },
+	{ name: `VueJS`, status: TechnologyStatus.Used },
+	{ name: `Php`, status: TechnologyStatus.Used },
+	{ name: `Android w/ Java`, status: TechnologyStatus.Used },
+	{ name: `Android w/Kotlin`, status: TechnologyStatus.Used },
+	{ name: `IOS w/ Swift`, status: TechnologyStatus.Used },
+	{ name: `MySQL`, status: TechnologyStatus.Used },
+	{ name: `MariaDB`, status: TechnologyStatus.Used },
+	{ name: `SQL Server`, status: TechnologyStatus.Used },
+	{ name: `Bash`, status: TechnologyStatus.Used },
+	{ name: `Redis`, status: TechnologyStatus.Used },
+	{ name: `Ruby on Rails`, status: TechnologyStatus.Used }
+] satisfies Technology[];
+
+const filterByStatus = (status: TechnologyStatus) =>
+	technologiesList.filter((technology) => technology.status === status);
 
 export const technologies = {
-	current: technologiesList.filter((t) => t.status === 0).map((t) => t.name),
-	learning: technologiesList.filter((t) => t.status === 1).map((t) => t.name),
-	used: technologiesList.filter((t) => t.status === 2).map((t) => t.name)
+	current: filterByStatus(TechnologyStatus.Current),
+	learning: filterByStatus(TechnologyStatus.Learning),
+	used: filterByStatus(TechnologyStatus.Used)
 };

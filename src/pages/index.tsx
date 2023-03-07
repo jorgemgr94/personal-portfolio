@@ -1,9 +1,10 @@
-import Head from 'next/head';
 import About from '@/components/About';
-import Navbar from '@/components/Navbar';
-import ThemeToggler from '@/components/ThemeToggler';
 import Experience from '@/components/Experience';
+import Head from 'next/head';
+import Navbar from '@/components/Navbar';
 import Social from '@/components/Social';
+import TechStack from '@/components/TechStack';
+import ThemeToggler from '@/components/ThemeToggler';
 
 export default function Index() {
 	return (
@@ -15,6 +16,7 @@ export default function Index() {
 			<Navbar />
 			<section className="basis-full dark:bg-gray-800 dark:text-white md:basis-9/12 md:ml-64 xl:basis-10/12">
 				<About />
+				<TechStack />
 				<Experience />
 				<Social />
 			</section>

@@ -1,11 +1,10 @@
 import { about } from '@/data';
 import SectionTemplate from '@/components/SectionTemplate';
 import SocialNetworks from './SocialNetworks';
-import TechsExperience from './TechsExperience';
 
 export default function About() {
 	return (
-		<SectionTemplate id="about" flexDirection="flex-col md:flex-row">
+		<SectionTemplate id="about">
 			<section className="mb-4 md:mr-2 md:mb-0">
 				<span className="text-4xl uppercase font-bold dark:text-yellow-500">{`I'm Jorge García 👨‍💻`}</span>
 				<p className="mb-4">{about.firstParagraph}</p>
@@ -13,7 +12,6 @@ export default function About() {
 				<p className="mb-4">{about.thirdParagraph}</p>
 				<SocialNetworks />
 			</section>
-			<TechsExperience />
 		</SectionTemplate>
 	);
 }

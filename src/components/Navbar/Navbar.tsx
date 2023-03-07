@@ -7,6 +7,7 @@ import { INavigationItem } from './type';
 
 const routes: INavigationItem[] = [
 	{ name: `About Me`, href: `#about`, current: true, target: '_self' },
+	{ name: `Tech Stack`, href: `#tech`, current: false, target: '_self' },
 	{
 		name: `Professional Exp.`,
 		href: `#experience`,

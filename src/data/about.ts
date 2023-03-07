@@ -11,7 +11,7 @@ export const about = {
   and knowledge through hands-on experience.`,
 	secondParagraph: `I started my career as a full-stack developer and spent seven years honing my skills.
   For the past two years, I have been fully dedicated to backend development while also improving
-  my skills in ${arrayToString(technologies.learning)}`,
+  my skills in ${arrayToString(technologies.learning.map((t) => t.name))}`,
 
 	thirdParagraph: `As a member of a team, I place a high value on best practices, code consistency, and collaboration.
   I consider myself a fast learner, highly adaptable to changes, and always eager to learn new technologies and approaches.`

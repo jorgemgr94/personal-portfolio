@@ -32,3 +32,17 @@ export interface IPosition {
 	achievements: string[];
 	technicalEnv: string;
 }
+
+// == Technologies ==================================================
+export enum TechnologyStatus {
+	Current = 'Current',
+	Learning = 'Learning',
+	Used = 'Used'
+}
+
+export type Technology = {
+	name: string;
+	status: TechnologyStatus;
+	icon?: string;
+	yearsOfExp?: string;
+};
