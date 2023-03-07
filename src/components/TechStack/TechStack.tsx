@@ -21,11 +21,7 @@ export default function TechStack() {
 									key={index}
 									className="w-10 mx-auto flex items-center flex-col justify-center"
 								>
-									<img
-										src={technology.icon}
-										style={technology.style}
-										alt={technologies.name}
-									/>
+									<img src={technology.icon} alt={technology.name} />
 									<p className="text-xs text-fun-gray font-bold mt-3 opacity-80">
 										{technology.name}
 									</p>

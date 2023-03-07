@@ -94,15 +94,15 @@ function Resume() {
 					<div className="w-full font-bold mb-4">Technical Experience</div>
 					<div className="w-full mb-2">
 						<span className="font-medium">Current Tech Stack: </span>
-						{arrayToString(technologies.current)}
+						{arrayToString(technologies.current.map((t) => t.name))}
 					</div>
 					<div className="w-full mb-2">
 						<span className="font-medium">Learning: </span>
-						{arrayToString(technologies.learning)}
+						{arrayToString(technologies.learning.map((t) => t.name))}
 					</div>
 					<div className="w-full">
 						<span className="font-medium">{`I've used: `}</span>
-						{arrayToString(technologies.used)}
+						{arrayToString(technologies.used.map((t) => t.name))}
 					</div>
 				</section>
 				<section>
