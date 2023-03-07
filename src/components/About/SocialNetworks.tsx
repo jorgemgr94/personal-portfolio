@@ -1,12 +1,12 @@
 import { FaRegFilePdf } from 'react-icons/fa';
 import IconRounded from '@/components/IconRounded';
-import { SocialNetworksData } from '@/data';
+import { socialNetworks } from '@/data';
 
 function SocialNetworks() {
 	return (
 		<>
 			<section className="mb-4">
-				{SocialNetworksData.map((socialNetwork, key) => (
+				{socialNetworks.map((socialNetwork, key) => (
 					<a
 						key={key}
 						href={socialNetwork.url}

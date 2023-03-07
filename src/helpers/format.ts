@@ -1,37 +1,33 @@
+import { DateTime } from 'luxon';
+
 export function arrayToString(array: string[], separator = `, `): string {
 	return array.join(separator) + `.`;
 }
 
-export const monthsNames = [
-	{ name: `January`, abbreviation: `Jan` },
-	{ name: `February`, abbreviation: `Feb` },
-	{ name: `March`, abbreviation: `Mar` },
-	{ name: `April`, abbreviation: `Apr` },
-	{ name: `May`, abbreviation: `May` },
-	{ name: `June`, abbreviation: `Jun` },
-	{ name: `July`, abbreviation: `Jul` },
-	{ name: `August`, abbreviation: `Aug` },
-	{ name: `September`, abbreviation: `Sep` },
-	{ name: `October`, abbreviation: `Oct` },
-	{ name: `November`, abbreviation: `Nov` },
-	{ name: `December`, abbreviation: `Dec` }
-];
+export function formatExperience(date1: string, date2?: string): string {
+	// FIXME: converting dateString to JSDate is a workaround, dates must be
+	//        formatted with an standard string format in ./src/data/positions.ts
+	//        i.e: ISO 8601 -> '2023-03-07T16:35:37.504Z'
+	const d1 = new Date(date1);
+	const d2 = date2 === undefined ? new Date() : new Date(date2);
 
-export function formatExperience(d1: Date, d2?: Date): string {
-	const MONTHS_IN_YEAR = 12;
-	const MONTHS_TO_YEAR = 3.8052e-10;
-	if (d2 === undefined) d2 = new Date();
+	const startDate = DateTime.fromJSDate(d1);
+	const endDate = DateTime.fromJSDate(d2);
+	const diff = endDate.diff(startDate, ['years', 'months']);
 
-	const e = Math.floor((d2.getTime() - d1.getTime()) * MONTHS_TO_YEAR);
-	if (e >= MONTHS_IN_YEAR) {
-		const months = e - Math.floor(e / MONTHS_IN_YEAR) * MONTHS_IN_YEAR;
-		return `${Math.floor(e / MONTHS_IN_YEAR)} year(s) ${months} month(s)`;
-	} else {
-		return `${e} month(s)`;
-	}
+	const years = Math.floor(diff.years);
+	const months = Math.floor(diff.months);
+
+	return `${years === 0 ? '' : `${years} year(s)`}  ${
+		months === 0 ? '' : `${months} months(s)`
+	}`;
 }
 
-export function formatDate(date?: Date) {
-	if (date === undefined) return `Current`;
-	return `${monthsNames[date.getMonth()].abbreviation} ${date.getFullYear()}`;
+export function formatDate(dateString?: string) {
+	if (dateString === undefined) return `Current`;
+	// FIXME: converting dateString to JSDate is a workaround, dates must be
+	//        formatted with an standard string format in ./src/data/positions.ts
+	//        i.e: ISO 8601 -> '2023-03-07T16:35:37.504Z'
+	const date = new Date(dateString);
+	return DateTime.fromJSDate(date).toFormat('MMM	yyyy');
 }

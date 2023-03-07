@@ -1,4 +1,6 @@
-export { AboutData, AboutParagraph } from './about';
-export { TechnologiesData, TechnologiesEnum } from './technologies';
-export { SocialNetworksData } from './socialNetworks';
-export { type IPosition, PositionsData } from './positions';
+export { about } from './about';
+export { positions } from './positions';
+export { socialNetworks } from './socialNetworks';
+export { technologies } from './technologies';
+export { CompaniesImages, GeneralImages, SocialIconsImages } from './types';
+export type { IPosition } from './types';

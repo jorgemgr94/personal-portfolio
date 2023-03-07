@@ -1,5 +1,6 @@
 export interface INavigationItem {
-	name: string;
+	name: string | React.ReactNode;
 	href: string;
 	current: boolean;
+	target: string;
 }

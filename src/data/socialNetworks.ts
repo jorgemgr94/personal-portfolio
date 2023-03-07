@@ -1,6 +1,6 @@
 import { FaGithub, FaGitlab, FaLinkedinIn } from 'react-icons/fa';
 
-export const SocialNetworksData = [
+export const socialNetworks = [
 	{
 		name: `Github`,
 		icon: FaGithub,

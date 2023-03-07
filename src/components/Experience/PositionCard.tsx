@@ -1,7 +1,7 @@
 import { AiOutlineTrophy } from 'react-icons/ai';
 import { BsFillStopFill } from 'react-icons/bs';
 import { formatDate, formatExperience } from '../../helpers/format';
-import { IPosition } from '../../data';
+import { IPosition } from '@/data';
 
 interface PositionCardProps {
 	position: IPosition;

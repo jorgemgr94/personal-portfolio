@@ -28,6 +28,7 @@ export default function DesktopNavbar({
 					<li key={key} className="py-2">
 						<a
 							href={navigationItem.href}
+							target={navigationItem.target}
 							className={classNames(
 								`block px-3 py-2 rounded-md text-base font-medium cursor-pointer text-gray-500`, // base
 								navigationItem.current
@@ -37,6 +38,7 @@ export default function DesktopNavbar({
 							onClick={() => {
 								setCurrentItem(navigationItem);
 							}}
+							rel="noreferrer"
 						>
 							{navigationItem.name}
 						</a>

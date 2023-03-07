@@ -1,32 +1,13 @@
-const GaragePhoto = '/assets/images/companies/garage.png';
-const HmsPhoto = '/assets/images/companies/hms.png';
-const IngeniatPhoto = '/assets/images/companies/ingeniat.png';
-const IntersogPhoto = '/assets/images/companies/intersog.png';
-const SensaiPhoto = '/assets/images/companies/sensai.jpg';
-const SintecPhoto = '/assets/images/companies/sintec.png';
+import { CompaniesImages, IPosition } from './types';
 
-export interface IPosition {
-	name: string;
-	startAt: Date;
-	endAt?: Date;
-	company: {
-		name: string;
-		// eslint-disable-next-line @typescript-eslint/no-explicit-any
-		photo: any;
-	};
-	responsibilities: string[];
-	achievements: string[];
-	technicalEnv: string;
-}
-
-export const PositionsData: IPosition[] = [
+export const positions: IPosition[] = [
 	{
-		name: `Software Engineer`,
-		startAt: new Date(`09/06/2021`),
+		name: `Backend Engineer (Contractor)`,
+		startAt: `09/06/2021`,
 		endAt: undefined,
 		company: {
-			name: `Intersog`,
-			photo: IntersogPhoto
+			name: `Intersog (Ureek, ZenBusiness)`,
+			photo: CompaniesImages.IntersogPhoto
 		},
 		responsibilities: [],
 		achievements: [],
@@ -34,23 +15,23 @@ export const PositionsData: IPosition[] = [
 	},
 	{
 		name: `Tech Lead / Digital Solutions Manager`,
-		startAt: new Date(`02/01/2020`),
-		endAt: new Date(`09/03/2021`),
+		startAt: `02/01/2020`,
+		endAt: `09/03/2021`,
 		company: {
 			name: `Sintec`,
-			photo: SintecPhoto
+			photo: CompaniesImages.SintecPhoto
 		},
 		responsibilities: [],
 		achievements: [],
-		technicalEnv: `React, Typescript, MongoDB, NodeJs, Python, PostgreSQL, Git, SCRUM, GCP, AWS, Docker.`
+		technicalEnv: `React, Typescript, MongoDB, NodeJs, Python, PostgreSQL, Git,  GCP, AWS, Docker.`
 	},
 	{
-		name: `Software Engineer, Consultant`,
-		startAt: new Date(`02/01/2019`),
-		endAt: new Date(`02/01/2020`),
+		name: `Full-stack Engineer / Consultant`,
+		startAt: `02/01/2019`,
+		endAt: `02/01/2020`,
 		company: {
 			name: `Sintec`,
-			photo: SintecPhoto
+			photo: CompaniesImages.SintecPhoto
 		},
 		responsibilities: [
 			`Features development to front-end, back-end, and mobile app.`,
@@ -67,16 +48,15 @@ export const PositionsData: IPosition[] = [
 			`I incorporated new technologies that ensure quality and scalability; besides, they bring
 			innovation and dynamism which represents a competitive vantage.`
 		],
-		technicalEnv: `React, React Native, Typescript, MongoDB, NodeJs, Python, Php, MySQL, PostgreSQL, Git,
-		SCRUM, GCP, AWS, Docker.`
+		technicalEnv: `React, React Native, Typescript, MongoDB, NodeJs, Python, Php, MySQL, PostgreSQL, Git, GCP, AWS, Docker.`
 	},
 	{
-		name: `Software Engineer (Remote, Part time)`,
-		startAt: new Date(`07/01/2019`),
-		endAt: new Date(`12/31/2019`),
+		name: `Full-stack Engineer (Remote, Part time)`,
+		startAt: `07/01/2019`,
+		endAt: `12/31/2019`,
 		company: {
 			name: `Garage (Startup)`,
-			photo: GaragePhoto
+			photo: CompaniesImages.GaragePhoto
 		},
 		responsibilities: [
 			`Features development to front-end and back-end.`,
@@ -88,15 +68,15 @@ export const PositionsData: IPosition[] = [
 			`I learned about containers (Docker), code replication (Migrations and Seeds), automated testing (Jest, RSpec),
 			DevOps (Gitlab CI/CD, Eslint) and SOLID principles.`
 		],
-		technicalEnv: `Ruby on Rails, React, Jest, Mobx, Typescript, PostgreSQL, Heroku, Git, SCRUM, Docker, Gitlab.`
+		technicalEnv: `Ruby on Rails, React, Jest, Mobx, Typescript, PostgreSQL, Heroku, Git, Docker, Gitlab.`
 	},
 	{
-		name: `Software Engineer`,
-		startAt: new Date(`08/01/2018`),
-		endAt: new Date(`02/01/2019`),
+		name: `Full-stack Engineer`,
+		startAt: `08/01/2018`,
+		endAt: `02/01/2019`,
 		company: {
 			name: `SENSAI Empower Success (Startup) / Metalsa`,
-			photo: SensaiPhoto
+			photo: CompaniesImages.SensaiPhoto
 		},
 		responsibilities: [
 			`Features development to front-end, back-end, and mobile app considering: scalability, multi-zones, multi-language.`,
@@ -110,15 +90,15 @@ export const PositionsData: IPosition[] = [
 			`I learned modern software development, stages (development, staging, production) and to work with other
 			departments like design and quality assurance.`
 		],
-		technicalEnv: `React, React Native, NodeJs, Ruby on Rails, MySQL, SQL Server, AWS, Git, SCRUM, Jira, MQTT.`
+		technicalEnv: `React, React Native, NodeJs, Ruby on Rails, MySQL, SQL Server, AWS, Git, MQTT.`
 	},
 	{
 		name: `Tech Lead`,
-		startAt: new Date(`10/01/2016`),
-		endAt: new Date(`07/01/2018`),
+		startAt: `10/01/2016`,
+		endAt: `07/01/2018`,
 		company: {
 			name: `HMS Sistemas de Información / ONCARE`,
-			photo: HmsPhoto
+			photo: CompaniesImages.HmsPhoto
 		},
 		responsibilities: [
 			`Lead a team of 5 Software Engineers.`,
@@ -139,12 +119,12 @@ export const PositionsData: IPosition[] = [
 		technicalEnv: `Php, Html, CSS, Javascript, MySQL, Bash, AWS, React, Android w/ Kotlin, IOS w/ Swift, Git.`
 	},
 	{
-		name: `Software Engineer`,
-		startAt: new Date(`01/01/2015`),
-		endAt: new Date(`10/01/2016`),
+		name: `Full-stack Engineer`,
+		startAt: `01/01/2015`,
+		endAt: `10/01/2016`,
 		company: {
 			name: `HMS Sistemas de Información / ONCARE`,
-			photo: HmsPhoto
+			photo: CompaniesImages.HmsPhoto
 		},
 		responsibilities: [
 			`Features and new modules development to the Oncology ERP (Custom software development).`,
@@ -165,12 +145,12 @@ export const PositionsData: IPosition[] = [
 		technicalEnv: `Php, Html, CSS, Javascript, MySQL, Bash, AWS.`
 	},
 	{
-		name: `Software Engineer`,
-		startAt: new Date(`06/01/2014`),
-		endAt: new Date(`01/01/2015`),
+		name: `Full-stack Engineer`,
+		startAt: `06/01/2014`,
+		endAt: `01/01/2015`,
 		company: {
 			name: `Ingeniat`,
-			photo: IngeniatPhoto
+			photo: CompaniesImages.IngeniatPhoto
 		},
 		responsibilities: [
 			`Bash scripts development to automate processes`,

@@ -1,21 +1,18 @@
-const yearsOfExperience = new Date().getFullYear() - 2014;
+import { toWords } from 'number-to-words';
+import { technologies } from './technologies';
+import { arrayToString } from '@/helpers/format';
 
-export enum AboutParagraph {
-	First,
-	Second,
-	Third
-}
+const yearsOfExp = new Date().getFullYear() - 2014;
+const yearsOfExpWords = toWords(yearsOfExp);
 
-export const AboutData = {
-	[AboutParagraph.First]: `+${yearsOfExperience} years of experience working with small, mid, large companies
-	as well as 3 startups (2 seeds, 1 series A).`,
+export const about = {
+	firstParagraph: `With over ${yearsOfExpWords} years of experience in software development,
+  working with companies of all sizes including three startups, I have established a strong foundation of skills
+  and knowledge through hands-on experience.`,
+	secondParagraph: `I started my career as a full-stack developer and spent seven years honing my skills.
+  For the past two years, I have been fully dedicated to backend development while also improving
+  my skills in ${arrayToString(technologies.learning)}`,
 
-	[AboutParagraph.Second]: `I started working as a full-stack developer for 4 years, then the next 2
-	years I focused on backend development with JavaScript. Nowadays I'm
-	learning about cloud development working with serverless apps, kubernetes,
-	containerization, CI/CD, multi-region.`,
-
-	[AboutParagraph.Third]: `I love and believe in teamwork, smart work, best practices,
-	collaboration, continuous learning, home office, leadership, priority,
-	order, people first, quickly adapt to change, new tech's.`
+	thirdParagraph: `As a member of a team, I place a high value on best practices, code consistency, and collaboration.
+  I consider myself a fast learner, highly adaptable to changes, and always eager to learn new technologies and approaches.`
 };
