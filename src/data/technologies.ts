@@ -74,7 +74,7 @@ const technologiesList = [
 		status: TechnologyStatus.Learning
 	},
 	{ name: `Terraform`, status: TechnologyStatus.Learning },
-	{ name: `GraphQl`, status: TechnologyStatus.Learning },
+	{ name: `GraphQL`, status: TechnologyStatus.Learning },
 	{ name: `Golang`, status: TechnologyStatus.Learning },
 
 	{ name: `AWS`, status: TechnologyStatus.Used },

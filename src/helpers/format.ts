@@ -29,5 +29,5 @@ export function formatDate(dateString?: string) {
 	//        formatted with an standard string format in ./src/data/positions.ts
 	//        i.e: ISO 8601 -> '2023-03-07T16:35:37.504Z'
 	const date = new Date(dateString);
-	return DateTime.fromJSDate(date).toFormat('MMM	yyyy');
+	return DateTime.fromJSDate(date).toFormat('MMM yyyy');
 }
