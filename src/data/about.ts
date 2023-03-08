@@ -8,7 +8,10 @@ const yearsOfExpWords = toWords(yearsOfExp);
 export const about = {
 	firstParagraph: `With over ${yearsOfExpWords} years of experience in software development,
   working with companies of all sizes including three startups, I have established a strong foundation of skills
-  and knowledge through hands-on experience.`,
+  and knowledge through hands-on experience building distributed software, multi stage managed, and focused on
+  "-ilities" including extensibility, availability, security, flexibility, reliability, scalability, maintainability,
+  usability, and performance.`,
+
 	secondParagraph: `I started my career as a full-stack developer and spent seven years honing my skills.
   For the past two years, I have been fully dedicated to backend development while also improving
   my skills in ${arrayToString(technologies.learning.map((t) => t.name))}`,
