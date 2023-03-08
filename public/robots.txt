@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://jorgemgr.com
+
+# Sitemaps
+Sitemap: https://jorgemgr.com/sitemap.xml
