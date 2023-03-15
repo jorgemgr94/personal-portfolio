@@ -6,3 +6,10 @@ html {
 	--scroll-behavior: smooth !important;
 	scroll-behavior: smooth !important;
 }
+
+@layer base {
+	h1 {
+		@apply text-4xl;
+		@apply dark:text-yellow-500;
+	}
+}
