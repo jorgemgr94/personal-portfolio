@@ -64,6 +64,12 @@ const technologiesList = [
 		icon: iconsBasePath + '/git/git-original.svg',
 		yearsOfExp: '7yrs'
 	},
+	{
+		name: `GraphQL`,
+		status: TechnologyStatus.Current,
+		icon: iconsBasePath + '/graphql/graphql-plain.svg',
+		yearsOfExp: '1yrs'
+	},
 
 	// -- Learning -------------------------------------------
 	{ name: `Kubernetes`, status: TechnologyStatus.Learning },
@@ -74,7 +80,6 @@ const technologiesList = [
 		status: TechnologyStatus.Learning
 	},
 	{ name: `Terraform`, status: TechnologyStatus.Learning },
-	{ name: `GraphQL`, status: TechnologyStatus.Learning },
 	{ name: `Golang`, status: TechnologyStatus.Learning },
 
 	{ name: `AWS`, status: TechnologyStatus.Used },
