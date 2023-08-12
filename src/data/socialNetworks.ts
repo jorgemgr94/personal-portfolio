@@ -1,4 +1,4 @@
-import { FaGithub, FaGitlab, FaLinkedinIn } from 'react-icons/fa';
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 export const socialNetworks = [
 	{
@@ -10,10 +10,5 @@ export const socialNetworks = [
 		name: `Linkedin`,
 		icon: FaLinkedinIn,
 		url: `https://www.linkedin.com/in/jorgemgr94/`
-	},
-	{
-		name: `Gitlab`,
-		icon: FaGitlab,
-		url: `https://gitlab.com/jorgemgr94`
 	}
 ];

@@ -1,7 +1,6 @@
 // == Images =====================================================
 export const enum SocialIconsImages {
 	Github = '/assets/images/social-icons/github.png',
-	Gitlab = '/assets/images/social-icons/gitlab.png',
 	Linkedin = '/assets/images/social-icons/linkedin.png'
 }
 
