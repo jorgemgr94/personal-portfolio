@@ -12,14 +12,16 @@ import {
 import { arrayToString, formatDate, formatExperience } from '@/helpers/format';
 
 function Resume() {
+	const handlePrint = () => window.print();
+
 	return (
 		<>
 			<Head>
 				<title>Jorge García - Resume</title>
 			</Head>
-			<section className="shadow-md place-content-center w-[216mm] my-0 mx-auto p-4 print:p-0 print:shadow-none">
+			<section className="shadow-md place-content-center text-base w-[22cm] my-0 mx-auto p-4 print:shadow-none">
 				<span
-					onClick={() => window.print()}
+					onClick={handlePrint}
 					className="fixed bottom-5 right-5 cursor-pointer flex flex-col items-center print:hidden"
 				>
 					<img
@@ -32,14 +34,14 @@ function Resume() {
 					</span>
 				</span>
 				<section className="flex mb-4">
-					<div className="flex flex-col items-center basis-4/12">
+					<div className="flex flex-col items-center basis-3/12">
 						<img
 							className="rounded-full shadow-sm w-28 h-28 mb-2"
 							src={GeneralImages.Profile}
 							alt="user image"
 						/>
-						<div className="font-bold">Jorge Marcial Garcia Rizo</div>
-						<div>Software Enginner</div>
+						<div className="font-bold">Jorge García</div>
+						<div>Software Engineer</div>
 						<a
 							className="underline cursor-pointer text-gray-600 hover:text-gray-400"
 							target="_blank"
@@ -68,14 +70,6 @@ function Resume() {
 							<a
 								className="h-6 w-6 mr-4"
 								rel="noopener noreferrer"
-								href="https://github.com/jorgemgr94"
-								target="_blank"
-							>
-								<img alt="Gitlab" src={SocialIconsImages.Gitlab} />
-							</a>
-							<a
-								className="h-6 w-6 mr-4"
-								rel="noopener noreferrer"
 								href="https://www.linkedin.com/in/jorgemgr94/"
 								target="_blank"
 							>
@@ -83,15 +77,15 @@ function Resume() {
 							</a>
 						</section>
 					</div>
-					<div className="basis-8/12">
+					<div className="basis-9/12">
 						<div className="font-bold">About Me</div>
 						<p className="mb-4">{about.firstParagraph}</p>
 						<p className="mb-4">{about.secondParagraph}</p>
-						<p className="mb-4">{about.thirdParagraph}</p>
+						<p>{about.thirdParagraph}</p>
 					</div>
 				</section>
 				<section className="mb-4">
-					<div className="w-full font-bold mb-4">Technical Experience</div>
+					<div className="w-full font-bold">Technical Experience</div>
 					<div className="w-full mb-2">
 						<span className="font-medium">Current Tech Stack: </span>
 						{arrayToString(technologies.current.map((t) => t.name))}
@@ -100,13 +94,9 @@ function Resume() {
 						<span className="font-medium">Learning: </span>
 						{arrayToString(technologies.learning.map((t) => t.name))}
 					</div>
-					<div className="w-full">
-						<span className="font-medium">{`I've used: `}</span>
-						{arrayToString(technologies.used.map((t) => t.name))}
-					</div>
 				</section>
 				<section>
-					<div className="w-full font-bold mb-4">Professional Experience</div>
+					<div className="w-full font-bold">Professional Experience</div>
 					{positions.map((position, key) => (
 						<section
 							key={key}
