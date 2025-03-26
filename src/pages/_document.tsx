@@ -36,7 +36,6 @@ export default function Document () {
           content="https://jorgemgr.com/assets/images/twitter-image.JPG"
         />
         <link rel="canonical" href="https://jorgemgr.com/" />
-        <script defer data-domain="jorgemgr.com" src="https://plausible.io/js/script.js"></script>
       </Head>
       <body>
         <Main />
