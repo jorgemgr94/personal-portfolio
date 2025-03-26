@@ -2,6 +2,7 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
 import Script from 'next/script';
+import { Analytics } from '@vercel/analytics/next';
 
 export default function App ({ Component, pageProps }: AppProps) {
   return (
@@ -28,6 +29,7 @@ export default function App ({ Component, pageProps }: AppProps) {
         forcedTheme={pageProps.forcedTheme || null}
       >
         <Component {...pageProps} />
+        <Analytics />
       </ThemeProvider>
     </>
   );
