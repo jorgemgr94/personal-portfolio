@@ -144,6 +144,8 @@ export default function Footer () {
                   rel="noreferrer"
                 >
                   <Image
+                    width={48}
+                    height={48}
                     src="/assets/images/paypal.png"
                     className="h-12 hover:opacity-80 opacity-100 transition-opacity"
                     alt="paypay icon"

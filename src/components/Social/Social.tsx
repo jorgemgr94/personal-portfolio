@@ -9,7 +9,7 @@ import SectionTemplate from '@/components/SectionTemplate';
 import Alink from '@/components/Alink';
 
 interface SocialNetworkDefinition {
-  icon: React.ReactElement;
+  icon: React.ReactNode;
   url: string;
   name: string;
 }

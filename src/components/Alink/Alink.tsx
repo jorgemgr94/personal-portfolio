@@ -1,5 +1,5 @@
 interface ALinkProps {
-  children?: React.ReactFragment | React.ReactNode;
+  children?: Iterable<React.ReactNode> | React.ReactNode;
   url: string;
 }
 

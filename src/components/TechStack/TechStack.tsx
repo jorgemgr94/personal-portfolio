@@ -22,7 +22,12 @@ export default function TechStack () {
                   key={index}
                   className="w-10 mx-auto flex items-center flex-col justify-center"
                 >
-                  <Image src={technology.icon || ''} alt={technology.name} />
+                  <Image
+                    src={technology.icon || ''}
+                    alt={technology.name}
+                    width={40}
+                    height={40}
+                  />
                   <p className="text-xs text-fun-gray font-bold mt-3 opacity-80">
                     {technology.name}
                   </p>

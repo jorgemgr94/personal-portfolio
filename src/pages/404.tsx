@@ -26,6 +26,8 @@ export default function PageNotFound404 () {
         </div>
         <div className="max-w-lg">
           <Image
+            width={100}
+            height={100}
             alt="sad milk"
             className="rounded-full"
             src="/assets/images/sad-milk.gif"
