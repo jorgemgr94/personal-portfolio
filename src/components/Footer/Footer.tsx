@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 type Route = {
   title: string;
@@ -127,7 +128,7 @@ export default function Footer () {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
+                  <Image
                     src="/assets/images/buy-me-a-coffee.png"
                     className="h-12 hover:opacity-80 opacity-100 transition-opacity"
                     alt="buy me a coffe"
@@ -142,7 +143,7 @@ export default function Footer () {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <img
+                  <Image
                     src="/assets/images/paypal.png"
                     className="h-12 hover:opacity-80 opacity-100 transition-opacity"
                     alt="paypay icon"

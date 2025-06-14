@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import Image from 'next/image';
+
 export default function PageNotFound404 () {
   return (
     <div className="flex items-center justify-center w-full min-h-screen bg-gray-100">
@@ -23,7 +25,7 @@ export default function PageNotFound404 () {
           </button>
         </div>
         <div className="max-w-lg">
-          <img
+          <Image
             alt="sad milk"
             className="rounded-full"
             src="/assets/images/sad-milk.gif"
