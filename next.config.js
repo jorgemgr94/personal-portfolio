@@ -1,9 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-	reactStrictMode: true,
+  reactStrictMode: true,
   images: {
-    domains: ['personal-portfolio-main-yj436fhcma-uc.a.run.app'],
-  },
+    domains: ['personal-portfolio-main-yj436fhcma-uc.a.run.app']
+  }
 };
 
 module.exports = nextConfig;
