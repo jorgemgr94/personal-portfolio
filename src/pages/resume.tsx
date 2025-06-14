@@ -42,7 +42,7 @@ function Resume () {
               alt="user profile"
               width={112}
               height={112}
-              className='rounded-full shadow-sm mb-2'
+              className='rounded-full shadow-xs mb-2'
             />
             <div className="font-bold">Jorge García</div>
             <div>Software Engineer</div>

@@ -63,7 +63,7 @@ export default function BlogArticle ({ blog = defaultBlog }: BlogArticleProps) {
                 height={30}
                 width={30}
                 src={'/assets/images/me.jpg'}
-                className="rounded-full !m-0 h-full"
+                className="rounded-full m-0! h-full"
               />
             </div>
             <div className="flex flex-col">

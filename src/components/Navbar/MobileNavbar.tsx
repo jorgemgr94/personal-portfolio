@@ -27,7 +27,7 @@ export default function MobileNavbar ({
             <div className="flex items-center justify-between">
               <div className="flex items-center">
                 {/* Mobile menu button */}
-                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset dark:focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 dark:hover:text-white dark:hover:bg-gray-700 focus:outline-hidden focus:ring-2 focus:ring-inset dark:focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? <BiX /> : <BiMenu />}
                 </Disclosure.Button>
