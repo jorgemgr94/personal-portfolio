@@ -1,6 +1,7 @@
 import SectionTemplate from '@/components/SectionTemplate';
-import { technologies } from '@/data';
-import { arrayToString } from '@/helpers/format';
+import { technologies, technologiesExperienceByStatus } from '@/data';
+import { TechnologyLearningStatus } from '@/data/types';
+import { arrayToString, formatMonthsToYears } from '@/helpers/format';
 import Image from 'next/image';
 
 export default function TechStack () {
@@ -15,7 +16,32 @@ export default function TechStack () {
         </div>
         <div className="flex flex-col md:flex-row justify-between relative">
           <div className="relative max-w-lg w-full mx-auto md:mx-none grid gap-x-8 gap-y-12 sm:gap-8 md:gap-12 grid-cols-3 sm:grid-cols-6 items-center place-content-center">
-            {technologies.current.map((technology, index) => {
+
+            {technologiesExperienceByStatus[TechnologyLearningStatus.Current].entries().map(([technologyName, technologyDetails]) => {
+              return (
+                <div
+                  title={technologyName}
+                  key={technologyName}
+                  className="w-10 mx-auto flex items-center flex-col justify-center"
+                >
+                  <Image
+                    src={technologyDetails.icon || ''}
+                    alt={technologyName}
+                    width={40}
+                    height={40}
+                  />
+                  <p className="text-xs text-fun-gray font-bold mt-3 opacity-80">
+                    {technologyName}
+                  </p>
+                  <p className="text-xs text-fun-gray font-bold mt-3 opacity-80">
+                    <span className="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-sm dark:bg-gray-700 dark:text-gray-300">
+                      {formatMonthsToYears(technologyDetails.monthsOfExperience)}
+                    </span>
+                  </p>
+                </div>
+              );
+            })}
+            {/* {technologies.current.map((technology, index) => {
               return (
                 <div
                   title={technology.name}
@@ -38,7 +64,7 @@ export default function TechStack () {
                   </p>
                 </div>
               );
-            })}
+            })} */}
           </div>
         </div>
       </section>

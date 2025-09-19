@@ -32,16 +32,40 @@ export interface IPosition {
   technicalEnv: string;
 }
 
-// == Technologies ==================================================
-export enum TechnologyStatus {
-  Current = 'Current',
-  Learning = 'Learning',
-  Used = 'Used'
+// == Work Experience ==================================================
+export type WorkExperience = {
+  positionName: string;
+  startedAt: string;
+  finishedAt: string;
+  companyName: string;
+  companyPhoto: string;
+  responsibilities: string[];
+  achievements: string[];
+  technologies: Map<TechnologiesNames, number>;
 }
 
-export type Technology = {
-  name: string;
-  status: TechnologyStatus;
+// == Technologies ==================================================
+export const TechnologyLearningStatus = {
+  Current: 'Current',
+  Learning: 'Learning',
+  Used: 'Used',
+  Unknown: 'Unknown'
+} as const;
+export type TechnologyLearningStatus = typeof TechnologyLearningStatus[keyof typeof TechnologyLearningStatus];
+
+export const technologiesNames = [
+  'Android w/ Java', 'Android w/Kotlin', 'AWS', 'Bash', 'CSS', 'Design Patterns',
+  'Docker', 'Domain Driven Design (DDD)', 'Firebase', 'GCP', 'Gitlab',
+  'Github', 'Golang', 'GraphQL', 'HTML', 'Heroku', 'IOS w/ Swift', 'Javascript',
+  'Jest', 'Kubernetes', 'Laravel', 'MariaDB', 'MongoDB', 'MySQL',
+  'NextJS', 'NodeJs', 'Php', 'PostgreSQL', 'Python', 'React', 'React Native',
+  'Redis', 'Ruby on Rails', 'RxJS', 'SQL Server', 'Systems Design (Cloud Architecture)',
+  'Terraform', 'Typescript', 'VueJS'
+] as const;
+export type TechnologiesNames = typeof technologiesNames[number];
+export type TechnologyDetails = {
+  monthsOfExperience: number;
   icon?: string;
-  yearsOfExp?: string;
-};
+  learningStatus: TechnologyLearningStatus;
+}
+

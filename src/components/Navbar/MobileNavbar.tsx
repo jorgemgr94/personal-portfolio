@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { BiMenu, BiX } from 'react-icons/bi';
-import { Disclosure } from '@headlessui/react';
+import { DisclosurePanel } from '@headlessui/react';
 import { INavigationItem } from './type';
 
 function classNames (...classes: string[]) {

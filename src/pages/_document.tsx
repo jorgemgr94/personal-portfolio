@@ -37,7 +37,7 @@ export default function Document () {
         />
         <link rel="canonical" href="https://jorgemgr.com/" />
       </Head>
-      <body>
+      <body className="min-h-screen bg-background font-sans antialiased min-w-sm">
         <Main />
         <NextScript />
       </body>

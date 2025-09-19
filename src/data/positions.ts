@@ -3,7 +3,7 @@ import { CompaniesImages, IPosition } from './types';
 export const positions: IPosition[] = [
   {
     name: 'Backend Engineer (Contractor)',
-    startAt: '09/06/2021',
+    startAt: '2021-09-06',
     endAt: undefined,
     company: {
       name: 'Intersog (Ureeka, ZenBusiness)',
@@ -31,8 +31,8 @@ export const positions: IPosition[] = [
   },
   {
     name: 'Tech Lead / Digital Solutions Manager',
-    startAt: '02/01/2020',
-    endAt: '09/03/2021',
+    startAt: '2020-02-01',
+    endAt: '2021-09-03',
     company: {
       name: 'Sintec',
       photo: CompaniesImages.SintecPhoto
@@ -58,8 +58,8 @@ export const positions: IPosition[] = [
   },
   {
     name: 'Full-stack Engineer / Consultant',
-    startAt: '02/01/2019',
-    endAt: '02/01/2020',
+    startAt: '2019-02-01',
+    endAt: '2020-02-01',
     company: {
       name: 'Sintec',
       photo: CompaniesImages.SintecPhoto
@@ -82,8 +82,8 @@ export const positions: IPosition[] = [
   },
   {
     name: 'Full-stack Engineer (Remote, Part time)',
-    startAt: '07/01/2019',
-    endAt: '12/31/2019',
+    startAt: '2019-07-01',
+    endAt: '2019-12-31',
     company: {
       name: 'Garage (Startup)',
       photo: CompaniesImages.GaragePhoto
@@ -103,8 +103,8 @@ export const positions: IPosition[] = [
   },
   {
     name: 'Full-stack Engineer',
-    startAt: '08/01/2018',
-    endAt: '02/01/2019',
+    startAt: '2018-08-01',
+    endAt: '2019-02-01',
     company: {
       name: 'SENSAI Empower Success (Startup) / Metalsa',
       photo: CompaniesImages.SensaiPhoto
@@ -126,8 +126,8 @@ export const positions: IPosition[] = [
   },
   {
     name: 'Tech Lead',
-    startAt: '10/01/2016',
-    endAt: '07/01/2018',
+    startAt: '2016-10-01',
+    endAt: '2018-07-01',
     company: {
       name: 'HMS Sistemas de Información / ONCARE',
       photo: CompaniesImages.HmsPhoto
@@ -150,51 +150,5 @@ export const positions: IPosition[] = [
     technicalEnv:
       'Php, Html, CSS, Javascript, MySQL, Bash, AWS, React, Android w/ Kotlin, IOS w/ Swift, Git.'
   },
-  {
-    name: 'Full-stack Engineer',
-    startAt: '01/01/2015',
-    endAt: '10/01/2016',
-    company: {
-      name: 'HMS Sistemas de Información / ONCARE',
-      photo: CompaniesImages.HmsPhoto
-    },
-    responsibilities: [
-      'Software design, architect and development of front-end and back-end features (Oncology ERP).',
-      'Software requirements gathering, priorities planning and schedule task to ensure effective project management.',
-      'Definition and design of solutions, including process diagrams, UML diagrams, database design.',
-      'Automate periodic processes and code refactoring with Bash scripts.'
-    ],
-    achievements: [
-      `Developed a software process that automated quote generation, aligning communication among doctors, nurses,
-      and administrative staff. The process accounted for various factors, including assignments, professional language,
-      active substance to medicine conversion, and clinic processes.`,
-      'Applied database transactions to ensure consistency and integrity of the data among processes.',
-      `Lead the implementation of a "continuous improvement" metric, driving innovation by delivering a new
-      feature every quarter to the project.`
-    ],
-    technicalEnv: 'Php, Html, CSS, Javascript, MySQL, Bash, AWS.'
-  },
-  {
-    name: 'Full-stack Engineer',
-    startAt: '06/01/2014',
-    endAt: '01/01/2015',
-    company: {
-      name: 'Ingeniat',
-      photo: CompaniesImages.IngeniatPhoto
-    },
-    responsibilities: [
-      'Software development of front-end and back-end features.',
-      'Code maintenance, bug fixes and improvements of front-end and back-end features.',
-      'Automate processes with Bash scripts.',
-      'Conduct research and testing of new technologies for the company (Mobile)'
-    ],
-    achievements: [
-      `Automated book uploading to the digital library by creating a bash script that converted PDF files into separate SVG files,
-      cleaned them using regular expressions, and uploaded them to AWS S3. The script also established relationships between books,
-      pages, and S3 links in MySQL`,
-      'Learned new programming languages and increased my ability to contribute in research and implementation of new technologies.'
-    ],
-    technicalEnv:
-      'Php, Html, CSS, Javascript, Android w/ Java, MySQL, Bash, AWS.'
-  }
+
 ];
