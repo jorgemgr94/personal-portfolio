@@ -27,6 +27,9 @@ const routes: INavigationItem[] = [
   }
 ];
 
+/**
+ * @deprecated Use 'NavbarV1' instead.
+ */
 export default function Navbar () {
   const [navigationItems, setNavigationItems] = useState(routes);
 
