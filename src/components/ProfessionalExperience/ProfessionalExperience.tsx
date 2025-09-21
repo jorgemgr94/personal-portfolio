@@ -17,7 +17,10 @@ function ProfessionalExperience() {
   };
 
   return (
-    <section id="experience" className="py-16 px-4 max-w-4xl mx-auto">
+    <section
+      id="experience"
+      className="py-16 px-4 max-w-4xl min-h-screen mx-auto"
+    >
       <SectionTitle
         title="Work Experience"
         description="A journey through my professional career, showcasing key roles and achievements."

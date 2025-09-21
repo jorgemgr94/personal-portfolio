@@ -4,7 +4,10 @@ import { projects } from '@/data-v2/projects';
 
 function Projects() {
   return (
-    <section id="projects" className="py-16 px-4 max-w-4xl mx-auto">
+    <section
+      id="projects"
+      className="py-16 px-4 max-w-4xl min-h-screen mx-auto"
+    >
       <SectionTitle
         title="Projects"
         description=" A progressive learning journey showcasing hands-on projects that
