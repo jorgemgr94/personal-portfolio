@@ -31,6 +31,7 @@ function ProjectCard({ icon, learning, project }: Project) {
         <div className="space-y-3">
           <section className="flex flex-col">
             <h3 className="text-xl font-bold">{project.title}</h3>
+            <p className="text-sm text-muted-foreground">{learning.area}</p>
           </section>
 
           <p className="text-muted-foreground leading-relaxed">
