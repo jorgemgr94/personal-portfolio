@@ -1698,7 +1698,7 @@ function JsonSchemaEditor({ initialSchema, onChange }: JsonSchemaEditorProps) {
                     </label>
                     <input
                       type="text"
-                      value={rule.condition.value}
+                      value={String(rule.condition.value)}
                       onChange={(e) =>
                         updateConditionalRule(rule.id, {
                           condition: {
