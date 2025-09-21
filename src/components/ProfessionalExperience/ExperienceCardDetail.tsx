@@ -12,7 +12,7 @@ function ExperienceCardDetail({
         {/* Responsibilities */}
         {responsibilities && responsibilities.length > 0 && (
           <div className="space-y-2">
-            <h4 className="text-sm font-semibold text-gray-200 flex items-center">
+            <h4 className="text-sm font-semibold flex items-center">
               <svg
                 className="w-4 h-4 mr-2 text-blue-400"
                 fill="none"
@@ -47,7 +47,7 @@ function ExperienceCardDetail({
         {/* Achievements */}
         {achievements && achievements.length > 0 && (
           <div className="space-y-2">
-            <h4 className="text-sm font-semibold text-gray-200 flex items-center">
+            <h4 className="text-sm font-semibold flex items-center">
               <svg
                 className="w-4 h-4 mr-2 text-yellow-400"
                 fill="none"
@@ -82,7 +82,7 @@ function ExperienceCardDetail({
         {/* Technologies */}
         {technologies && technologies.size > 0 && (
           <div className="space-y-2">
-            <h4 className="text-sm font-semibold text-gray-200 flex items-center">
+            <h4 className="text-sm font-semibold flex items-center">
               <svg
                 className="w-4 h-4 mr-2 text-green-400"
                 fill="none"
