@@ -27,21 +27,12 @@ function ProjectCard({ icon, learning, project }: Project) {
         </div>
       </div>
 
-      {/* Content */}
       <div className="flex-1 min-w-0">
         <div className="space-y-3">
-          {/* Date */}
-          {/* <div className="text-sm font-medium text-gray-500">{date}</div> */}
-
           <section className="flex flex-col">
-            {/* Title */}
-
             <h3 className="text-xl font-bold">{project.title}</h3>
-
-            {/* Location */}
           </section>
 
-          {/* Description */}
           <p className="text-muted-foreground leading-relaxed">
             {project.features.join(', ')}
           </p>
