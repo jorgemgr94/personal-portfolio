@@ -1,13 +1,13 @@
-import { useState } from 'react';
-import Image from 'next/image';
-import { useRouter } from 'next/router';
+import ThemeToggler from '@/components/ThemeTogglerV1';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
-import ThemeToggler from '@/components/ThemeTogglerV1';
+import Image from 'next/image';
+import { useRouter } from 'next/router';
+import { useState } from 'react';
+import { navigationItems } from './constants';
 import { NavigationItem } from './types';
 import { handleNavigation } from './utils';
-import { navigationItems } from './constants';
 
 function MobileNavigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -32,7 +32,7 @@ function MobileNavigation() {
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px] sm:w-[400px]">
         <div className="flex flex-col space-y-4 mt-8">
-          <div className="flex items-center space-x-2 pb-4 border-b">
+          <div className="flex items-center space-x-2 px-4 pb-4 border-b">
             <Image
               src="/assets/images/me.jpg"
               alt="Logo"
@@ -41,9 +41,10 @@ function MobileNavigation() {
               className="rounded-full"
             />
             <span className="text-lg font-bold">Jorge García</span>
+            <ThemeToggler />
           </div>
 
-          <nav className="flex flex-col space-y-4">
+          <nav className="flex flex-col px-4 space-y-4">
             {navigationItems.map((item) => (
               <button
                 key={item.name}
@@ -54,10 +55,6 @@ function MobileNavigation() {
               </button>
             ))}
           </nav>
-
-          <div className="flex flex-col space-y-2 pt-4 border-t">
-            <ThemeToggler />
-          </div>
         </div>
       </SheetContent>
     </Sheet>
