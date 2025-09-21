@@ -1,7 +1,8 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import React, { useState, useEffect, useCallback } from 'react';
 import { Button } from '@/components/ui/button';
+import React, { useCallback, useEffect, useState } from 'react';
 
 interface JsonSchemaFormRendererProps {
   schema: any;
@@ -18,7 +19,11 @@ interface ValidationError {
   message: string;
 }
 
-function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSchemaFormRendererProps) {
+function JsonSchemaFormRenderer({
+  schema,
+  onSubmit,
+  initialData = {}
+}: JsonSchemaFormRendererProps) {
   const [formData, setFormData] = useState<FormData>(initialData);
   const [errors, setErrors] = useState<ValidationError[]>([]);
   const [visibleFields, setVisibleFields] = useState<Set<string>>(new Set());
@@ -36,32 +41,34 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
       let conditionMet = true;
 
       if (condition.properties) {
-        Object.entries(condition.properties).forEach(([fieldName, fieldCondition]: [string, any]) => {
-          const fieldValue = formData[fieldName];
+        Object.entries(condition.properties).forEach(
+          ([fieldName, fieldCondition]: [string, any]) => {
+            const fieldValue = formData[fieldName];
 
-          if (fieldCondition.const !== undefined) {
-            if (fieldValue !== fieldCondition.const) {
-              conditionMet = false;
-            }
-          } else if (fieldCondition.not) {
-            if (fieldValue === fieldCondition.not.const) {
-              conditionMet = false;
-            }
-          } else if (fieldCondition.pattern) {
-            const regex = new RegExp(fieldCondition.pattern);
-            if (!regex.test(String(fieldValue))) {
-              conditionMet = false;
-            }
-          } else if (fieldCondition.minimum !== undefined) {
-            if (Number(fieldValue) < fieldCondition.minimum) {
-              conditionMet = false;
-            }
-          } else if (fieldCondition.maximum !== undefined) {
-            if (Number(fieldValue) > fieldCondition.maximum) {
-              conditionMet = false;
+            if (fieldCondition.const !== undefined) {
+              if (fieldValue !== fieldCondition.const) {
+                conditionMet = false;
+              }
+            } else if (fieldCondition.not) {
+              if (fieldValue === fieldCondition.not.const) {
+                conditionMet = false;
+              }
+            } else if (fieldCondition.pattern) {
+              const regex = new RegExp(fieldCondition.pattern);
+              if (!regex.test(String(fieldValue))) {
+                conditionMet = false;
+              }
+            } else if (fieldCondition.minimum !== undefined) {
+              if (Number(fieldValue) < fieldCondition.minimum) {
+                conditionMet = false;
+              }
+            } else if (fieldCondition.maximum !== undefined) {
+              if (Number(fieldValue) > fieldCondition.maximum) {
+                conditionMet = false;
+              }
             }
           }
-        });
+        );
       }
 
       // If condition is met, add fields from then schema to visible fields
@@ -83,37 +90,39 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
           let conditionMet = true;
 
           if (condition.properties) {
-            Object.entries(condition.properties).forEach(([fieldName, fieldCondition]: [string, any]) => {
-              const fieldValue = formData[fieldName];
+            Object.entries(condition.properties).forEach(
+              ([fieldName, fieldCondition]: [string, any]) => {
+                const fieldValue = formData[fieldName];
 
-              if (fieldCondition.const !== undefined) {
-                if (fieldValue !== fieldCondition.const) {
-                  conditionMet = false;
-                }
-              } else if (fieldCondition.not) {
-                if (fieldValue === fieldCondition.not.const) {
-                  conditionMet = false;
-                }
-              } else if (fieldCondition.pattern) {
-                const regex = new RegExp(fieldCondition.pattern);
-                if (!regex.test(String(fieldValue))) {
-                  conditionMet = false;
-                }
-              } else if (fieldCondition.minimum !== undefined) {
-                if (Number(fieldValue) < fieldCondition.minimum) {
-                  conditionMet = false;
-                }
-              } else if (fieldCondition.maximum !== undefined) {
-                if (Number(fieldValue) > fieldCondition.maximum) {
-                  conditionMet = false;
+                if (fieldCondition.const !== undefined) {
+                  if (fieldValue !== fieldCondition.const) {
+                    conditionMet = false;
+                  }
+                } else if (fieldCondition.not) {
+                  if (fieldValue === fieldCondition.not.const) {
+                    conditionMet = false;
+                  }
+                } else if (fieldCondition.pattern) {
+                  const regex = new RegExp(fieldCondition.pattern);
+                  if (!regex.test(String(fieldValue))) {
+                    conditionMet = false;
+                  }
+                } else if (fieldCondition.minimum !== undefined) {
+                  if (Number(fieldValue) < fieldCondition.minimum) {
+                    conditionMet = false;
+                  }
+                } else if (fieldCondition.maximum !== undefined) {
+                  if (Number(fieldValue) > fieldCondition.maximum) {
+                    conditionMet = false;
+                  }
                 }
               }
-            });
+            );
           }
 
           // If condition is met, add fields from then schema to visible fields
           if (conditionMet && thenSchema.properties) {
-            Object.keys(thenSchema.properties).forEach(fieldName => {
+            Object.keys(thenSchema.properties).forEach((fieldName) => {
               newVisibleFields.add(fieldName);
             });
           }
@@ -131,13 +140,13 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
 
   // Handle field value changes
   const handleFieldChange = (fieldName: string, value: any) => {
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [fieldName]: value
     }));
 
     // Clear errors for this field
-    setErrors(prev => prev.filter(error => error.field !== fieldName));
+    setErrors((prev) => prev.filter((error) => error.field !== fieldName));
   };
 
   // Validate form data
@@ -147,7 +156,11 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
     // Check required fields
     const requiredFields = schema.required || [];
     requiredFields.forEach((fieldName: string) => {
-      if (!formData[fieldName] && formData[fieldName] !== 0 && formData[fieldName] !== false) {
+      if (
+        !formData[fieldName] &&
+        formData[fieldName] !== 0 &&
+        formData[fieldName] !== false
+      ) {
         validationErrors.push({
           field: fieldName,
           message: `${fieldName} is required`
@@ -164,21 +177,27 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
       let conditionMet = true;
 
       if (condition.properties) {
-        Object.entries(condition.properties).forEach(([fieldName, fieldCondition]: [string, any]) => {
-          const fieldValue = formData[fieldName];
+        Object.entries(condition.properties).forEach(
+          ([fieldName, fieldCondition]: [string, any]) => {
+            const fieldValue = formData[fieldName];
 
-          if (fieldCondition.const !== undefined) {
-            if (fieldValue !== fieldCondition.const) {
-              conditionMet = false;
+            if (fieldCondition.const !== undefined) {
+              if (fieldValue !== fieldCondition.const) {
+                conditionMet = false;
+              }
             }
           }
-        });
+        );
       }
 
       // If condition is met, check required fields in then schema
       if (conditionMet && thenSchema.required) {
         thenSchema.required.forEach((fieldName: string) => {
-          if (!formData[fieldName] && formData[fieldName] !== 0 && formData[fieldName] !== false) {
+          if (
+            !formData[fieldName] &&
+            formData[fieldName] !== 0 &&
+            formData[fieldName] !== false
+          ) {
             validationErrors.push({
               field: fieldName,
               message: `${fieldName} is required`
@@ -199,21 +218,27 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
           let conditionMet = true;
 
           if (condition.properties) {
-            Object.entries(condition.properties).forEach(([fieldName, fieldCondition]: [string, any]) => {
-              const fieldValue = formData[fieldName];
+            Object.entries(condition.properties).forEach(
+              ([fieldName, fieldCondition]: [string, any]) => {
+                const fieldValue = formData[fieldName];
 
-              if (fieldCondition.const !== undefined) {
-                if (fieldValue !== fieldCondition.const) {
-                  conditionMet = false;
+                if (fieldCondition.const !== undefined) {
+                  if (fieldValue !== fieldCondition.const) {
+                    conditionMet = false;
+                  }
                 }
               }
-            });
+            );
           }
 
           // If condition is met, check required fields in then schema
           if (conditionMet && thenSchema.required) {
             thenSchema.required.forEach((fieldName: string) => {
-              if (!formData[fieldName] && formData[fieldName] !== 0 && formData[fieldName] !== false) {
+              if (
+                !formData[fieldName] &&
+                formData[fieldName] !== 0 &&
+                formData[fieldName] !== false
+              ) {
                 validationErrors.push({
                   field: fieldName,
                   message: `${fieldName} is required`
@@ -242,8 +267,9 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
 
   // Render form field based on schema
   const renderField = (fieldName: string, fieldSchema: any) => {
-    const isVisible = visibleFields.has(fieldName) || schema.properties[fieldName];
-    const hasError = errors.some(error => error.field === fieldName);
+    const isVisible =
+      visibleFields.has(fieldName) || schema.properties[fieldName];
+    const hasError = errors.some((error) => error.field === fieldName);
 
     if (!isVisible) return null;
 
@@ -252,13 +278,20 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
 
     return (
       <div key={fieldName} className="mb-4">
-        <label htmlFor={fieldId} className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1">
+        <label
+          htmlFor={fieldId}
+          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
+        >
           {fieldSchema.title || fieldName}
-          {schema.required?.includes(fieldName) && <span className="text-red-500 ml-1">*</span>}
+          {schema.required?.includes(fieldName) && (
+            <span className="text-red-500 ml-1">*</span>
+          )}
         </label>
 
         {fieldSchema.description && (
-          <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{fieldSchema.description}</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">
+            {fieldSchema.description}
+          </p>
         )}
 
         {fieldSchema.type === 'string' && (
@@ -268,7 +301,9 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
             value={value}
             onChange={(e) => handleFieldChange(fieldName, e.target.value)}
             className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              hasError ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+              hasError
+                ? 'border-red-500'
+                : 'border-gray-300 dark:border-gray-600'
             } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
             placeholder={fieldSchema.title || fieldName}
           />
@@ -279,9 +314,13 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
             id={fieldId}
             type="number"
             value={value}
-            onChange={(e) => handleFieldChange(fieldName, Number(e.target.value))}
+            onChange={(e) =>
+              handleFieldChange(fieldName, Number(e.target.value))
+            }
             className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              hasError ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+              hasError
+                ? 'border-red-500'
+                : 'border-gray-300 dark:border-gray-600'
             } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
             placeholder={fieldSchema.title || fieldName}
           />
@@ -296,7 +335,10 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
               onChange={(e) => handleFieldChange(fieldName, e.target.checked)}
               className="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
             />
-            <label htmlFor={fieldId} className="ml-2 text-sm text-gray-700 dark:text-gray-300">
+            <label
+              htmlFor={fieldId}
+              className="ml-2 text-sm text-gray-700 dark:text-gray-300"
+            >
               {fieldSchema.title || fieldName}
             </label>
           </div>
@@ -308,7 +350,9 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
             value={value}
             onChange={(e) => handleFieldChange(fieldName, e.target.value)}
             className={`w-full px-3 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 ${
-              hasError ? 'border-red-500' : 'border-gray-300 dark:border-gray-600'
+              hasError
+                ? 'border-red-500'
+                : 'border-gray-300 dark:border-gray-600'
             } bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100`}
           >
             <option value="">Select an option</option>
@@ -322,7 +366,7 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
 
         {hasError && (
           <p className="mt-1 text-sm text-red-600 dark:text-red-400">
-            {errors.find(error => error.field === fieldName)?.message}
+            {errors.find((error) => error.field === fieldName)?.message}
           </p>
         )}
       </div>
@@ -345,16 +389,19 @@ function JsonSchemaFormRenderer({ schema, onSubmit, initialData = {} }: JsonSche
         </h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          {Object.entries(schema.properties).map(([fieldName, fieldSchema]: [string, any]) =>
-            renderField(fieldName, fieldSchema)
+          {Object.entries(schema.properties).map(
+            ([fieldName, fieldSchema]: [string, any]) =>
+              renderField(fieldName, fieldSchema)
           )}
 
           {/* Render conditionally visible fields */}
-          {Array.from(visibleFields).map(fieldName => {
+          {Array.from(visibleFields).map((fieldName) => {
             if (schema.properties[fieldName]) return null; // Already rendered above
-            return renderField(fieldName, schema.allOf?.find((c: any) =>
-              c.then?.properties?.[fieldName]
-            )?.then?.properties?.[fieldName]);
+            return renderField(
+              fieldName,
+              schema.allOf?.find((c: any) => c.then?.properties?.[fieldName])
+                ?.then?.properties?.[fieldName]
+            );
           })}
 
           <div className="pt-4">

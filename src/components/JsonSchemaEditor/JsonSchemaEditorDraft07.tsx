@@ -1,32 +1,34 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 
-import React, { useState, useCallback, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
-import JsonSchemaFormRenderer from './JsonSchemaFormRenderer';
 import {
-  Plus,
-  Trash2,
-  GripVertical,
-  Eye,
-  Code,
-  Settings,
-  Type,
-  Hash,
+  AlertTriangle,
+  Calendar,
+  CheckCircle,
   CheckSquare,
-  List,
-  Map,
   ChevronDown,
   ChevronRight,
-  AlertTriangle,
-  CheckCircle,
-  XCircle,
-  Calendar,
-  Mail,
-  Globe,
+  Code,
   CreditCard,
-  FileText
+  Eye,
+  FileText,
+  Globe,
+  GripVertical,
+  Hash,
+  List,
+  Mail,
+  Map,
+  Plus,
+  Settings,
+  Trash2,
+  Type,
+  XCircle
 } from 'lucide-react';
+import React, { useCallback, useEffect, useState } from 'react';
+import JsonSchemaFormRenderer from './JsonSchemaFormRenderer';
 
 // Enhanced types for JSON Schema Draft-07
 interface SchemaBlock {
