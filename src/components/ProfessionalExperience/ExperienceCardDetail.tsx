@@ -1,4 +1,4 @@
-import Blur from '@/components/Blur';
+import BlurIn from '@/components/BlurIn';
 import { Badge } from '@/components/ui/badge';
 import { ProfessionalExperience } from '@/data-v2/types';
 
@@ -8,7 +8,7 @@ function ExperienceCardDetail({
   experience: ProfessionalExperience;
 }) {
   return (
-    <Blur duration={0.2}>
+    <BlurIn duration={0.2}>
       <div className="mt-4 space-y-4 animate-in slide-in-from-top-2 duration-200">
         {/* Responsibilities */}
         {responsibilities && responsibilities.length > 0 && (
@@ -109,7 +109,7 @@ function ExperienceCardDetail({
           </div>
         )}
       </div>
-    </Blur>
+    </BlurIn>
   );
 }
 
