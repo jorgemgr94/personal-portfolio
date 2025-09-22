@@ -1,3 +1,4 @@
+import { Badge } from '@/components/ui/badge';
 import type { Project } from '@/data-v2/types';
 import Image from 'next/image';
 
@@ -43,12 +44,9 @@ function ProjectCard({ icon, learning, project }: Project) {
             <div className="mt-4">
               <div className="flex flex-wrap gap-2">
                 {learning.topics.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="inline-flex items-center px-3 py-1.5 bg-secondary/50 text-secondary-foreground rounded-full text-xs font-medium border border-border/50 hover:bg-secondary/70 transition-colors duration-200"
-                  >
+                  <Badge key={index} variant="secondary" className="text-xs">
                     {tech}
-                  </span>
+                  </Badge>
                 ))}
               </div>
             </div>

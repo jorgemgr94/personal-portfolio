@@ -1,4 +1,5 @@
 import Blur from '@/components/Blur';
+import { Badge } from '@/components/ui/badge';
 import { ProfessionalExperience } from '@/data-v2/types';
 
 function ExperienceCardDetail({
@@ -100,12 +101,9 @@ function ExperienceCardDetail({
             </h4>
             <div className="flex flex-wrap gap-2">
               {Array.from(technologies.keys()).map((tech, index) => (
-                <span
-                  key={index}
-                  className="text-xs bg-secondary border border-border/30 rounded-md px-2 py-1 hover:bg-secondary/30 transition-colors"
-                >
+                <Badge key={index} variant="secondary" className="text-xs">
                   {tech}
-                </span>
+                </Badge>
               ))}
             </div>
           </div>

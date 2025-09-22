@@ -1,3 +1,4 @@
+import { Badge } from '@/components/ui/badge';
 import { socialNetworks } from '@/data/socialNetworks';
 import { technologies } from '@/data/technologies';
 import { GeneralImages } from '@/data/types';
@@ -90,10 +91,7 @@ function AboutMe() {
 
           <div className="flex flex-wrap gap-1.5">
             {technologies.current.map((tech, index) => (
-              <div
-                key={index}
-                className="flex items-center gap-1.5 bg-secondary/20 border border-border/30 rounded-md px-2 py-1 hover:bg-secondary/30 transition-colors"
-              >
+              <Badge key={index} variant="secondary" className="text-xs">
                 <div className="w-3 h-3 relative">
                   {tech.icon ? (
                     <Image
@@ -118,7 +116,7 @@ function AboutMe() {
                     {tech.yearsOfExp}
                   </span>
                 )}
-              </div>
+              </Badge>
             ))}
           </div>
         </section>
