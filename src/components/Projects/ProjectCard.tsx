@@ -44,7 +44,11 @@ function ProjectCard({ icon, learning, project }: Project) {
             <div className="mt-4">
               <div className="flex flex-wrap gap-2">
                 {learning.topics.map((tech, index) => (
-                  <Badge key={index} variant="secondary" className="text-xs">
+                  <Badge
+                    key={index}
+                    variant="secondary"
+                    className="text-xs whitespace-break-spaces"
+                  >
                     {tech}
                   </Badge>
                 ))}
