@@ -1,10 +1,10 @@
-import ThemeToggler from '@/components/ThemeTogglerV1';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import ThemeToggler from '../ThemeTogglerV1';
 import { navigationItems } from './constants';
 import { NavigationItem } from './types';
 import { handleNavigation } from './utils';
@@ -30,6 +30,9 @@ function MobileNavigation() {
           <Menu className="h-5 w-5" />
         </Button>
       </SheetTrigger>
+      <div className="md:hidden">
+        <ThemeToggler />
+      </div>
       <SheetContent side="right" className="w-[300px] sm:w-[400px]">
         <div className="flex flex-col space-y-4 mt-8">
           <div className="flex items-center space-x-2 px-4 pb-4 border-b">
@@ -41,7 +44,6 @@ function MobileNavigation() {
               className="rounded-full"
             />
             <span className="text-lg font-bold">Jorge García</span>
-            <ThemeToggler />
           </div>
 
           <nav className="flex flex-col px-4 space-y-4">
