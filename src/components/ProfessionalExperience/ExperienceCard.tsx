@@ -1,5 +1,5 @@
 import { ProfessionalExperience } from '@/data-v2/types';
-import { formatDuration } from '@/helpers/format';
+import { formatDateFromISO, formatDuration } from '@/helpers/format';
 import Image from 'next/image';
 import ExperienceCardDetail from './ExperienceCardDetail';
 
@@ -13,6 +13,9 @@ function ExperienceCard({
   onToggle: () => void;
 }) {
   const { companyName, jobTitle, startDate, endDate, companyLogo } = experience;
+
+  const formattedStartDate = formatDateFromISO(startDate);
+  const formattedEndDate = endDate ? formatDateFromISO(endDate) : 'Present';
 
   return (
     <div className="border-b py-6 last:border-b-0">
@@ -73,7 +76,7 @@ function ExperienceCard({
 
             <section>
               <div className="text-sm text-right">
-                {startDate} - {endDate || 'Present'}
+                {formattedStartDate} - {formattedEndDate}
               </div>
               <div className="text-sm text-right">
                 {formatDuration(startDate, endDate)}
