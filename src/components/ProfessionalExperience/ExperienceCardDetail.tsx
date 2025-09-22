@@ -32,7 +32,7 @@ function ExperienceCardDetail({
               {responsibilities.map((responsibility, index) => (
                 <li
                   key={index}
-                  className="text-gray-300 text-sm leading-relaxed flex items-start"
+                  className="text-muted-foreground text-sm leading-relaxed flex items-start"
                 >
                   <span className="text-gray-500 mr-2 mt-1.5 flex-shrink-0">
                     •
@@ -67,7 +67,7 @@ function ExperienceCardDetail({
               {achievements.map((achievement, index) => (
                 <li
                   key={index}
-                  className="text-gray-300 text-sm leading-relaxed flex items-start"
+                  className="text-muted-foreground text-sm leading-relaxed flex items-start"
                 >
                   <span className="text-yellow-400 mr-2 mt-1.5 flex-shrink-0">
                     🏆
@@ -102,7 +102,7 @@ function ExperienceCardDetail({
               {Array.from(technologies.keys()).map((tech, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs font-medium hover:bg-gray-700 transition-colors duration-200"
+                  className="text-xs bg-secondary border border-border/30 rounded-md px-2 py-1 hover:bg-secondary/30 transition-colors"
                 >
                   {tech}
                 </span>
