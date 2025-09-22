@@ -43,10 +43,9 @@ function AboutMe() {
 
             <p>
               I started my career as a full-stack developer, spending seven
-              years building end-to-end solutions. For the past two years,
-              I&apos;ve focused entirely on backend development, diving deep
-              into scalable architecture, distributed systems, and cloud-native
-              technologies.
+              years building end-to-end solutions. Since 2021, I&apos;ve focused
+              on backend development, diving deep into scalable architecture,
+              distributed systems, and cloud-native technologies.
             </p>
 
             <p>
