@@ -1,8 +1,16 @@
 import { Badge } from '@/components/ui/badge';
+import {
+  HoverCard,
+  HoverCardContent,
+  HoverCardTrigger
+} from '@/components/ui/hover-card';
+import { technologiesExperienceByStatus } from '@/data-v2/technologies';
+import { TechnologyLearningStatus } from '@/data-v2/types';
 import { socialNetworks } from '@/data/socialNetworks';
-import { technologies } from '@/data/technologies';
 import { GeneralImages } from '@/data/types';
+import { formatMonthsToYears } from '@/helpers/format';
 import Image from 'next/image';
+import { Button } from './ui/button';
 
 function AboutMe() {
   return (
@@ -80,45 +88,83 @@ function AboutMe() {
 
         {/* Tech Stack */}
         <section className="col-span-1 md:col-span-1 space-y-4">
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-1">
-              Current Stack
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              Technologies I&apos;m actively working with
-            </p>
-          </div>
+          <h3 className="text-lg font-semibold text-foreground mb-1">
+            Current Stack
+          </h3>
+          <p className="text-sm text-muted-foreground">
+            Technologies I&apos;m actively working with
+          </p>
 
           <div className="flex flex-wrap gap-1.5">
-            {technologies.current.map((tech, index) => (
-              <Badge key={index} variant="secondary" className="text-xs">
-                <div className="w-3 h-3 relative">
+            {Array.from(
+              technologiesExperienceByStatus[TechnologyLearningStatus.Current]
+            ).map(([name, tech]) => (
+              <Badge key={name} variant="secondary" className="text-xs">
+                <div className="w-5 h-5 relative">
                   {tech.icon ? (
                     <Image
                       src={tech.icon}
-                      alt={tech.name}
+                      alt={name}
                       fill
                       className="object-contain"
                     />
                   ) : (
                     <div className="w-full h-full bg-muted rounded flex items-center justify-center">
                       <span className="text-xs font-medium text-muted-foreground">
-                        {tech.name.charAt(0)}
+                        {name.charAt(0)}
                       </span>
                     </div>
                   )}
                 </div>
                 <span className="text-xs font-medium text-foreground">
-                  {tech.name}
+                  {name}
                 </span>
-                {tech.yearsOfExp && (
-                  <span className="text-xs text-muted-foreground">
-                    {tech.yearsOfExp}
-                  </span>
-                )}
+
+                <span className="text-xs text-muted-foreground">
+                  {formatMonthsToYears(tech.monthsOfExperience)}
+                </span>
               </Badge>
             ))}
           </div>
+
+          <HoverCard>
+            <HoverCardTrigger asChild>
+              <Button variant="link">Technologies I&apos;ve worked with</Button>
+            </HoverCardTrigger>
+            <HoverCardContent className="w-80">
+              <div className="flex flex-wrap gap-1.5">
+                {Array.from(
+                  technologiesExperienceByStatus[TechnologyLearningStatus.Used]
+                ).map(([name, tech]) => (
+                  <Badge key={name} variant="secondary" className="text-xs">
+                    <div className="w-5 h-5 relative">
+                      {tech.icon ? (
+                        <Image
+                          src={tech.icon}
+                          alt={name}
+                          fill
+                          className="object-contain"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-muted rounded flex items-center justify-center">
+                          <span className="text-xs font-medium text-muted-foreground">
+                            {name.charAt(0)}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <span className="text-xs font-medium text-foreground">
+                      {name}
+                    </span>
+
+                    <span className="text-xs text-muted-foreground">
+                      {formatMonthsToYears(tech.monthsOfExperience)}
+                    </span>
+                  </Badge>
+                ))}
+              </div>
+            </HoverCardContent>
+          </HoverCard>
         </section>
       </div>
     </section>
