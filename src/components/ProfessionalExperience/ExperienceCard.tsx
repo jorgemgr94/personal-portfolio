@@ -15,7 +15,7 @@ function ExperienceCard({
   const { companyName, jobTitle, startDate, endDate, companyLogo } = experience;
 
   return (
-    <div className="border-b border-gray-800 py-6 last:border-b-0">
+    <div className="border-b py-6 last:border-b-0">
       <div className="flex items-start space-x-4">
         <div className="flex-shrink-0">
           <div className="w-16 h-16 bg-white rounded-full bg-gradient-to-b flex items-center justify-center shadow-sm">
@@ -44,6 +44,7 @@ function ExperienceCard({
           <div className="flex items-center justify-between mb-1">
             <section>
               <div className="flex items-center space-x-2">
+                {/* Company Name */}
                 <h3 className="text-lg font-semibold ">{companyName}</h3>
 
                 {/* Chevron Icon */}
@@ -66,14 +67,15 @@ function ExperienceCard({
                   </svg>
                 </button>
               </div>
-              <p className="text-gray-400 text-sm mb-2">{jobTitle}</p>
+              {/* Job Title */}
+              <p className="text-sm mb-2">{jobTitle}</p>
             </section>
 
             <section>
-              <div className="text-gray-400 text-sm text-right">
+              <div className="text-sm text-right">
                 {startDate} - {endDate || 'Present'}
               </div>
-              <div className="text-gray-400 text-sm text-right">
+              <div className="text-sm text-right">
                 {formatDuration(startDate, endDate)}
               </div>
             </section>
