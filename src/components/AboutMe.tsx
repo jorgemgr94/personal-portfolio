@@ -94,7 +94,6 @@ function AboutMe() {
           <p className="text-sm text-muted-foreground">
             Technologies I&apos;m actively working with
           </p>
-
           <div className="flex flex-wrap gap-1.5">
             {Array.from(
               technologiesExperienceByStatus[TechnologyLearningStatus.Current]
@@ -127,44 +126,89 @@ function AboutMe() {
             ))}
           </div>
 
-          <HoverCard>
-            <HoverCardTrigger asChild>
-              <Button variant="link">Technologies I&apos;ve worked with</Button>
-            </HoverCardTrigger>
-            <HoverCardContent className="w-80">
-              <div className="flex flex-wrap gap-1.5">
-                {Array.from(
-                  technologiesExperienceByStatus[TechnologyLearningStatus.Used]
-                ).map(([name, tech]) => (
-                  <Badge key={name} variant="secondary" className="text-xs">
-                    <div className="w-5 h-5 relative">
-                      {tech.icon ? (
-                        <Image
-                          src={tech.icon}
-                          alt={name}
-                          fill
-                          className="object-contain"
-                        />
-                      ) : (
-                        <div className="w-full h-full bg-muted rounded flex items-center justify-center">
-                          <span className="text-xs font-medium text-muted-foreground">
-                            {name.charAt(0)}
-                          </span>
-                        </div>
-                      )}
-                    </div>
-                    <span className="text-xs font-medium text-foreground">
-                      {name}
-                    </span>
+          {/* Used Technologies Desktop */}
+          <section className="hidden md:block">
+            <HoverCard>
+              <HoverCardTrigger asChild>
+                <Button variant="link">
+                  Technologies I&apos;ve worked with
+                </Button>
+              </HoverCardTrigger>
+              <HoverCardContent className="w-80">
+                <div className="flex flex-wrap gap-1.5">
+                  {Array.from(
+                    technologiesExperienceByStatus[
+                      TechnologyLearningStatus.Used
+                    ]
+                  ).map(([name, tech]) => (
+                    <Badge key={name} variant="secondary" className="text-xs">
+                      <div className="w-5 h-5 relative">
+                        {tech.icon ? (
+                          <Image
+                            src={tech.icon}
+                            alt={name}
+                            fill
+                            className="object-contain"
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-muted rounded flex items-center justify-center">
+                            <span className="text-xs font-medium text-muted-foreground">
+                              {name.charAt(0)}
+                            </span>
+                          </div>
+                        )}
+                      </div>
+                      <span className="text-xs font-medium text-foreground">
+                        {name}
+                      </span>
 
-                    <span className="text-xs text-muted-foreground">
-                      {formatMonthsToYears(tech.monthsOfExperience)}
-                    </span>
-                  </Badge>
-                ))}
-              </div>
-            </HoverCardContent>
-          </HoverCard>
+                      <span className="text-xs text-muted-foreground">
+                        {formatMonthsToYears(tech.monthsOfExperience)}
+                      </span>
+                    </Badge>
+                  ))}
+                </div>
+              </HoverCardContent>
+            </HoverCard>
+          </section>
+
+          {/* Used Technologies Mobile */}
+          <section className="block md:hidden space-y-4">
+            <p className="text-sm text-muted-foreground">
+              Technologies I&apos;ve worked with
+            </p>
+            <div className="flex flex-wrap gap-1.5">
+              {Array.from(
+                technologiesExperienceByStatus[TechnologyLearningStatus.Used]
+              ).map(([name, tech]) => (
+                <Badge key={name} variant="secondary" className="text-xs">
+                  <div className="w-5 h-5 relative">
+                    {tech.icon ? (
+                      <Image
+                        src={tech.icon}
+                        alt={name}
+                        fill
+                        className="object-contain"
+                      />
+                    ) : (
+                      <div className="w-full h-full bg-muted rounded flex items-center justify-center">
+                        <span className="text-xs font-medium text-muted-foreground">
+                          {name.charAt(0)}
+                        </span>
+                      </div>
+                    )}
+                  </div>
+                  <span className="text-xs font-medium text-foreground">
+                    {name}
+                  </span>
+
+                  <span className="text-xs text-muted-foreground">
+                    {formatMonthsToYears(tech.monthsOfExperience)}
+                  </span>
+                </Badge>
+              ))}
+            </div>
+          </section>
         </section>
       </div>
     </section>
