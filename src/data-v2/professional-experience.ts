@@ -25,13 +25,18 @@ export const professionalExperiences: ProfessionalExperience[] = [
       Error Reporting, and automated alert policies, improving issue identification and resolution by 60%.`
     ],
     technologies: new Map([
-      ['Typescript', 36],
-      ['React', 36],
-      ['RxJS', 36],
-      ['NodeJs', 36],
-      ['Firebase', 36],
-      ['GCP', 36],
-      ['Docker', 36]
+      ['Typescript', 12],
+      ['React', 24],
+      ['NodeJs', 24],
+      ['Firebase', 6],
+      ['GCP', 24],
+      ['Docker', 24],
+      ['Kubernetes', 24],
+      ['GraphQL', 24],
+      ['Golang', 6],
+      ['Django', 6],
+      ['PostgreSQL', 24],
+      ['Terraform', 6],
     ])
   },
   {
@@ -47,6 +52,13 @@ export const professionalExperiences: ProfessionalExperience[] = [
     achievements: [
     ],
     technologies: new Map([
+      ['Typescript', 23],
+      ['React', 23],
+      ['RxJS', 12],
+      ['NodeJs', 23],
+      ['Firebase', 23],
+      ['GCP', 23],
+      ['Docker', 23]
     ])
   },
   {
@@ -78,13 +90,13 @@ export const professionalExperiences: ProfessionalExperience[] = [
       ['Typescript', 19],
       ['NextJS', 19],
       ['Firebase', 19],
-      ['MongoDB', 19],
+      ['MongoDB', 10],
       ['NodeJs', 19],
-      ['Python', 19],
-      ['PostgreSQL', 19],
+      ['Python', 10],
+      ['PostgreSQL', 10],
       ['Github', 19],
       ['GCP', 19],
-      ['AWS', 19],
+      ['AWS', 10],
       ['Docker', 19]
     ])
   },
@@ -114,20 +126,20 @@ export const professionalExperiences: ProfessionalExperience[] = [
     ],
     technologies: new Map([
       ['React', 12],
-      ['React Native', 12],
-      ['NextJS', 12],
-      ['Typescript', 12],
-      ['Firebase', 12],
-      ['MongoDB', 12],
+      ['React Native', 6],
+      ['NextJS', 6],
+      ['Typescript', 6],
+      ['Firebase', 6],
+      ['MongoDB', 6],
       ['NodeJs', 12],
-      ['Python', 12],
-      ['Php', 12],
+      ['Python', 6],
+      ['Php', 6],
       ['MySQL', 12],
-      ['PostgreSQL', 12],
+      ['PostgreSQL', 6],
       ['Github', 12],
       ['GCP', 12],
-      ['AWS', 12],
-      ['Docker', 12]
+      ['AWS', 6],
+      ['Docker', 6]
     ])
   },
   {
@@ -153,15 +165,15 @@ export const professionalExperiences: ProfessionalExperience[] = [
       improving code quality and deployment efficiency.`
     ],
     technologies: new Map([
-      ['Ruby on Rails', 6],
-      ['React', 6],
-      ['GCP', 6],
-      ['Jest', 6],
-      ['Typescript', 6],
-      ['PostgreSQL', 6],
-      ['Heroku', 6],
-      ['Docker', 6],
-      ['Gitlab', 6]
+      ['Ruby on Rails', 5],
+      ['React', 5],
+      ['GCP', 5],
+      ['Testing', 5],
+      ['Typescript', 5],
+      ['PostgreSQL', 5],
+      ['Heroku', 5],
+      ['Docker', 5],
+      ['Gitlab', 5]
     ])
   },
   {
@@ -189,10 +201,10 @@ export const professionalExperiences: ProfessionalExperience[] = [
       ['React', 6],
       ['React Native', 6],
       ['NodeJs', 6],
-      ['Ruby on Rails', 6],
+      ['Ruby on Rails', 3],
       ['MySQL', 6],
-      ['SQL Server', 6],
-      ['AWS', 6]
+      ['SQL Server', 3],
+      ['AWS', 3]
     ])
   },
   {
@@ -228,15 +240,13 @@ export const professionalExperiences: ProfessionalExperience[] = [
     ],
     technologies: new Map([
       ['Php', 21],
-      ['HTML', 21],
-      ['CSS', 21],
       ['Javascript', 21],
       ['MySQL', 21],
-      ['Bash', 21],
-      ['AWS', 21],
-      ['React', 21],
-      ['Android w/Kotlin', 21],
-      ['IOS w/ Swift', 21]
+      ['Bash', 10],
+      ['AWS', 5],
+      ['React', 10],
+      ['Android w/Kotlin', 10],
+      ['IOS w/ Swift', 10]
     ])
   },
   {
@@ -267,12 +277,10 @@ export const professionalExperiences: ProfessionalExperience[] = [
     ],
     technologies: new Map([
       ['Php', 21],
-      ['HTML', 21],
-      ['CSS', 21],
       ['Javascript', 21],
       ['MySQL', 21],
-      ['Bash', 21],
-      ['AWS', 21]
+      ['Bash', 10],
+      ['AWS', 5]
     ])
   },
   {
@@ -301,8 +309,6 @@ export const professionalExperiences: ProfessionalExperience[] = [
     ],
     technologies: new Map([
       ['Php', 7],
-      ['HTML', 7],
-      ['CSS', 7],
       ['Javascript', 7],
       ['Android w/ Java', 7],
       ['MySQL', 7],

@@ -23,10 +23,10 @@ export const TechnologyLearningStatus = {
 export type TechnologyLearningStatus = typeof TechnologyLearningStatus[keyof typeof TechnologyLearningStatus];
 
 export const technologiesNames = [
-  'Android w/ Java', 'Android w/Kotlin', 'AWS', 'Bash', 'CSS', 'Design Patterns',
+  'Android w/ Java', 'Android w/Kotlin', 'AWS', 'Bash', 'Design Patterns', 'Django',
   'Docker', 'Domain Driven Design (DDD)', 'Firebase', 'GCP', 'Gitlab',
-  'Github', 'Golang', 'GraphQL', 'HTML', 'Heroku', 'IOS w/ Swift', 'Javascript',
-  'Jest', 'Kubernetes', 'Laravel', 'MariaDB', 'MongoDB', 'MySQL',
+  'Github', 'Golang', 'GraphQL', 'Heroku', 'IOS w/ Swift', 'Javascript',
+  'Testing', 'Kubernetes', 'Laravel', 'MariaDB', 'MongoDB', 'MySQL',
   'NextJS', 'NodeJs', 'Php', 'PostgreSQL', 'Python', 'React', 'React Native',
   'Redis', 'Ruby on Rails', 'RxJS', 'SQL Server', 'Systems Design (Cloud Architecture)',
   'Terraform', 'Typescript', 'VueJS'
