@@ -58,10 +58,11 @@ function ExperienceCard({
                   {/* Chevron Icon */}
                   <button
                     onClick={onToggle}
-                    className=" hover:text-gray-300 transition-colors duration-200"
+                    className="flex items-center space-x-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200"
                   >
+                    <span>{isExpanded ? 'Show Less' : 'Show More'}</span>
                     <svg
-                      className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-90' : ''}`}
+                      className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}
                       fill="none"
                       stroke="currentColor"
                       viewBox="0 0 24 24"
@@ -70,7 +71,7 @@ function ExperienceCard({
                         strokeLinecap="round"
                         strokeLinejoin="round"
                         strokeWidth={2}
-                        d="M9 5l7 7-7 7"
+                        d="M19 9l-7 7-7-7"
                       />
                     </svg>
                   </button>
