@@ -19,15 +19,15 @@ function ExperienceCard({
   const formattedEndDate = endDate ? formatDateFromISO(endDate) : 'Present';
 
   return (
-    <div
-      className="border-b py-6 last:border-b-0 cursor-pointer"
-      onClick={onToggle}
-    >
+    <div className="border-b py-6 last:border-b-0">
       <div className="flex items-start space-x-4">
         <div className="flex-1 min-w-0">
           <div className="flex items-center justify-between mb-1">
             {/* Left side */}
-            <section className="flex items-center space-x-2 min-w-7/12">
+            <section
+              className="flex items-center space-x-2 min-w-7/12 cursor-pointer"
+              onClick={onToggle}
+            >
               <a
                 href={companyUrl}
                 target="_blank"
