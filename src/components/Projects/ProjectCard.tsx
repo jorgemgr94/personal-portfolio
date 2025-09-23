@@ -1,5 +1,5 @@
 import { Badge } from '@/components/ui/badge';
-import type { Project } from '@/data-v2/types';
+import type { Project } from '@/data/types';
 import Image from 'next/image';
 import BlurIn from '../BlurIn';
 

@@ -5,9 +5,8 @@ import { FaGithub, FaGlobe, FaLinkedin } from 'react-icons/fa';
 
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { GeneralImages } from '@/data';
-import { professionalExperiences } from '@/data-v2/professional-experience';
-import { technologiesExperienceByStatus } from '@/data-v2/technologies';
+import { professionalExperiences } from '@/data/professional-experience';
+import { technologiesExperienceByStatus } from '@/data/technologies';
 import {
   formatDateFromISO,
   formatDuration,
@@ -35,11 +34,11 @@ function Resume2() {
         <Button
           onClick={handlePrint}
           className="fixed bottom-5 right-5 cursor-pointer flex flex-col items-center print:hidden"
-          variant="outline"
+          variant="ghost"
           size="sm"
         >
           <Image
-            src={GeneralImages.Printer}
+            src="/assets/images/printer.png"
             alt="Printer"
             width={20}
             height={20}
@@ -51,7 +50,7 @@ function Resume2() {
         <section className="flex mb-3">
           <div className="flex flex-col items-center basis-3/12">
             <Image
-              src={GeneralImages.Profile}
+              src="/assets/images/me.jpg"
               alt="user profile"
               width={100}
               height={100}

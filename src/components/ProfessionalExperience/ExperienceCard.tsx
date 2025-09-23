@@ -1,4 +1,4 @@
-import { ProfessionalExperience } from '@/data-v2/types';
+import { ProfessionalExperience } from '@/data/types';
 import { formatDateFromISO, formatDuration } from '@/helpers/format';
 import Image from 'next/image';
 import BlurIn from '../BlurIn';

@@ -4,10 +4,9 @@ import {
   HoverCardContent,
   HoverCardTrigger
 } from '@/components/ui/hover-card';
-import { technologiesExperienceByStatus } from '@/data-v2/technologies';
-import { TechnologyLearningStatus } from '@/data-v2/types';
-import { socialNetworks } from '@/data/socialNetworks';
-import { GeneralImages } from '@/data/types';
+import { networks } from '@/data/networks';
+import { technologiesExperienceByStatus } from '@/data/technologies';
+import { TechnologyLearningStatus } from '@/data/types';
 import { formatMonthsToYears } from '@/helpers/format';
 import Image from 'next/image';
 import { Button } from './ui/button';
@@ -23,7 +22,7 @@ function AboutMe() {
         <section className="col-span-1 md:col-span-3 space-y-8">
           <div className="flex items-start gap-6">
             <Image
-              src={GeneralImages.Profile}
+              src="/assets/images/me.jpg"
               alt="Profile picture"
               width={120}
               height={120}
@@ -70,7 +69,7 @@ function AboutMe() {
               Let&apos;s Connect
             </h3>
             <div className="flex gap-2">
-              {socialNetworks.map((social, index) => (
+              {networks.map((social, index) => (
                 <a
                   key={index}
                   href={social.url}

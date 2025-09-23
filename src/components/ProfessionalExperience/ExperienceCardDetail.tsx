@@ -1,5 +1,5 @@
 import { Badge } from '@/components/ui/badge';
-import { ProfessionalExperience } from '@/data-v2/types';
+import { ProfessionalExperience } from '@/data/types';
 
 function ExperienceCardDetail({
   experience: { responsibilities, achievements, technologies }

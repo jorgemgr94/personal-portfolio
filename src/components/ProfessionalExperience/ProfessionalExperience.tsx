@@ -1,5 +1,5 @@
 import SectionTitle from '@/components/SectionTitle';
-import { professionalExperiences } from '@/data-v2/professional-experience';
+import { professionalExperiences } from '@/data/professional-experience';
 import { useState } from 'react';
 import BlurIn from '../BlurIn';
 import ExperienceCard from './ExperienceCard';
