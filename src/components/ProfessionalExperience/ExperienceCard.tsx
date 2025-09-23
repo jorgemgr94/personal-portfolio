@@ -22,7 +22,10 @@ function ExperienceCard({
     <div className="border-b py-6 last:border-b-0">
       <div className="flex items-start space-x-4">
         <div className="flex-1 min-w-0">
-          <div className="flex items-center justify-between mb-1">
+          <div
+            className="flex items-center justify-between mb-1 cursor-pointer"
+            onClick={onToggle}
+          >
             {/* Left side */}
             <section
               className="flex items-center space-x-2 min-w-7/12 cursor-pointer"
