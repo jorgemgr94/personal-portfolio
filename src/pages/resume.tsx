@@ -1,175 +1,244 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { AiOutlineTrophy } from 'react-icons/ai';
-import { BsFillStopFill } from 'react-icons/bs';
+import { AiOutlineCalendar, AiOutlineTrophy } from 'react-icons/ai';
+import { FaGithub, FaGlobe, FaLinkedin } from 'react-icons/fa';
 
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { GeneralImages } from '@/data';
+import { professionalExperiences } from '@/data-v2/professional-experience';
+import { technologiesExperienceByStatus } from '@/data-v2/technologies';
 import {
-  GeneralImages,
-  SocialIconsImages,
-  about,
-  positions,
-  technologies
-} from '@/data';
-import { arrayToString, formatDate, formatExperience } from '@/helpers/format';
+  formatDateFromISO,
+  formatDuration,
+  formatMonthsToYears
+} from '@/helpers/format';
 
-function Resume () {
+function Resume2() {
   const handlePrint = () => window.print();
+
+  // Get current technologies (most experienced) - reduced to 6
+  const currentTechnologies = Array.from(
+    technologiesExperienceByStatus.Current.entries()
+  ).sort(([, a], [, b]) => b.monthsOfExperience - a.monthsOfExperience);
+
+  // Filter to most recent experiences
+  const recentExperiences = professionalExperiences.slice(0, 4);
 
   return (
     <>
       <Head>
         <title>Jorge García - Resume</title>
       </Head>
-      <section className="shadow-md place-content-center text-base w-[22cm] my-0 mx-auto p-4 print:shadow-none">
-        <button
+      <section className="shadow-md place-content-center text-sm w-[22cm] my-0 mx-auto p-3 print:shadow-none bg-white">
+        {/* Print Button */}
+        <Button
           onClick={handlePrint}
           className="fixed bottom-5 right-5 cursor-pointer flex flex-col items-center print:hidden"
+          variant="outline"
+          size="sm"
         >
           <Image
             src={GeneralImages.Printer}
             alt="Printer"
-            width={40}
-            height={40}
+            width={20}
+            height={20}
           />
-          <span className="text-xs mt-2 font-semibold inline-block py-1 px-2 uppercase rounded-full bg-blue-400 hover:bg-blue-300 text-white">
-            Print
-          </span>
-        </button>
-        <section className="flex mb-4">
+          <span className="text-xs mt-1 font-semibold">Print</span>
+        </Button>
+
+        {/* Header Section */}
+        <section className="flex mb-3">
           <div className="flex flex-col items-center basis-3/12">
             <Image
               src={GeneralImages.Profile}
               alt="user profile"
-              width={112}
-              height={112}
-              className='rounded-full shadow-xs mb-2'
+              width={100}
+              height={100}
+              className="rounded-full shadow-sm mb-2"
             />
-            <div className="font-bold">Jorge García</div>
-            <div>Software Engineer</div>
-            <a
-              className="underline cursor-pointer text-gray-600 hover:text-gray-400"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="https://jorgemgr.com"
-            >
-              <small>jorgemgr.com</small>
-            </a>
-            <a
-              className="underline cursor-pointer text-gray-600 hover:text-gray-400 mb-2"
-              target="_blank"
-              rel="noopener noreferrer"
-              href="mailto:jorgemgr94@gmail.com"
-            >
-              <small>jorgemgr94@gmail.com</small>
-            </a>
-            <section className="flex items-start">
+            <div className="font-bold text-lg">Jorge García</div>
+            <div className="text-gray-600 mb-2">Software Engineer</div>
+
+            {/* Contact Links */}
+            <div className="flex flex-col items-center space-y-1 mb-3">
               <a
-                className="h-6 w-6 mr-4"
+                className="flex items-center text-sm text-gray-600 hover:text-gray-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="https://jorgemgr.com"
+              >
+                <FaGlobe className="mr-1" size={12} />
+                jorgemgr.com
+              </a>
+              <a
+                className="flex items-center text-sm text-gray-600 hover:text-gray-400 transition-colors"
+                target="_blank"
+                rel="noopener noreferrer"
+                href="mailto:jorgemgr94@gmail.com"
+              >
+                jorgemgr94@gmail.com
+              </a>
+            </div>
+
+            {/* Social Links */}
+            <section className="flex items-center space-x-3">
+              <a
+                className="h-6 w-6 hover:opacity-70 transition-opacity"
                 rel="noopener noreferrer"
                 href="https://github.com/jorgemgr94"
                 target="_blank"
               >
-                <Image
-                  alt="Github"
-                  src={SocialIconsImages.Github}
-                  width={24}
-                  height={24}
-                />
+                <FaGithub size={20} />
               </a>
               <a
-                className="h-6 w-6 mr-4"
+                className="h-6 w-6 hover:opacity-70 transition-opacity"
                 rel="noopener noreferrer"
                 href="https://www.linkedin.com/in/jorgemgr94/"
                 target="_blank"
               >
-                <Image
-                  alt="Linkedin"
-                  src={SocialIconsImages.Linkedin}
-                  width={24}
-                  height={24}
-                />
+                <FaLinkedin size={20} />
               </a>
             </section>
           </div>
-          <div className="basis-9/12">
-            <div className="font-bold">About Me</div>
-            <p className="mb-4">{about.firstParagraph}</p>
-            <p className="mb-4">{about.secondParagraph}</p>
-            <p>{about.thirdParagraph}</p>
+
+          {/* About Section */}
+          <div className="basis-9/12 pl-4">
+            <div className="font-bold text-base mb-3">About Me</div>
+            <p className="text-gray-700 leading-relaxed text-sm mb-4">
+              Passionate software engineer with over{' '}
+              {new Date().getFullYear() - 2014} years of experience architecting
+              and delivering scalable solutions across diverse industries.
+              Expert in backend development with a strong foundation in
+              distributed systems, cloud-native architectures, and modern DevOps
+              practices. Proven track record of leading technical initiatives
+              and mentoring teams while maintaining high code quality standards
+              and fostering collaborative environments.
+            </p>
+
+            {/* Current Tech Stack */}
+            <div className="mb-4">
+              <div className="font-bold text-base mb-2">Current Tech Stack</div>
+              <div className="flex flex-wrap gap-1.5">
+                {currentTechnologies.map(([name, tech]) => (
+                  <Badge key={name} variant="secondary" className="text-xs">
+                    <div className="w-4 h-4 relative">
+                      {tech.icon ? (
+                        <Image
+                          src={tech.icon}
+                          alt={name}
+                          fill
+                          className="object-contain"
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-muted rounded flex items-center justify-center">
+                          <span className="text-xs font-medium text-muted-foreground">
+                            {name.charAt(0)}
+                          </span>
+                        </div>
+                      )}
+                    </div>
+                    <span className="text-xs font-medium text-foreground">
+                      {name}
+                    </span>
+
+                    <span className="text-xs text-muted-foreground">
+                      {formatMonthsToYears(tech.monthsOfExperience)}
+                    </span>
+                  </Badge>
+                ))}
+              </div>
+            </div>
           </div>
         </section>
-        <section className="mb-4">
-          <div className="w-full font-bold">Technical Experience</div>
-          <div className="w-full mb-2">
-            <span className="font-medium">Current Tech Stack: </span>
-            {arrayToString(technologies.current.map((t) => t.name))}
-          </div>
-          <div className="w-full mb-2">
-            <span className="font-medium">Learning: </span>
-            {arrayToString(technologies.learning.map((t) => t.name))}
-          </div>
-        </section>
+
+        {/* Professional Experience Section */}
         <section>
-          <div className="w-full font-bold">Professional Experience</div>
-          {positions.map((position, key) => (
+          <div className="w-full font-bold text-base mb-2">
+            Professional Experience
+          </div>
+          {recentExperiences.map((position) => (
             <section
-              key={key}
+              key={position.id}
               className="py-2 border-b border-gray-200 last:border-0"
             >
-              <section className="flex justify-between mb-2">
-                <section className="inline-flex items-center">
+              {/* Position Header */}
+              <section className="flex justify-between items-start mb-2">
+                <section className="flex items-center">
                   <Image
-                    className="mr-2"
-                    alt="Company Logo"
-                    src={position.company.photo}
+                    className="mr-3 rounded"
+                    alt={`${position.companyName} Logo`}
+                    src={position.companyLogo}
                     height={32}
                     width={100}
                   />
                   <div className="flex flex-col">
-                    <span className="font-medium">{position.company.name}</span>
-                    <span className="font-light">{position.name}</span>
+                    <span className="font-semibold text-gray-800">
+                      {position.companyName}
+                    </span>
+                    <span className="font-medium text-gray-600">
+                      {position.jobTitle}
+                    </span>
                   </div>
                 </section>
-                <section className="inline-flex flex-col items-end">
-                  <span className="font-medium">
-                    {formatDate(position.startAt)} -{' '}
-                    {formatDate(position.endAt)}
-                  </span>
-                  <span className="font-light">
-                    {formatExperience(position.startAt, position.endAt)}
+                <section className="flex flex-col items-end">
+                  <div className="flex items-center text-sm text-gray-600">
+                    <AiOutlineCalendar className="mr-1" size={14} />
+                    <span className="font-medium">
+                      {formatDateFromISO(position.startDate)} -{' '}
+                      {position.endDate
+                        ? formatDateFromISO(position.endDate)
+                        : 'Current'}
+                    </span>
+                  </div>
+                  <span className="text-xs text-gray-500">
+                    {formatDuration(position.startDate, position.endDate)}
                   </span>
                 </section>
               </section>
-              <section className="font-light">
-                <ul className="mb-4">
-                  {position.responsibilities.map((responsibility, key) => (
-                    <li key={key}>
-                      <BsFillStopFill className="inline-block" />{' '}
-                      {responsibility}
+
+              {/* Achievements */}
+              <section className="mb-2">
+                <ul className="space-y-1">
+                  {position.achievements.map((achievement, index) => (
+                    <li
+                      key={index}
+                      className="flex items-start text-sm text-gray-700"
+                    >
+                      <AiOutlineTrophy
+                        className="text-yellow-500 inline-block mr-2 mt-1 flex-shrink-0"
+                        size={14}
+                      />
+                      <span>{achievement}</span>
                     </li>
                   ))}
                 </ul>
-                <ul className="mb-4">
-                  {position.achievements.map((achievement, key) => (
-                    <li key={key}>
-                      <AiOutlineTrophy className="text-yellow-500 inline-block" />{' '}
-                      {achievement}
-                    </li>
-                  ))}
-                </ul>
-                <small>Tech stack: {position.technicalEnv}</small>
               </section>
             </section>
           ))}
+          <div className="mt-4 p-3 bg-gradient-to-r from-slate-50 to-gray-50 border-l-4 border-slate-300 rounded-r-md shadow-sm">
+            <div className="text-xs text-slate-600">
+              This resume shows a condensed view of recent positions. For
+              complete professional experience details, visit{' '}
+              <a
+                href="/#experience"
+                className="text-slate-800 underline hover:text-slate-900 transition-colors font-medium"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                jorgemgr.com/#experience
+              </a>
+            </div>
+          </div>
         </section>
       </section>
     </>
   );
 }
 
-export default Resume;
+export default Resume2;
 
-export async function getServerSideProps () {
+export async function getServerSideProps() {
   return {
     props: { forcedTheme: 'light' }
   };
