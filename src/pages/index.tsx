@@ -1,5 +1,5 @@
 import AboutMe from '@/components/AboutMe';
-import Navbar from '@/components/NavbarV1';
+import Navbar from '@/components/Navbar';
 import WorkExperience from '@/components/ProfessionalExperience/ProfessionalExperience';
 import Projects from '@/components/Projects';
 import SlideIn from '@/components/SlideIn';
