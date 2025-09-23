@@ -359,6 +359,3 @@ export const professionalExperiences: ProfessionalExperience[] = [
     ])
   }
 ];
-
-
-console.log(professionalExperiences[0].technologies);
