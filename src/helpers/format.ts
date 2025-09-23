@@ -1,15 +1,11 @@
 import { DateTime } from 'luxon';
 
-export function arrayToString(array: string[], separator = ', '): string {
-  return array.join(separator) + '.';
-}
-
 /**
  * Format months number to years and months
  * @param months number
  * @returns string
  */
-export function formatMonthsToYears(months: number) {
+export function formatMonthsToYears(months: number): string {
   const years = Math.floor(months / 12);
   const remainingMonths = months % 12;
 
@@ -54,7 +50,7 @@ export function formatDuration(startDate: string, endDate: string | null): strin
  * @param dateString 'yyyy-MM-dd' format
  * @returns string
  */
-export function formatDateFromISO(dateString?: string) {
+export function formatDateFromISO(dateString?: string): string {
   if (dateString === undefined) return 'Current';
   // Automatically uses viewer's timezone
   return DateTime.fromISO(dateString).toFormat('MMM yyyy');
@@ -81,6 +77,9 @@ export function formatExperience(date1: string, date2?: string): string {
     }`;
 }
 
+/**
+ * @deprecated use formatDateFromISO instead
+ */
 export function formatDate(dateString?: string) {
   if (dateString === undefined) return 'Current';
   // FIXME: converting dateString to JSDate is a workaround, dates must be
@@ -88,4 +87,11 @@ export function formatDate(dateString?: string) {
   //        i.e: ISO 8601 -> '2023-03-07T16:35:37.504Z'
   const date = new Date(dateString);
   return DateTime.fromJSDate(date).toFormat('MMM yyyy');
+}
+
+/**
+ * @deprecated no longer supported
+ */
+export function arrayToString(array: string[], separator = ', '): string {
+  return array.join(separator) + '.';
 }
