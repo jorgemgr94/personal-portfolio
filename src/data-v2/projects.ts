@@ -3,7 +3,7 @@ import type { Project } from '@/data-v2/types';
 export const projects: Project[] = [
   {
     id: 1,
-    icon: '/assets/images/social-icons/non-sense.png',
+    icon: '/assets/images/projects/cli-agenda.svg',
     learning: {
       area: 'Basic fundamentals',
       topics: [
@@ -26,7 +26,7 @@ export const projects: Project[] = [
   },
   {
     id: 2,
-    icon: '/assets/images/social-icons/non-sense.png',
+    icon: '/assets/images/projects/library-management.svg',
     learning: {
       area: 'OOP and best practices',
       topics: [
@@ -49,7 +49,7 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    icon: '/assets/images/social-icons/non-sense.png',
+    icon: '/assets/images/projects/recommendation-engine.svg',
     learning: {
       area: 'Patterns and intermediate structures',
       topics: [
@@ -75,7 +75,7 @@ export const projects: Project[] = [
   },
   {
     id: 4,
-    icon: '/assets/images/social-icons/non-sense.png',
+    icon: '/assets/images/projects/event-booking.svg',
     learning: {
       area: 'Software architecture',
       topics: [
@@ -104,7 +104,7 @@ export const projects: Project[] = [
   },
   {
     id: 5,
-    icon: '/non-sense.png',
+    icon: '/assets/images/projects/concurrent-scraper.svg',
     learning: {
       area: 'Concurrency',
       topics: [
@@ -128,7 +128,7 @@ export const projects: Project[] = [
   },
   {
     id: 6,
-    icon: '/assets/images/social-icons/non-sense.png',
+    icon: '/assets/images/projects/routes-engine.svg',
     learning: {
       area: 'Advanced algorithms',
       topics: [
@@ -155,7 +155,7 @@ export const projects: Project[] = [
   },
   {
     id: 7,
-    icon: '/assets/images/social-icons/non-sense.png',
+    icon: '/assets/images/projects/distributed-orders.svg',
     learning: {
       area: 'Distributed architecture',
       topics: [
@@ -181,7 +181,7 @@ export const projects: Project[] = [
   },
   {
     id: 8,
-    icon: '/assets/images/social-icons/non-sense.png',
+    icon: '/assets/images/projects/production-infrastructure.svg',
     learning: {
       area: 'DevOps and software lifecycle',
       topics: [
@@ -206,7 +206,7 @@ export const projects: Project[] = [
   },
   {
     id: 9,
-    icon: '/assets/images/social-icons/non-sense.png',
+    icon: '/assets/images/projects/ddd-orders.svg',
     learning: {
       area: 'Paradigms and philosophy',
       topics: [
@@ -230,7 +230,7 @@ export const projects: Project[] = [
   },
   {
     id: 10,
-    icon: '/assets/images/social-icons/non-sense.png',
+    icon: '/assets/images/projects/consensus-simulator.svg',
     learning: {
       area: 'Complex Distributed Systems',
       topics: [
@@ -250,7 +250,7 @@ export const projects: Project[] = [
   },
   {
     id: 11,
-    icon: '/assets/images/social-icons/non-sense.png',
+    icon: '/assets/images/projects/intelligent-assistant.svg',
     learning: {
       area: 'AI applied to software',
       topics: [
@@ -276,7 +276,7 @@ export const projects: Project[] = [
   },
   {
     id: 12,
-    icon: '/assets/images/social-icons/non-sense.png',
+    icon: '/assets/images/projects/multimodal-assistant.svg',
     learning: {
       area: 'Multimodal AI and LLMOps',
       topics: [
