@@ -1,4 +1,10 @@
-import type { ProfessionalExperience } from './types';
+import { calculateMonthsBetween } from '@/helpers/date';
+import type { ProfessionalExperience, TechnologiesNames } from './types';
+
+function createFullExperienceTechArray(startDate: string, endDate: string | null, techList: TechnologiesNames[]): [TechnologiesNames, number][] {
+  const months = calculateMonthsBetween(startDate, endDate);
+  return techList.map(tech => [tech, months]);
+}
 
 export const professionalExperiences: ProfessionalExperience[] = [
   {
@@ -10,35 +16,52 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyLogo: '/assets/images/companies/zenbusiness.png',
     companyUrl: 'https://www.linkedin.com/company/zenbusiness-pbc',
     responsibilities: [
-      `Architected and developed scalable back-end features for the Ureeka platform, implementing advanced concepts
-      including distributed computing, eventual consistency, design patterns, and backward compatibility.`,
-      `Maintained and optimized serverless services including Cloud Functions (Scheduled, HTTP, Firestore Triggers),
-      ensuring high availability and performance across the platform.`,
-      `Designed and implemented robust third-party integrations with comprehensive error handling, rate limiting,
-      security protocols, and data consistency mechanisms.`
+      `Architected and implemented full-stack solutions across multiple microservices using Node.js, Django, React, and Golang,
+      handling everything from service spin-up to feature delivery and project completion.`,
+
+      `Led product-related enhancements and early adoption of company initiatives including Microfrontend Architecture (MFEs),
+      Event-driven design patterns, and microservice redesigns, participating in architectural decisions and driving adoption.`,
+
+      `Contributed to technical initiatives and architectural decisions across multiple teams,
+      participating in the adoption of modern patterns and helping establish technical standards for
+      company-wide initiatives.`,
+
+      `Implemented robust third-party integrations with comprehensive error handling, rate limiting, security protocols,
+      and data consistency mechanisms across distributed systems.`
     ],
     achievements: [
-      `Demonstrated exceptional adaptability by mastering complex distributed systems concepts including eventual consistency,
-      design patterns, and backward compatibility while contributing to the Ureeka platform development.`,
-      `Optimized distributed task queue performance by implementing best practices, achieving 8x improvement in enqueue rate
-      (from ~940 to 7,500 tasks per minute per queue/scheduler) and significantly reduced latency.`,
-      `Enhanced system observability by implementing comprehensive logging instrumentation with Cloud Trace, Cloud Logging,
-      Error Reporting, and automated alert policies, improving issue identification and resolution by 60%.`
+      `Led a frontend migration from legacy architecture to Microfrontend Architecture (MFE) with zero downtime,
+      improving scalability and maintainability while establishing new architectural standards.`,
+
+      `Led the development of a Google Profile API consumer service that seamlessly connects customer Google profiles and
+      provides comprehensive metrics dashboards.`,
+
+      `Contributed to company-wide reusable Fastify packages, establishing standardized patterns.`,
+
+      `Contributed to the Enterprise API development team, designing and implementing secure public-facing APIs that expose
+      company resources while ensuring robust business logic.`,
+
+      `Participated in the development of a backend service from scratch, integrating with an Accountant partner to deliver Tax products
+      using an event-driven design approach, ensuring scalable and maintainable architecture.`
     ],
-    technologies: new Map([
-      ['Typescript', 12],
-      ['React', 24],
-      ['NodeJs', 24],
-      ['Firebase', 6],
-      ['GCP', 24],
-      ['Docker', 24],
-      ['Kubernetes', 24],
-      ['GraphQL', 24],
-      ['Golang', 6],
-      ['Django', 6],
-      ['PostgreSQL', 24],
-      ['Terraform', 6],
-    ])
+    technologies: new Map(
+      [
+        ...createFullExperienceTechArray('2023-09-01', null, [
+          'React',
+          'NodeJs',
+          'Typescript',
+          'GCP',
+          'Docker',
+          'Kubernetes',
+          'GraphQL',
+          'PostgreSQL',
+        ]),
+        ['Firebase', 6],
+        ['Golang', 6],
+        ['Django', 6],
+        ['Terraform', 6],
+      ]
+    )
   },
   {
     id: '01996961-47be-7a79-a66f-12e7b13eec87',
@@ -49,18 +72,29 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyLogo: '/assets/images/companies/ureeka.png',
     companyUrl: 'https://www.crunchbase.com/organization/ureeka',
     responsibilities: [
-
+      `Developed scalable back-end features for the Ureeka platform, implementing advanced concepts
+      including distributed computing, eventual consistency, design patterns, and backward compatibility.`,
+      `Optimized serverless services including Cloud Functions (Scheduled, HTTP, Firestore Triggers),
+      ensuring high availability and performance across the platform.`,
+      `Implemented robust third-party integrations with comprehensive error handling, rate limiting,
+      security protocols, and data consistency mechanisms.`
     ],
     achievements: [
+      `Mastered complex distributed systems concepts including eventual consistency,
+      design patterns, and backward compatibility while contributing to the Ureeka platform development.`,
+      `Optimized distributed task queue performance, achieving 8x improvement in enqueue rate
+      (from ~940 to 7,500 tasks per minute per queue/scheduler).`,
+      `Implemented comprehensive logging instrumentation with Cloud Trace, Cloud Logging,
+      Error Reporting, and automated alert policies.`
     ],
     technologies: new Map([
       ['Typescript', 23],
       ['React', 23],
-      ['RxJS', 12],
       ['NodeJs', 23],
       ['Firebase', 23],
       ['GCP', 23],
-      ['Docker', 23]
+      ['Docker', 23],
+      ['RxJS', 12],
     ])
   },
   {
@@ -72,21 +106,27 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyLogo: '/assets/images/companies/sintec.png',
     companyUrl: 'https://www.linkedin.com/company/sintec',
     responsibilities: [
-      'Led and mentored a team of 2 software engineers, driving feature development and implementation while fostering professional growth.',
-      'Spearheaded software requirements gathering, strategic priority planning, and task scheduling to ensure optimal project management and delivery.',
-      'Collaborated with cross-functional teams including product, design, and QA to establish project roadmaps and technical specifications.',
-      'Provided technical oversight, architectural guidance, and expertise to support software development initiatives across multiple projects.',
-      'Implemented comprehensive project tracking using JIRA, maintaining stakeholder communication and ensuring transparent progress reporting.',
-      'Established and maintained company-wide GitHub repository standards, implementing security protocols and code consistency guidelines.',
-      'Managed Google Cloud Platform infrastructure, ensuring security compliance, resource optimization, and consistent naming conventions.'
+      `Led and mentored a team of 2 software engineers, driving feature development and
+      implementation while fostering professional growth.`,
+      `Conducted consultative software requirements gathering through stakeholder interviews
+       and technical analysis to inform strategic priority planning and task scheduling.`,
+      `Worked with cross-functional teams across other consultative areas to establish
+       project road-maps and technical specifications.`,
+      `Provided technical oversight, architectural guidance, and expertise to support
+      software development initiatives across multiple projects.`,
+      `Implemented comprehensive project tracking using JIRA, maintaining stakeholder
+      communication and ensuring transparent progress reporting.`,
+      `Established and maintained company-wide GitHub repository standards and code consistency guidelines.`,
+      `Managed Google Cloud Platform infrastructure, ensuring security compliance, resource
+      optimization, and consistent naming conventions.`
     ],
     achievements: [
-      `Improved cost-efficiency for the company's minimum viable products (MVPs) by transitioning from dedicated servers
-      (EC2, Compute Engine) to serverless environments (Cloud Functions, Cloud Run), reducing infrastructure costs by 40%.`,
-      `Standardized NodeJS CI/CD deployment using Cloud Build, reducing deployment time from 2 hours to 15 minutes
-      and eliminating manual deployment errors.`,
-      `Established strategic partnerships with 3 software development providers, expanding the company's delivery capacity
-      by 200% while maintaining software quality standards and on-time delivery commitments.`
+      `Reduced infrastructure costs by transitioning from dedicated servers
+      (EC2, Compute Engine) to serverless environments (Cloud Functions, Cloud Run).`,
+      `Automated NodeJS CI/CD deployment using Cloud Build, improving deployment time and reducing manual
+      deployment errors.`,
+      `Built partnerships with 3 software development providers, expanding the company's delivery capacity
+      while maintaining software quality standards and on-time delivery commitments.`
     ],
     technologies: new Map([
       ['React', 19],
@@ -95,12 +135,12 @@ export const professionalExperiences: ProfessionalExperience[] = [
       ['Firebase', 19],
       ['MongoDB', 10],
       ['NodeJs', 19],
-      ['Python', 10],
-      ['PostgreSQL', 10],
       ['Github', 19],
       ['GCP', 19],
+      ['Docker', 19],
       ['AWS', 10],
-      ['Docker', 19]
+      ['Python', 10],
+      ['PostgreSQL', 10],
     ])
   },
   {
@@ -112,21 +152,20 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyLogo: '/assets/images/companies/sintec.png',
     companyUrl: 'https://www.linkedin.com/company/sintec',
     responsibilities: [
-      `Designed and architected comprehensive full-stack solutions including front-end, back-end, and mobile applications,
-      ensuring scalable and maintainable code architecture.`,
-      `Led software requirements gathering, strategic priority planning, and task scheduling to ensure effective
-      project management and timely delivery.`,
+      `Architected full-stack solutions including front-end, back-end, and mobile applications.`,
+      `Conducted consultative software requirements gathering through stakeholder interviews and
+      technical analysis to inform strategic priority planning and task scheduling.`,
       `Conducted extensive research and testing of emerging technologies, particularly IoT solutions,
       to drive innovation and competitive advantage.`,
       `Maintained and optimized existing codebases across front-end, back-end, and mobile platforms,
       implementing bug fixes and performance improvements.`
     ],
     achievements: [
-      `Led the complete development of Dynamo, an innovative IoT platform tracking real-time user positions
+      `Led the development of Dynamo, an innovative IoT platform tracking real-time user positions
       in distribution centers using 150+ beacon tags, storing data in MongoDB and providing real-time
       analytics dashboards for movement and time analysis.`,
-      `Pioneered the adoption of modern technologies (Serverless, Firebase, NodeJS) within the company,
-      establishing new standards for quality and scalability that provided significant competitive advantage.`
+      `Introduced modern technologies (Serverless, Firebase, NodeJS) within the company,
+      establishing new standards for quality and scalability.`
     ],
     technologies: new Map([
       ['React', 12],
@@ -155,17 +194,17 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyLogo: '/assets/images/companies/garage.png',
     companyUrl: 'https://www.crunchbase.com/organization/garage',
     responsibilities: [
-      `Designed and architected robust full-stack solutions, developing both front-end and back-end features
+      `Architected full-stack solutions, developing both front-end and back-end features
       for the startup's core platform.`,
-      `Actively participated in SCRUM ceremonies, contributing to user story definition, estimation,
+      `Participated in SCRUM ceremonies, contributing to user story definition, estimation,
       and sprint planning processes.`,
       `Maintained and optimized existing codebases, implementing bug fixes and performance improvements
       across front-end and back-end systems.`
     ],
     achievements: [
-      `Redesigned and simplified the quoting process by implementing functional reactive programming with MobX,
-      improving user experience and reducing complexity by 50%.`,
-      `Mastered modern development practices including containerization (Docker), database migrations,
+      `Simplified the quoting process by implementing functional reactive programming with MobX,
+      improving user experience.`,
+      `Implemented modern development practices including containerization (Docker), database migrations,
       automated testing (Jest, RSpec), DevOps (GitLab CI/CD), and SOLID principles, significantly
       improving code quality and deployment efficiency.`
     ],
@@ -190,18 +229,18 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyLogo: '/assets/images/companies/sensai.jpg',
     companyUrl: 'https://www.crunchbase.com/organization/sensai-empower-success',
     responsibilities: [
-      `Designed and architected comprehensive full-stack solutions including front-end, back-end, and mobile applications,
+      `Architected full-stack solutions including front-end, back-end, and mobile applications,
       implementing multi-stage, multi-zone, and multi-language capabilities.`,
-      `Actively participated in SCRUM ceremonies, contributing to user story definition, estimation,
+      `Participated in SCRUM ceremonies, contributing to user story definition, estimation,
       and sprint planning processes.`,
       `Maintained and optimized existing codebases across front-end, back-end, and mobile platforms,
       implementing bug fixes and performance improvements.`
     ],
     achievements: [
-      `Successfully led the migration of a 1.5-year-old NodeJS back-end codebase to Ruby on Rails in just 3 months,
-      earning team trust and establishing myself as a key contributor through exceptional delivery speed and quality.`,
-      `Gained extensive experience in modern software development methodologies while collaborating effectively
-      with cross-functional teams including design and quality assurance, improving overall project outcomes.`
+      `Contributed to the migration of a 1.5-year-old NodeJS back-end codebase to Ruby on Rails in just 3 months,
+      earning team trust and establishing myself as a key contributor.`,
+      `Gained experience in modern software development methodologies while collaborating effectively
+      with cross-functional teams including design and quality assurance.`
     ],
     technologies: new Map([
       ['React', 6],
@@ -222,26 +261,21 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyUrl: 'http://linkedin.com/company/hms-sistemas-de-informaci-n-sa-de-cv',
     companyLogo: '/assets/images/companies/hms.png',
     responsibilities: [
-      `Led and mentored a team of 5 software engineers, driving feature development and implementation
-      while fostering professional growth and technical excellence.`,
-      `Spearheaded software requirements gathering, strategic priority planning, and task scheduling
+      `Led a team of 5 software engineers, supervising solution design and architecture while driving
+      feature development and implementation, creating comprehensive technical documentation and
+      mentoring team members to pursue technical excellence.`,
+      `Led software requirements gathering, strategic priority planning, and task scheduling
       to ensure optimal project management and delivery.`,
-      `Conducted extensive research and testing of emerging technologies including Git version control,
-      mobile development, and RIS & PACS systems to drive innovation.`,
-      `Supervised solution design and architecture, creating comprehensive process diagrams,
-      UML diagrams, and database designs for complex healthcare systems.`,
-      `Provided technical oversight, architectural guidance, and expertise to support
-      software development initiatives across multiple projects.`,
-      `Automated periodic processes and implemented code refactoring using Bash scripts,
-      improving operational efficiency and code quality.`,
+      `Researched and tested emerging technologies including Git version control,
+      mobile development, and RIS & PACS systems.`,
       `Participated in recruitment processes, identifying and onboarding new talent
-      to strengthen the development team.`
+      to strengthen the development team.`,
     ],
     achievements: [
-      `Developed innovative software solutions implementing a competitive advantage strategy by transitioning
+      `Developed software solutions that provided competitive advantage by transitioning
       from selling medicine boxes to precise gram/milliliter-based sales, revolutionizing inventory management.`,
       `Led the software development of new business units including analysis laboratory, ambulatory surgery center,
-      and RIS & PACS systems, expanding company capabilities and revenue streams.`,
+      and RIS & PACS systems, expanding company capabilities.`,
       `Successfully developed and launched an iOS application for the ambulatory surgery center,
       improving patient experience and operational efficiency.`
     ],
@@ -265,23 +299,22 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyLogo: '/assets/images/companies/hms.png',
     companyUrl: 'http://linkedin.com/company/hms-sistemas-de-informaci-n-sa-de-cv',
     responsibilities: [
-      `Designed and architected comprehensive full-stack solutions for the Oncology ERP system,
-      developing both front-end and back-end features with focus on healthcare compliance.`,
+      `Architected full-stack solutions for the Oncology ERP system,
+      developing both front-end and back-end features.`,
       `Led software requirements gathering, strategic priority planning, and task scheduling
       to ensure effective project management and timely delivery.`,
       `Created detailed solution designs including process diagrams, UML diagrams,
       and database schemas for complex healthcare workflows.`,
-      `Automated periodic processes and implemented code refactoring using Bash scripts,
-      improving operational efficiency and maintainability.`
+      `Automated periodic processes and implemented code refactoring using Bash scripts.`
     ],
     achievements: [
-      `Developed an innovative software process automating quote generation, streamlining communication
+      `Developed a software process automating quote generation, streamlining communication
       among doctors, nurses, and administrative staff while accounting for assignments, professional language,
       active substance conversions, and clinic processes.`,
       `Implemented robust database transactions ensuring data consistency and integrity
-      across complex healthcare processes, reducing errors by 80%.`,
-      `Pioneered a "continuous improvement" initiative delivering new features quarterly,
-      driving innovation and maintaining competitive advantage in the healthcare market.`
+      across complex healthcare processes.`,
+      `Implemented a quarterly feature delivery initiative, establishing continuous innovation cycles that
+      enhanced product capabilities.`
     ],
     technologies: new Map([
       ['Php', 21],
@@ -300,19 +333,19 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyLogo: '/assets/images/companies/ingeniat.svg',
     companyUrl: 'https://www.linkedin.com/company/ingeniat/',
     responsibilities: [
-      `Developed comprehensive full-stack solutions, creating both front-end and back-end features
+      `Developed full-stack solutions, creating both front-end and back-end features
       for the digital library platform.`,
       `Maintained and optimized existing codebases, implementing bug fixes and performance improvements
       across front-end and back-end systems.`,
       `Automated complex processes using Bash scripts, improving operational efficiency
       and reducing manual workload.`,
-      `Conducted research and testing of emerging mobile technologies to drive innovation
+      `Researched mobile technologies to drive innovation
       and expand company capabilities.`
     ],
     achievements: [
-      `Revolutionized book uploading to the digital library by creating an automated Bash script that converts
+      `Automated book uploading to the digital library by creating a Bash script that converts
       PDF files into separate SVG files, cleans them using regular expressions, uploads to AWS S3,
-      and establishes relationships between books, pages, and S3 links in MySQL, reducing manual work by 90%.`,
+      and establishes relationships between books, pages, and S3 links in MySQL.`,
       `Expanded technical expertise by learning new programming languages and significantly increased
       ability to contribute to research and implementation of cutting-edge technologies.`
     ],
@@ -326,3 +359,6 @@ export const professionalExperiences: ProfessionalExperience[] = [
     ])
   }
 ];
+
+
+console.log(professionalExperiences[0].technologies);
