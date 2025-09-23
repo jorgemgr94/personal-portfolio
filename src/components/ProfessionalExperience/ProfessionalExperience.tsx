@@ -1,6 +1,7 @@
 import SectionTitle from '@/components/SectionTitle';
 import { professionalExperiences } from '@/data-v2/professional-experience';
 import { useState } from 'react';
+import BlurIn from '../BlurIn';
 import ExperienceCard from './ExperienceCard';
 
 function ProfessionalExperience() {
@@ -28,12 +29,13 @@ function ProfessionalExperience() {
 
       <div className="space-y-0">
         {professionalExperiences.map((experience) => (
-          <ExperienceCard
-            key={experience.id}
-            experience={experience}
-            isExpanded={expandedItems.has(experience.id)}
-            onToggle={() => toggleExpanded(experience.id)}
-          />
+          <BlurIn key={experience.id}>
+            <ExperienceCard
+              experience={experience}
+              isExpanded={expandedItems.has(experience.id)}
+              onToggle={() => toggleExpanded(experience.id)}
+            />
+          </BlurIn>
         ))}
       </div>
     </section>

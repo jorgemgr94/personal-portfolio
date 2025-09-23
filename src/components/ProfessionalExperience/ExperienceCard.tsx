@@ -1,6 +1,7 @@
 import { ProfessionalExperience } from '@/data-v2/types';
 import { formatDateFromISO, formatDuration } from '@/helpers/format';
 import Image from 'next/image';
+import BlurIn from '../BlurIn';
 import ExperienceCardDetail from './ExperienceCardDetail';
 
 function ExperienceCard({
@@ -95,7 +96,11 @@ function ExperienceCard({
             </section>
           </div>
 
-          {isExpanded && <ExperienceCardDetail experience={experience} />}
+          {isExpanded && (
+            <BlurIn duration={0.2}>
+              <ExperienceCardDetail experience={experience} />
+            </BlurIn>
+          )}
         </div>
       </div>
     </div>

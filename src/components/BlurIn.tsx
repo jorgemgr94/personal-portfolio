@@ -1,7 +1,6 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
 interface BlurInProps {
@@ -9,7 +8,7 @@ interface BlurInProps {
   duration?: number;
   delay?: number;
   yOffset?: number;
-  inViewMargin?: `${number}${"px" | "%"}`;
+  inViewMargin?: `${number}${'px' | '%'}`;
   blur?: string;
   className?: string;
   once?: boolean;
@@ -17,31 +16,31 @@ interface BlurInProps {
 
 export default function BlurIn({
   children,
-  duration = 1,
+  duration = 0.75,
   delay = 0,
   yOffset = 8,
   inViewMargin = '-20px',
   blur = '2px',
   className = '',
-  once = true,
+  once = true
 }: BlurInProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     margin: inViewMargin,
-    once: once,
+    once: once
   });
 
   const variants = {
     hidden: {
       opacity: 0,
       y: yOffset,
-      filter: `blur(${blur})`,
+      filter: `blur(${blur})`
     },
     visible: {
       opacity: 1,
       y: 0,
-      filter: 'blur(0px)',
-    },
+      filter: 'blur(0px)'
+    }
   };
 
   return (
@@ -53,7 +52,7 @@ export default function BlurIn({
       transition={{
         delay: 0.04 + delay,
         duration,
-        ease: 'easeOut',
+        ease: 'easeOut'
       }}
       className={className}
     >
