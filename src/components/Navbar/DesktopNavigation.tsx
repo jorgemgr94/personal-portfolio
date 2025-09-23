@@ -1,8 +1,8 @@
+import ThemeToggler from '@/components/ThemeToggler';
 import { useRouter } from 'next/router';
-import ThemeToggler from '@/components/ThemeTogglerV1';
+import { navigationItems } from './constants';
 import { NavigationItem } from './types';
 import { handleNavigation } from './utils';
-import { navigationItems } from './constants';
 
 function DesktopNavigation() {
   const router = useRouter();

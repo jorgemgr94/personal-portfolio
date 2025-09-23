@@ -4,7 +4,7 @@ import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import ThemeToggler from '../ThemeTogglerV1';
+import ThemeToggler from '../ThemeToggler';
 import { navigationItems } from './constants';
 import { NavigationItem } from './types';
 import { handleNavigation } from './utils';
