@@ -163,7 +163,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
     achievements: [
       `Led the development of Dynamo, an innovative IoT platform tracking real-time user positions
       in distribution centers using 150+ beacon tags, storing data in MongoDB and providing real-time
-      analytics dashboards for movement and time analysis.`,
+      analytics dashboards.`,
       `Introduced modern technologies (Serverless, Firebase, NodeJS) within the company,
       establishing new standards for quality and scalability.`
     ],
