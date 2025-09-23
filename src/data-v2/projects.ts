@@ -16,10 +16,10 @@ export const projects: Project[] = [
     project: {
       title: 'Personal CLI Agenda',
       features: [
-        'Contact CRUD',
-        'Sorting by name/phone using sort',
-        'Binary search by name',
-        'Persistence in JSON file or SQLite'
+        'Contact CRUD operations',
+        'Sorting algorithms (name/phone)',
+        'Binary search implementation',
+        'Data persistence (JSON/SQLite)'
       ],
       githubLink: null
     }
@@ -38,11 +38,11 @@ export const projects: Project[] = [
     project: {
       title: 'Library Management System',
       features: [
-        'Entities: Book, User, Loan',
-        'Operations: lend, return, list available books',
-        'Logic separated by interfaces (Repository, Service, Handler)',
-        'Unit tests with Go test',
-        'CLI or simple REST API with Fiber'
+        'Domain entities: Book, User, Loan',
+        'Business operations: lend, return, availability check',
+        'Clean architecture with interfaces (Repository, Service, Handler)',
+        'Unit tests with Go testing framework',
+        'CLI interface or REST API with Fiber'
       ],
       githubLink: null
     }
@@ -65,10 +65,10 @@ export const projects: Project[] = [
       title: 'Basic Recommendation Engine',
       features: [
         'Decision tree for product recommendations',
-        'Strategy pattern for different recommendation algorithms',
-        'Observer for stock events',
-        'Singleton for configuration manager',
-        'REST API that returns recommendations'
+        'Strategy pattern for recommendation algorithms',
+        'Observer pattern for inventory events',
+        'Singleton pattern for configuration management',
+        'REST API with recommendation endpoints'
       ],
       githubLink: null
     }
@@ -89,15 +89,15 @@ export const projects: Project[] = [
       ]
     },
     project: {
-      title: 'Event booking API',
+      title: 'Event Booking API',
       features: [
-        'Hexagonal architecture',
-        'CRUD for events, bookings, users',
-        'Auth (OAuth2, JWT, API Keys)',
-        'Scheduled job that automatically cancels expired bookings',
-        'API documentation (Swagger, OpenAPI)',
-        'Structured logging and basic monitoring',
-        'API versioning'
+        'Hexagonal architecture implementation',
+        'CRUD operations for events, bookings, users',
+        'Multi-strategy authentication (OAuth2, JWT, API Keys)',
+        'Scheduled job for expired booking cleanup',
+        'API documentation (Swagger/OpenAPI)',
+        'Structured logging and monitoring',
+        'API versioning strategy'
       ],
       githubLink: null
     }
@@ -115,13 +115,13 @@ export const projects: Project[] = [
       ]
     },
     project: {
-      title: 'Concurrent Scraper',
+      title: 'Concurrent Web Scraper',
       features: [
-        'Reads a list of URLs from a file',
-        'Launches concurrent goroutines for scraping',
-        'Uses channels to collect results',
-        'Worker pool that limits the concurrent number of scrapers',
-        'Context timeout'
+        'URL list processing from file input',
+        'Concurrent goroutines for parallel scraping',
+        'Channel-based result collection',
+        'Worker pool with concurrency limits',
+        'Context-based timeout handling'
       ],
       githubLink: 'https://github.com/jorgemgr94/go-learning'
     }
@@ -143,12 +143,13 @@ export const projects: Project[] = [
       ]
     },
     project: {
-      title: 'Optimal routes engine',
+      title: 'Optimal Routes Engine',
       features: [
-        'Graph representing a city network',
-        'Shortest path calculation (Dijkstra)',
-        'Dijkstra / BFS / DFS',
-        'CLI or REST API that calculates optimal routes based on criteria (minimum time, lowest cost, etc.)'
+        'Graph-based city network representation',
+        'Shortest path algorithms (Dijkstra, BFS, DFS)',
+        'Multi-criteria route optimization',
+        'CLI or REST API for route calculation',
+        'Performance metrics (time, cost, distance)'
       ],
       githubLink: null
     }
@@ -169,12 +170,13 @@ export const projects: Project[] = [
       ]
     },
     project: {
-      title: 'Distributed orders platform',
+      title: 'Distributed Orders Platform',
       features: [
-        'Services: Order, Inventory, Notifications',
-        'Communication via RabbitMQ',
-        'Order service that uses Redis as cache',
-        'Retry + fallback on errors'
+        'Microservices: Order, Inventory, Notifications',
+        'Event-driven communication via RabbitMQ',
+        'Redis caching for order service',
+        'Circuit breaker pattern with retry/fallback',
+        'Eventual consistency handling'
       ],
       githubLink: null
     }
@@ -194,12 +196,13 @@ export const projects: Project[] = [
       ]
     },
     project: {
-      title: 'Production infrastructure for orders platform',
+      title: 'Production Infrastructure Platform',
       features: [
-        'Dockerize all services',
-        'Deploy to local K8s',
-        'Metrics with Prometheus and Grafana',
-        'GitHub Actions for CI/CD'
+        'Docker containerization for all services',
+        'Kubernetes deployment with manifests',
+        'Monitoring stack (Prometheus + Grafana)',
+        'CI/CD pipeline with GitHub Actions',
+        'Infrastructure as Code with Terraform'
       ],
       githubLink: null
     }
@@ -220,10 +223,11 @@ export const projects: Project[] = [
     project: {
       title: 'DDD Orders Platform',
       features: [
-        'Separate domain, application, infrastructure',
-        'Event sourcing for orders',
-        'TDD on new features',
-        'Logging and clean code'
+        'Domain-driven design architecture',
+        'Event sourcing for order state management',
+        'Test-driven development implementation',
+        'Clean code principles and logging',
+        'Separation of domain, application, and infrastructure layers'
       ],
       githubLink: null
     }
@@ -241,9 +245,11 @@ export const projects: Project[] = [
     project: {
       title: 'Distributed Consensus Simulator',
       features: [
-        'Implement basic Raft between multiple nodes',
+        'Raft consensus algorithm implementation',
         'Leader election and log replication',
-        'CLI or WebSocket simulation to view node states'
+        'Multi-node fault tolerance simulation',
+        'CLI or WebSocket interface for state visualization',
+        'Network partition handling'
       ],
       githubLink: null
     }
@@ -265,11 +271,11 @@ export const projects: Project[] = [
     project: {
       title: 'Intelligent Assistant',
       features: [
-        'RAG on your own documentation',
-        'Agent that calls external APIs (weather, GitHub, Jira)',
-        'OpenAI API + Pinecone',
-        'REST API in Go, fallback to Node.js if using LangChain server-side',
-        'Logging + monitoring of token consumption'
+        'RAG implementation with custom documentation',
+        'AI agent with external API integration (weather, GitHub, Jira)',
+        'OpenAI API with Pinecone vector database',
+        'Go REST API with Node.js fallback for LangChain',
+        'Token consumption monitoring and logging'
       ],
       githubLink: null
     }
@@ -289,11 +295,11 @@ export const projects: Project[] = [
     project: {
       title: 'Multimodal Assistant',
       features: [
-        'Receives screenshots, logs, text',
-        'Processes images with GPT-4 Vision / Gemini',
-        'Generates automatic problem reports',
-        'Backend in Go (file handling, security)',
-        'Frontend in Next.js or React'
+        'Multi-modal input processing (screenshots, logs, text)',
+        'Vision AI with GPT-4 Vision / Gemini integration',
+        'Automated problem report generation',
+        'Go backend for file handling and security',
+        'Next.js/React frontend interface'
       ],
       githubLink: null
     }
