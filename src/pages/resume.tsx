@@ -1,6 +1,6 @@
 import Head from 'next/head';
 import Image from 'next/image';
-import { AiOutlineCalendar, AiOutlineTrophy } from 'react-icons/ai';
+import { AiOutlineCalendar } from 'react-icons/ai';
 import { FaGithub, FaGlobe, FaLinkedin } from 'react-icons/fa';
 
 import { Badge } from '@/components/ui/badge';
@@ -205,11 +205,7 @@ function Resume2() {
                       key={index}
                       className="flex items-start text-sm text-gray-700"
                     >
-                      <AiOutlineTrophy
-                        className="text-yellow-500 inline-block mr-2 mt-1 flex-shrink-0"
-                        size={14}
-                      />
-                      <span>{achievement}</span>
+                      <span>🏅 {achievement}</span>
                     </li>
                   ))}
                 </ul>
