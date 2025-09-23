@@ -22,7 +22,7 @@ function ProfessionalExperience() {
       className="py-16 px-4 max-w-4xl min-h-screen mx-auto"
     >
       <SectionTitle
-        title="Work Experience"
+        title="Professional Experience"
         description="A journey through my professional career, showcasing key roles and achievements."
       />
 
