@@ -129,7 +129,7 @@ export const positions: IPosition[] = [
     startAt: '10/01/2016',
     endAt: '07/01/2018',
     company: {
-      name: 'HMS Sistemas de Información / ONCARE',
+      name: 'HMS Sistemas de Información',
       photo: CompaniesImages.HmsPhoto
     },
     responsibilities: [

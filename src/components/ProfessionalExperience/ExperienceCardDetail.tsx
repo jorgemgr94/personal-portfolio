@@ -9,7 +9,7 @@ function ExperienceCardDetail({
 }) {
   return (
     <BlurIn duration={0.2}>
-      <div className="mt-4 space-y-4 animate-in slide-in-from-top-2 duration-200">
+      <div className="mt-4 space-y-4">
         {/* Responsibilities */}
         {responsibilities && responsibilities.length > 0 && (
           <div className="space-y-2">

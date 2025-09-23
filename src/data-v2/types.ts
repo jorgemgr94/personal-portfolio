@@ -46,6 +46,7 @@ export type ProfessionalExperience = {
   endDate: string | null;
   companyName: string;
   companyLogo: string;
+  companyUrl: string;
   responsibilities: string[];
   achievements: string[];
   technologies: Map<TechnologiesNames, number>;

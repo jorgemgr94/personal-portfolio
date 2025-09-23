@@ -8,6 +8,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
     endDate: null,
     companyName: 'ZenBusiness',
     companyLogo: '/assets/images/companies/zenbusiness.png',
+    companyUrl: 'https://www.linkedin.com/company/zenbusiness-pbc',
     responsibilities: [
       `Architected and developed scalable back-end features for the Ureeka platform, implementing advanced concepts
       including distributed computing, eventual consistency, design patterns, and backward compatibility.`,
@@ -46,6 +47,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
     endDate: '2023-09-01',
     companyName: 'Ureeka',
     companyLogo: '/assets/images/companies/ureeka.png',
+    companyUrl: 'https://www.crunchbase.com/organization/ureeka',
     responsibilities: [
 
     ],
@@ -68,6 +70,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
     endDate: '2021-09-03',
     companyName: 'Sintec',
     companyLogo: '/assets/images/companies/sintec.png',
+    companyUrl: 'https://www.linkedin.com/company/sintec',
     responsibilities: [
       'Led and mentored a team of 2 software engineers, driving feature development and implementation while fostering professional growth.',
       'Spearheaded software requirements gathering, strategic priority planning, and task scheduling to ensure optimal project management and delivery.',
@@ -107,6 +110,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
     endDate: '2020-02-01',
     companyName: 'Sintec',
     companyLogo: '/assets/images/companies/sintec.png',
+    companyUrl: 'https://www.linkedin.com/company/sintec',
     responsibilities: [
       `Designed and architected comprehensive full-stack solutions including front-end, back-end, and mobile applications,
       ensuring scalable and maintainable code architecture.`,
@@ -144,11 +148,12 @@ export const professionalExperiences: ProfessionalExperience[] = [
   },
   {
     id: '01996961-47c6-78ea-a2d3-9028104b5c42',
-    jobTitle: 'Full-stack Engineer (Remote, Part time)',
+    jobTitle: 'Full-stack Engineer',
     startDate: '2019-07-01',
     endDate: '2019-12-31',
-    companyName: 'Garage (Startup)',
+    companyName: 'Garage',
     companyLogo: '/assets/images/companies/garage.png',
+    companyUrl: 'https://www.crunchbase.com/organization/garage',
     responsibilities: [
       `Designed and architected robust full-stack solutions, developing both front-end and back-end features
       for the startup's core platform.`,
@@ -181,8 +186,9 @@ export const professionalExperiences: ProfessionalExperience[] = [
     jobTitle: 'Full-stack Engineer',
     startDate: '2018-08-01',
     endDate: '2019-02-01',
-    companyName: 'SENSAI Empower Success (Startup) / Metalsa',
+    companyName: 'SENSAI',
     companyLogo: '/assets/images/companies/sensai.jpg',
+    companyUrl: 'https://www.crunchbase.com/organization/sensai-empower-success',
     responsibilities: [
       `Designed and architected comprehensive full-stack solutions including front-end, back-end, and mobile applications,
       implementing multi-stage, multi-zone, and multi-language capabilities.`,
@@ -212,7 +218,8 @@ export const professionalExperiences: ProfessionalExperience[] = [
     jobTitle: 'Tech Lead',
     startDate: '2016-10-01',
     endDate: '2018-07-01',
-    companyName: 'HMS Sistemas de Información / ONCARE',
+    companyName: 'HMS',
+    companyUrl: 'http://linkedin.com/company/hms-sistemas-de-informaci-n-sa-de-cv',
     companyLogo: '/assets/images/companies/hms.png',
     responsibilities: [
       `Led and mentored a team of 5 software engineers, driving feature development and implementation
@@ -254,8 +261,9 @@ export const professionalExperiences: ProfessionalExperience[] = [
     jobTitle: 'Full-stack Engineer',
     startDate: '2015-01-01',
     endDate: '2016-10-01',
-    companyName: 'HMS Sistemas de Información / ONCARE',
+    companyName: 'HMS',
     companyLogo: '/assets/images/companies/hms.png',
+    companyUrl: 'http://linkedin.com/company/hms-sistemas-de-informaci-n-sa-de-cv',
     responsibilities: [
       `Designed and architected comprehensive full-stack solutions for the Oncology ERP system,
       developing both front-end and back-end features with focus on healthcare compliance.`,
@@ -290,6 +298,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
     endDate: '2015-01-01',
     companyName: 'Ingeniat',
     companyLogo: '/assets/images/companies/ingeniat.svg',
+    companyUrl: 'https://www.linkedin.com/company/ingeniat/',
     responsibilities: [
       `Developed comprehensive full-stack solutions, creating both front-end and back-end features
       for the digital library platform.`,
