@@ -85,7 +85,8 @@ export const projects: Project[] = [
         'JWT Auth',
         'API Gateway / Reverse Proxy',
         'Jobs, Workers, Schedulers',
-        'Cronjobs'
+        'Cronjobs',
+        'Database security (RLS, encryption, access control)'
       ]
     },
     project: {
@@ -162,6 +163,8 @@ export const projects: Project[] = [
       topics: [
         'Microservices (REST, gRPC, GraphQL)',
         'Message Brokers (RabbitMQ, Kafka)',
+        'Cloud-native messaging (SQS, Cloud Tasks), At-least-once delivery',
+        'Event streaming (Pub/Sub, SNS), Fan-out messaging patterns',
         'Event-driven architecture',
         'Caching (Redis, Memcached)',
         'Circuit Breakers (Hystrix, Resilience4j)',
