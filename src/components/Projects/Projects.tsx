@@ -10,9 +10,7 @@ function Projects() {
     >
       <SectionTitle
         title="Projects"
-        description="A progressive learning journey showcasing hands-on
-          projects that demonstrate mastery from fundamental programming
-          to advanced distributed systems, cloud architecture, and AI applications."
+        description="Selected projects focused on applied AI systems and resilient, cloud-native platform architectures."
       />
 
       <div className="relative">
