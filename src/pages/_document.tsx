@@ -11,7 +11,7 @@ export default function Document() {
         />
         <meta
           name="keywords"
-          content="Software Engineer, Web Development, React, Node.js, Typescript"
+          content="Software Engineer, Web Development, React, Node.js, TypeScript"
         />
 
         {/* Open Graph / Facebook */}
