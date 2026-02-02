@@ -2,7 +2,7 @@ import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
 
 export const networks = [
   {
-    name: 'Github',
+    name: 'GitHub',
     icon: FaGithub,
     url: 'https://github.com/jorgemgr94'
   },
