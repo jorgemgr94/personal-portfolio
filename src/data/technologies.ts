@@ -1,5 +1,9 @@
 import { professionalExperiences } from './professional-experience';
-import { TechnologiesNames, TechnologyDetails, TechnologyLearningStatus } from './types';
+import {
+  TechnologiesNames,
+  TechnologyDetails,
+  TechnologyLearningStatus
+} from './types';
 
 const iconsBasePath = 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons';
 
@@ -10,10 +14,10 @@ const technologyBaseConfig: TechnologyDetails = {
   icon: iconsBasePath + '/bash/bash-original.svg', // Generic tech icon
   monthsOfExperience: 0,
   learningStatus: TechnologyLearningStatus.Unknown
-}
+};
 
 const technologiesExperience: Record<TechnologiesNames, TechnologyDetails> = {
-  Typescript: {
+  TypeScript: {
     ...technologyBaseConfig,
     icon: iconsBasePath + '/typescript/typescript-original.svg',
     learningStatus: TechnologyLearningStatus.Current
@@ -23,15 +27,20 @@ const technologiesExperience: Record<TechnologiesNames, TechnologyDetails> = {
     icon: iconsBasePath + '/react/react-original.svg',
     learningStatus: TechnologyLearningStatus.Current
   },
-  NodeJs: {
+  'Node.js': {
     ...technologyBaseConfig,
     icon: iconsBasePath + '/nodejs/nodejs-original.svg',
+    learningStatus: TechnologyLearningStatus.Current
+  },
+  Python: {
+    ...technologyBaseConfig,
+    icon: iconsBasePath + '/python/python-original.svg',
     learningStatus: TechnologyLearningStatus.Current
   },
   Firebase: {
     ...technologyBaseConfig,
     icon: iconsBasePath + '/firebase/firebase-plain.svg',
-    learningStatus: TechnologyLearningStatus.Current
+    learningStatus: TechnologyLearningStatus.Used
   },
   GCP: {
     ...technologyBaseConfig,
@@ -74,7 +83,7 @@ const technologiesExperience: Record<TechnologiesNames, TechnologyDetails> = {
     learningStatus: TechnologyLearningStatus.Current
   },
   // -- Used --------------------------------------------
-  Github: {
+  GitHub: {
     ...technologyBaseConfig,
     icon: iconsBasePath + '/git/git-original.svg',
     learningStatus: TechnologyLearningStatus.Used
@@ -106,12 +115,8 @@ const technologiesExperience: Record<TechnologiesNames, TechnologyDetails> = {
   },
   AWS: {
     ...technologyBaseConfig,
-    icon: iconsBasePath + '/amazonwebservices/amazonwebservices-plain-wordmark.svg',
-    learningStatus: TechnologyLearningStatus.Used
-  },
-  Python: {
-    ...technologyBaseConfig,
-    icon: iconsBasePath + '/python/python-original.svg',
+    icon:
+      iconsBasePath + '/amazonwebservices/amazonwebservices-plain-wordmark.svg',
     learningStatus: TechnologyLearningStatus.Used
   },
   Gitlab: {
@@ -139,7 +144,7 @@ const technologiesExperience: Record<TechnologiesNames, TechnologyDetails> = {
     icon: iconsBasePath + '/laravel/laravel-original.svg',
     learningStatus: TechnologyLearningStatus.Used
   },
-  Javascript: {
+  JavaScript: {
     ...technologyBaseConfig,
     icon: iconsBasePath + '/javascript/javascript-original.svg',
     learningStatus: TechnologyLearningStatus.Used
@@ -149,22 +154,22 @@ const technologiesExperience: Record<TechnologiesNames, TechnologyDetails> = {
     icon: iconsBasePath + '/vuejs/vuejs-original.svg',
     learningStatus: TechnologyLearningStatus.Used
   },
-  Php: {
+  PHP: {
     ...technologyBaseConfig,
     icon: iconsBasePath + '/php/php-original.svg',
     learningStatus: TechnologyLearningStatus.Used
   },
-  'Android w/ Java': {
+  'Android (Java)': {
     ...technologyBaseConfig,
     icon: iconsBasePath + '/android/android-original.svg',
     learningStatus: TechnologyLearningStatus.Used
   },
-  'Android w/Kotlin': {
+  'Android (Kotlin)': {
     ...technologyBaseConfig,
     icon: iconsBasePath + '/kotlin/kotlin-original.svg',
     learningStatus: TechnologyLearningStatus.Used
   },
-  'IOS w/ Swift': {
+  'IOS (Swift)': {
     ...technologyBaseConfig,
     icon: iconsBasePath + '/swift/swift-original.svg',
     learningStatus: TechnologyLearningStatus.Used
@@ -189,10 +194,10 @@ const technologiesExperience: Record<TechnologiesNames, TechnologyDetails> = {
     icon: iconsBasePath + '/bash/bash-original.svg',
     learningStatus: TechnologyLearningStatus.Used
   },
-  'Systems Design (Cloud Architecture)': {
+  'Systems Design': {
     ...technologyBaseConfig,
     icon: iconsBasePath + '/bash/bash-original.svg',
-    learningStatus: TechnologyLearningStatus.Used
+    learningStatus: TechnologyLearningStatus.Current
   },
   Redis: {
     ...technologyBaseConfig,
@@ -210,8 +215,14 @@ const technologiesExperience: Record<TechnologiesNames, TechnologyDetails> = {
  * Computes the total months of experience for each technology
  * and returns a deep copy of the technologies with updated experience
  */
-function computeTechnologiesWithExperience(): Record<TechnologiesNames, TechnologyDetails> {
-  const technologiesWithExperience = {} as Record<TechnologiesNames, TechnologyDetails>;
+function computeTechnologiesWithExperience(): Record<
+  TechnologiesNames,
+  TechnologyDetails
+> {
+  const technologiesWithExperience = {} as Record<
+    TechnologiesNames,
+    TechnologyDetails
+  >;
 
   // Deep copy the base technologies
   for (const [name, details] of Object.entries(technologiesExperience)) {
@@ -240,16 +251,31 @@ function groupTechnologiesByStatus(
   technologies: Record<TechnologiesNames, TechnologyDetails>
 ): Record<TechnologyLearningStatus, Map<TechnologiesNames, TechnologyDetails>> {
   const grouped = {
-    [TechnologyLearningStatus.Current]: new Map<TechnologiesNames, TechnologyDetails>(),
-    [TechnologyLearningStatus.Learning]: new Map<TechnologiesNames, TechnologyDetails>(),
-    [TechnologyLearningStatus.Used]: new Map<TechnologiesNames, TechnologyDetails>(),
-    [TechnologyLearningStatus.Unknown]: new Map<TechnologiesNames, TechnologyDetails>()
+    [TechnologyLearningStatus.Current]: new Map<
+      TechnologiesNames,
+      TechnologyDetails
+    >(),
+    [TechnologyLearningStatus.Learning]: new Map<
+      TechnologiesNames,
+      TechnologyDetails
+    >(),
+    [TechnologyLearningStatus.Used]: new Map<
+      TechnologiesNames,
+      TechnologyDetails
+    >(),
+    [TechnologyLearningStatus.Unknown]: new Map<
+      TechnologiesNames,
+      TechnologyDetails
+    >()
   };
 
   for (const [name, details] of Object.entries(technologies)) {
     const technologyName = name as TechnologiesNames;
     const technologyDetails = details as TechnologyDetails;
-    grouped[technologyDetails.learningStatus].set(technologyName, technologyDetails);
+    grouped[technologyDetails.learningStatus].set(
+      technologyName,
+      technologyDetails
+    );
   }
 
   return grouped;
@@ -263,9 +289,12 @@ const technologiesWithExperience = computeTechnologiesWithExperience();
 /**
  * Technologies grouped by learning status - always computed and available
  */
-const technologiesExperienceByStatus = groupTechnologiesByStatus(technologiesWithExperience);
+const technologiesExperienceByStatus = groupTechnologiesByStatus(
+  technologiesWithExperience
+);
 
 export {
-  technologiesExperience, technologiesExperienceByStatus, technologiesWithExperience
+  technologiesExperience,
+  technologiesExperienceByStatus,
+  technologiesWithExperience
 };
-

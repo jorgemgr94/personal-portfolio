@@ -2,16 +2,14 @@
 export type Project = {
   id: number;
   icon: string;
-  learning: {
-    area: string;
-    topics: string[];
-  };
+  area: string;
+  topics: string[];
   project: {
     title: string;
-    features: string[];
+    description: string;
     githubLink: string | null;
   };
-}
+};
 
 // == Technologies ==================================================
 export const TechnologyLearningStatus = {
@@ -20,23 +18,55 @@ export const TechnologyLearningStatus = {
   Used: 'Used',
   Unknown: 'Unknown'
 } as const;
-export type TechnologyLearningStatus = typeof TechnologyLearningStatus[keyof typeof TechnologyLearningStatus];
+export type TechnologyLearningStatus =
+  (typeof TechnologyLearningStatus)[keyof typeof TechnologyLearningStatus];
 
 export const technologiesNames = [
-  'Android w/ Java', 'Android w/Kotlin', 'AWS', 'Bash', 'Design Patterns', 'Django',
-  'Docker', 'Domain Driven Design (DDD)', 'Firebase', 'GCP', 'Gitlab',
-  'Github', 'Golang', 'GraphQL', 'Heroku', 'IOS w/ Swift', 'Javascript',
-  'Testing', 'Kubernetes', 'Laravel', 'MariaDB', 'MongoDB', 'MySQL',
-  'NextJS', 'NodeJs', 'Php', 'PostgreSQL', 'Python', 'React', 'React Native',
-  'Redis', 'Ruby on Rails', 'RxJS', 'SQL Server', 'Systems Design (Cloud Architecture)',
-  'Terraform', 'Typescript', 'VueJS'
+  'Android (Java)',
+  'Android (Kotlin)',
+  'AWS',
+  'Bash',
+  'Design Patterns',
+  'Django',
+  'Docker',
+  'Domain Driven Design (DDD)',
+  'Firebase',
+  'GCP',
+  'Gitlab',
+  'GitHub',
+  'Golang',
+  'GraphQL',
+  'Heroku',
+  'IOS (Swift)',
+  'JavaScript',
+  'Testing',
+  'Kubernetes',
+  'Laravel',
+  'MariaDB',
+  'MongoDB',
+  'MySQL',
+  'NextJS',
+  'Node.js',
+  'PHP',
+  'PostgreSQL',
+  'Python',
+  'React',
+  'React Native',
+  'Redis',
+  'Ruby on Rails',
+  'RxJS',
+  'SQL Server',
+  'Systems Design',
+  'Terraform',
+  'TypeScript',
+  'VueJS'
 ] as const;
-export type TechnologiesNames = typeof technologiesNames[number];
+export type TechnologiesNames = (typeof technologiesNames)[number];
 export type TechnologyDetails = {
   monthsOfExperience: number;
   icon?: string;
   learningStatus: TechnologyLearningStatus;
-}
+};
 
 // == Professional Experience =====================================================
 export type ProfessionalExperience = {
@@ -47,8 +77,7 @@ export type ProfessionalExperience = {
   companyName: string;
   companyLogo: string;
   companyUrl: string;
-  responsibilities: string[];
+  description: string;
   achievements: string[];
   technologies: Map<TechnologiesNames, number>;
-}
-
+};

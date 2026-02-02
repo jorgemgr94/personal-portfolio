@@ -1,3 +1,4 @@
+import { Markdown } from '@/components/Markdown';
 import { Badge } from '@/components/ui/badge';
 import {
   HoverCard,
@@ -7,7 +8,6 @@ import {
 import { networks } from '@/data/networks';
 import { technologiesExperienceByStatus } from '@/data/technologies';
 import { TechnologyLearningStatus } from '@/data/types';
-import { formatMonthsToYears } from '@/helpers/format';
 import Image from 'next/image';
 import { Button } from './ui/button';
 
@@ -33,42 +33,29 @@ function AboutMe() {
               <h2 className="text-5xl font-bold text-foreground">
                 Hi, I&apos;m Jorge 👋
               </h2>
-              <div className="text-lg">
-                Software Engineer with 11+ years experience. I love building
-                scalable solutions and mentoring others.
+              <div className="text-lg text-muted-foreground font-medium">
+                Senior Staff Engineer | Systems Design & Applied AI Architecture
               </div>
             </div>
           </div>
 
-          <div className="text-muted-foreground leading-relaxed space-y-4">
-            <p>
-              With over eleven years of experience in software development,
-              I&apos;ve worked with companies of all sizes, from startups to
-              enterprises. This diverse journey has given me a comprehensive
-              understanding of software engineering principles across different
-              organizational contexts.
-            </p>
-
-            <p>
-              I started my career as a full-stack developer, spending seven
-              years building end-to-end solutions. Since 2021, I&apos;ve focused
-              on backend development, diving deep into scalable architecture,
-              distributed systems, and cloud-native technologies.
-            </p>
-
-            <p>
-              I&apos;m passionate about clean code, collaborative development,
-              and continuous learning. I thrive in environments that challenge
-              me to grow and adapt, always eager to tackle new problems and
-              contribute to meaningful projects.
-            </p>
+          <div className="text-foreground leading-relaxed space-y-4">
+            <Markdown content="I design and integrate resilient, large-scale platforms, across distributed systems and production-grade AI-driven systems." />
+            <Markdown
+              content={`* Zero-Downtime Migrations: Migrated legacy monoliths to microfrontends.
+* Performance Engineering: Achieved 8× throughput gains (7,500+ tasks/min).
+* IoT Scale: Supported 150k+ concurrent devices via WebSockets.
+* Applied AI: Integrating multi-agent systems and RAG patterns in production.`}
+              className="space-y-2"
+            />
+            <Markdown content="My approach is pragmatic. I rely on a systems engineering foundation to ensure emerging AI patterns remain resilient and scalable within real enterprise codebases." />
           </div>
 
-          <section>
+          <section className="mt-6">
             <h3 className="text-lg font-semibold text-foreground">
               Let&apos;s Connect
             </h3>
-            <div className="flex gap-2">
+            <div className="flex gap-2 mt-3">
               {networks.map((social, index) => (
                 <a
                   key={index}
@@ -117,10 +104,6 @@ function AboutMe() {
                 <span className="text-xs font-medium text-foreground">
                   {name}
                 </span>
-
-                <span className="text-xs text-muted-foreground">
-                  {formatMonthsToYears(tech.monthsOfExperience)}
-                </span>
               </Badge>
             ))}
           </div>
@@ -137,7 +120,7 @@ function AboutMe() {
                 <div className="flex flex-wrap gap-1.5">
                   {Array.from(
                     technologiesExperienceByStatus[
-                      TechnologyLearningStatus.Used
+                    TechnologyLearningStatus.Used
                     ]
                   ).map(([name, tech]) => (
                     <Badge key={name} variant="secondary" className="text-xs">
@@ -159,10 +142,6 @@ function AboutMe() {
                       </div>
                       <span className="text-xs font-medium text-foreground">
                         {name}
-                      </span>
-
-                      <span className="text-xs text-muted-foreground">
-                        {formatMonthsToYears(tech.monthsOfExperience)}
                       </span>
                     </Badge>
                   ))}
@@ -199,10 +178,6 @@ function AboutMe() {
                   </div>
                   <span className="text-xs font-medium text-foreground">
                     {name}
-                  </span>
-
-                  <span className="text-xs text-muted-foreground">
-                    {formatMonthsToYears(tech.monthsOfExperience)}
                   </span>
                 </Badge>
               ))}
