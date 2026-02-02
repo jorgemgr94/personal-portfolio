@@ -40,15 +40,15 @@ function AboutMe() {
           </div>
 
           <div className="text-foreground leading-relaxed space-y-4">
-            <Markdown content="I design and integrate resilient, large-scale platforms, across distributed systems and production-grade AI-driven systems." />
+            <Markdown content="I design and integrate resilient, large-scale platforms across distributed systems and production-grade, AI-driven architectures. My work focuses on building systems that scale predictably, remain observable under load, and evolve without disrupting the business." />
             <Markdown
-              content={`* Zero-Downtime Migrations: Migrated legacy monoliths to microfrontends.
-* Performance Engineering: Achieved 8× throughput gains (7,500+ tasks/min).
-* IoT Scale: Supported 150k+ concurrent devices via WebSockets.
-* Applied AI: Integrating multi-agent systems and RAG patterns in production.`}
+              content={`* Zero-downtime migrations: Led incremental transitions from legacy monoliths to modular, frontend and service-oriented architectures.
+* Performance engineering: Delivered up to 8× throughput improvements (7,500+ tasks/min) through system-level optimizations.
+* IoT at scale: Supported 150k+ concurrent devices.
+* Applied AI: Integrating RAG patterns and multi-agent systems into production codebases with reliability and maintainability in mind.`}
               className="space-y-2"
             />
-            <Markdown content="My approach is pragmatic. I rely on a systems engineering foundation to ensure emerging AI patterns remain resilient and scalable within real enterprise codebases." />
+            <Markdown content="My approach is pragmatic and grounded in systems engineering, ensuring emerging AI patterns remain resilient, scalable, and operable within real enterprise environments." />
           </div>
 
           <section className="mt-6">
