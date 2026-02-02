@@ -54,10 +54,9 @@ function Resume() {
     <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 antialiased">
       <Head>
         <title>Jorge García | Senior Staff Engineer | Resume</title>
-        <meta
-          name="description"
-          content="Senior Staff Engineer & Platform Architect specializing in distributed systems and AI-integrated architectures."
-        />
+        <meta name="author" content="Jorge García" />
+        <meta name="keywords" content="Senior Staff Engineer, Platform Engineering, Distributed Systems, Kubernetes, Go, Python, AI Architecture" />
+        <meta name="description" content="Senior Staff Engineer with 12+ years in distributed systems, platform engineering, and AI-driven architectures." />
       </Head>
 
       {/* Main Resume Container - A4 Optimized */}
@@ -98,18 +97,18 @@ function Resume() {
                 </a>
                 <FaGlobe className="text-slate-300" />
               </div>
-              <div className="flex items-center justify-end gap-3 text-xs font-bold uppercase tracking-wider mt-2">
+              <div className="flex flex-col items-end gap-1 text-xs font-medium mt-2">
                 <a
                   href="https://linkedin.com/in/jorgemgr94"
-                  className="hover:text-blue-600 border-b border-transparent hover:border-blue-600"
+                  className="hover:text-blue-600"
                 >
-                  LinkedIn
+                  linkedin.com/in/jorgemgr94
                 </a>
                 <a
                   href="https://github.com/jorgemgr94"
-                  className="hover:text-blue-600 border-b border-transparent hover:border-blue-600"
+                  className="hover:text-blue-600"
                 >
-                  GitHub
+                  github.com/jorgemgr94
                 </a>
               </div>
             </div>
@@ -122,7 +121,7 @@ function Resume() {
           </h3>
           <Markdown
             className="text-[15px] leading-relaxed text-slate-700"
-            content="**Senior Staff Engineer** with 11+ years designing and scaling **resilient, large-scale platforms** across distributed systems and **production-grade AI-driven systems**. Proven track record delivering **zero-downtime platform migrations**, engineering **8× throughput improvements**, and operating high-scale systems across **IoT and enterprise platforms**, grounded in a pragmatic systems engineering approach."
+            content="**Senior Staff Engineer** with 12+ years designing and scaling **resilient, large-scale platforms** across distributed systems and **production-grade AI-driven systems**. Proven track record delivering **zero-downtime platform migrations**, engineering **8× throughput improvements**, and operating high-scale systems across **IoT and enterprise platforms**, grounded in a pragmatic systems engineering approach."
           />
         </section>
 
@@ -209,16 +208,9 @@ function Resume() {
                       project.project.description.slice(1)}
                     .
                   </p>
-                  <div className="flex flex-wrap gap-x-3 gap-y-1">
-                    {project.topics.slice(0, 5).map((topic) => (
-                      <span
-                        key={topic}
-                        className="text-[10px] font-black text-slate-400 uppercase"
-                      >
-                        #{topic.replace(/\s+/g, '')}
-                      </span>
-                    ))}
-                  </div>
+                  <p className="text-[11px] text-slate-500 font-medium">
+                    <strong>Tech:</strong> {project.topics.slice(0, 5).join(', ')}
+                  </p>
                 </div>
               ))}
           </div>
