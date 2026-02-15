@@ -1,7 +1,7 @@
 'use client';
 
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useMemo } from 'react';
 
 interface BlurInProps {
   children: React.ReactNode;
@@ -30,18 +30,21 @@ export default function BlurIn({
     once: once
   });
 
-  const variants = {
-    hidden: {
-      opacity: 0,
-      y: yOffset,
-      filter: `blur(${blur})`
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      filter: 'blur(0px)'
-    }
-  };
+  const variants = useMemo(
+    () => ({
+      hidden: {
+        opacity: 0,
+        y: yOffset,
+        filter: `blur(${blur})`
+      },
+      visible: {
+        opacity: 1,
+        y: 0,
+        filter: 'blur(0px)'
+      }
+    }),
+    [yOffset, blur]
+  );
 
   return (
     <motion.div

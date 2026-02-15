@@ -21,7 +21,7 @@ function ExperienceCardDetail({
       </div>
 
       {/* Achievements */}
-      {achievements && achievements.length > 0 && (
+      {achievements?.length ? (
         <div className="space-y-2">
           <h4 className="text-sm font-semibold flex items-center">
             Key Achievements
@@ -33,10 +33,10 @@ function ExperienceCardDetail({
             className="text-sm space-y-1"
           />
         </div>
-      )}
+      ) : null}
 
       {/* Technologies */}
-      {technologies && technologies.size > 0 && (
+      {technologies?.size ? (
         <div className="space-y-2">
           <h4 className="text-sm font-semibold flex items-center">
             Tech Stack
@@ -49,7 +49,7 @@ function ExperienceCardDetail({
             ))}
           </div>
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

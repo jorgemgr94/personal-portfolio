@@ -11,7 +11,11 @@ export default function ThemeToggler() {
     setMounted(true);
   }, []);
 
-  if (!mounted) return null;
+  if (!mounted) {
+    return (
+      <div className="h-10 w-10 rounded-full" aria-hidden />
+    );
+  }
 
   return (
     <Button

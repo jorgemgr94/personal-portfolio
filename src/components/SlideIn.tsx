@@ -1,8 +1,7 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
+import { useRef, useMemo } from 'react';
 
 type Direction = 'left' | 'right' | 'up' | 'down';
 
@@ -33,32 +32,33 @@ export default function SlideIn({
     once: once,
   });
 
-  const getInitialPosition = () => {
-    switch (direction) {
-      case 'left':
-        return { x: -distance, y: 0 };
-      case 'right':
-        return { x: distance, y: 0 };
-      case 'up':
-        return { x: 0, y: distance };
-      case 'down':
-        return { x: 0, y: -distance };
-      default:
-        return { x: 0, y: distance };
-    }
-  };
-
-  const variants = {
-    hidden: {
-      opacity: 0,
-      ...getInitialPosition(),
-    },
-    visible: {
-      opacity: 1,
-      x: 0,
-      y: 0,
-    },
-  };
+  const variants = useMemo(() => {
+    const getInitialPosition = () => {
+      switch (direction) {
+        case 'left':
+          return { x: -distance, y: 0 };
+        case 'right':
+          return { x: distance, y: 0 };
+        case 'up':
+          return { x: 0, y: distance };
+        case 'down':
+          return { x: 0, y: -distance };
+        default:
+          return { x: 0, y: distance };
+      }
+    };
+    return {
+      hidden: {
+        opacity: 0,
+        ...getInitialPosition(),
+      },
+      visible: {
+        opacity: 1,
+        x: 0,
+        y: 0,
+      },
+    };
+  }, [direction, distance]);
 
   return (
     <motion.div

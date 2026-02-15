@@ -7,7 +7,7 @@ import BlurIn from '../BlurIn';
 function ProjectCard({ icon, area, topics, project }: Project) {
   return (
     <li className="relative flex items-start space-x-6 pb-8 last:pb-0">
-      <div className="relative flex-shrink-0">
+      <div className="relative shrink-0">
         <BlurIn>
           <div className="w-16 h-16 bg-neutral-900 rounded-full border border-neutral-800 flex items-center justify-center shadow-2xl overflow-hidden group">
             <Image
@@ -43,7 +43,7 @@ function ProjectCard({ icon, area, topics, project }: Project) {
               <Markdown content={project.description} />
             </div>
             {/* Technologies */}
-            {topics && topics.length > 0 && (
+            {topics?.length ? (
               <div className="mt-4">
                 <div className="flex flex-wrap gap-2">
                   {topics.map((tech, index) => (
@@ -57,7 +57,7 @@ function ProjectCard({ icon, area, topics, project }: Project) {
                   ))}
                 </div>
               </div>
-            )}
+            ) : null}
 
             {/* GitHub Link Button */}
             {project.githubLink ? (

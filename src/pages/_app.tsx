@@ -2,7 +2,12 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from 'next-themes';
 import Script from 'next/script';
-import { Analytics } from '@vercel/analytics/next';
+import dynamic from 'next/dynamic';
+
+const Analytics = dynamic(
+  () => import('@vercel/analytics/next').then((m) => m.Analytics),
+  { ssr: false }
+);
 
 export default function App ({ Component, pageProps }: AppProps) {
   return (
