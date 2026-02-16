@@ -51,18 +51,17 @@ export const projects: Project[] = [
     topics: [
       'AVL Trees, B-Trees',
       'Tries',
-      'Advanced graphs (Dijkstra, A*, Floyd-Warshall)',
+      'Advanced Graph Algorithms (A*, Dijkstra)',
       'Recursion',
       'Dynamic Programming',
-      'Greedy Algorithms',
-      'Advanced backtracking',
-      'Advanced Divide & Conquer'
+      'Greedy Strategy',
+      'Backtracking (VRP Solver)',
+      'Divide & Conquer'
     ],
     project: {
-      title: 'Optimal Routes Engine',
-      description: `Advanced graph-based optimization engine for complex city-scale network navigation. Supports multi-criteria routing, including shortest-path and cost-optimized strategies, using high-performance data structures to enable efficient large-scale pathfinding.
-      `,
-      githubLink: null
+      title: 'Urban Logistics Engine',
+      description: `High-performance logistics core for solving the Vehicle Routing Problem (VRP) at city scale. Optimized for 50+ vehicle fleets using custom spatial indexing (QuadTrees) and hybrid pathfinding algorithms to minimize delivery costs and latency.`,
+      githubLink: 'https://github.com/jorgemgr94/urban-logistics-engine'
     }
   },
   {
