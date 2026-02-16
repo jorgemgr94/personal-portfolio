@@ -49,19 +49,20 @@ export const projects: Project[] = [
     icon: '/assets/images/projects/distributed-orders.png',
     area: 'Distributed Architecture',
     topics: [
-      'Microservices (REST, gRPC, GraphQL)',
-      'Message Brokers (RabbitMQ, Kafka)',
-      'Cloud-native messaging (SQS, Cloud Tasks), At-least-once delivery',
-      'Event streaming (Pub/Sub, SNS), Fan-out messaging patterns',
-      'Caching (Redis, Memcached)',
-      'Circuit Breakers (Hystrix, Resilience4j)',
-      'Eventual consistency'
+      'Microservices (Polyglot: Go, TS, Python)',
+      'High-Performance gRPC (Protobuf)',
+      'Event-Driven Architecture (Google Pub/Sub)',
+      'Infrastructure as Code (Pulumi, GKE)',
+      'Distributed Locking (Redis Redlock)',
+      'Resilience Patterns (Circuit Breakers, DLQ)',
+      'GitOps (ArgoCD)'
     ],
     project: {
       title: 'Distributed Orders Platform',
-      description: `Resilient microservices architecture for high-volume transaction processing.
-                    Uses event-driven communication, distributed caching, and circuit breakers to manage failure modes and maintain eventual consistency across a complex service ecosystem.`,
-      githubLink: null
+      description: `Production-grade microservices system designed for high availability and fault tolerance.
+                    Orchestrates synchronous gRPC for critical paths and asynchronous events for eventual consistency,
+                    using advanced resilience patterns like Circuit Breakers and Distributed Locking to handle failure modes in a distributed ecosystem.`,
+      githubLink: 'https://github.com/jorgemgr94/distributed-orders'
     }
   },
   {
