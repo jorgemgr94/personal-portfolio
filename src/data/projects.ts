@@ -24,27 +24,6 @@ export const projects: Project[] = [
     }
   },
   {
-    id: 2,
-    icon: '/assets/images/projects/routes-engine.png',
-    area: 'Advanced Algorithms',
-    topics: [
-      'AVL Trees, B-Trees',
-      'Tries',
-      'Advanced graphs (Dijkstra, A*, Floyd-Warshall)',
-      'Recursion',
-      'Dynamic Programming',
-      'Greedy Algorithms',
-      'Advanced backtracking',
-      'Advanced Divide & Conquer'
-    ],
-    project: {
-      title: 'Optimal Routes Engine',
-      description: `Advanced graph-based optimization engine for complex city-scale network navigation. Supports multi-criteria routing, including shortest-path and cost-optimized strategies, using high-performance data structures to enable efficient large-scale pathfinding.
-      `,
-      githubLink: null
-    }
-  },
-  {
     id: 7,
     icon: '/assets/images/projects/distributed-orders.png',
     area: 'Distributed Architecture',
@@ -63,6 +42,27 @@ export const projects: Project[] = [
                     Orchestrates synchronous gRPC for critical paths and asynchronous events for eventual consistency,
                     using advanced resilience patterns like Circuit Breakers and Distributed Locking to handle failure modes in a distributed ecosystem.`,
       githubLink: 'https://github.com/jorgemgr94/distributed-orders'
+    }
+  },
+  {
+    id: 2,
+    icon: '/assets/images/projects/routes-engine.png',
+    area: 'Advanced Algorithms',
+    topics: [
+      'AVL Trees, B-Trees',
+      'Tries',
+      'Advanced graphs (Dijkstra, A*, Floyd-Warshall)',
+      'Recursion',
+      'Dynamic Programming',
+      'Greedy Algorithms',
+      'Advanced backtracking',
+      'Advanced Divide & Conquer'
+    ],
+    project: {
+      title: 'Optimal Routes Engine',
+      description: `Advanced graph-based optimization engine for complex city-scale network navigation. Supports multi-criteria routing, including shortest-path and cost-optimized strategies, using high-performance data structures to enable efficient large-scale pathfinding.
+      `,
+      githubLink: null
     }
   },
   {
