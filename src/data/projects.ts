@@ -75,7 +75,6 @@ export const projects: Project[] = [
       'Docker',
       'Kubernetes',
       'GitHub Actions',
-      'Terraform'
     ],
     project: {
       title: 'ConectaPelu2 - Animal Welfare Ecosystem',
