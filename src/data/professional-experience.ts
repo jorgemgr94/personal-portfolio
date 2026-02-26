@@ -13,7 +13,7 @@ function createFullExperienceTechArray(
 export const professionalExperiences: ProfessionalExperience[] = [
   {
     id: '01996961-47be-7a79-a66f-12e7b13eec86',
-    jobTitle: 'Senior Staff Engineer',
+    jobTitle: 'Staff Software Engineer',
     startDate: '2023-09-01',
     endDate: null,
     companyName: 'ZenBusiness',

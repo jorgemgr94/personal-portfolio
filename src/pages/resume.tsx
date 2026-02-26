@@ -53,10 +53,10 @@ function Resume() {
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 antialiased">
       <Head>
-        <title>Jorge García | Senior Staff Engineer | Resume</title>
+        <title>Jorge García | Staff Software Engineer | Resume</title>
         <meta name="author" content="Jorge García" />
-        <meta name="keywords" content="Senior Staff Engineer, Platform Engineering, Distributed Systems, Kubernetes, Go, Python, AI Architecture" />
-        <meta name="description" content="Senior Staff Engineer with 12+ years in distributed systems, platform engineering, and AI-driven architectures." />
+        <meta name="keywords" content="Staff Software Engineer, Platform Engineering, Distributed Systems, Kubernetes, Go, Python, AI Architecture" />
+        <meta name="description" content="Staff Software Engineer with 12+ years in distributed systems, platform engineering, and AI-driven architectures." />
       </Head>
 
       {/* Main Resume Container - A4 Optimized */}
@@ -69,7 +69,7 @@ function Resume() {
                 Jorge García
               </h1>
               <h2 className="text-xl font-medium text-blue-600 mt-1">
-                Senior Staff Engineer
+                Staff Software Engineer
               </h2>
               <div className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1.5 flex items-center gap-2">
                 Systems Design <span>·</span> Applied AI Architecture
@@ -121,7 +121,7 @@ function Resume() {
           </h3>
           <Markdown
             className="text-[15px] leading-relaxed text-slate-700"
-            content="**Senior Staff Engineer** with 12+ years designing and scaling **resilient, large-scale platforms** across distributed systems and **production-grade AI-driven systems**. Proven track record delivering **zero-downtime platform migrations**, engineering **8× throughput improvements**, and operating high-scale systems across **IoT and enterprise platforms**, grounded in a pragmatic systems engineering approach."
+            content="**Staff Software Engineer** with 12+ years designing and scaling **resilient, large-scale platforms** across distributed systems and **production-grade AI-driven systems**. Proven track record delivering **zero-downtime platform migrations**, engineering **8× throughput improvements**, and operating high-scale systems across **IoT and enterprise platforms**, grounded in a pragmatic systems engineering approach."
           />
         </section>
 

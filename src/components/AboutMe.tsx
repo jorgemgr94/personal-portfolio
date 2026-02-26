@@ -34,7 +34,7 @@ function AboutMe() {
                 Hi, I&apos;m Jorge 👋
               </h2>
               <div className="text-lg text-muted-foreground font-medium">
-                Senior Staff Engineer | Systems Design & Applied AI Architecture
+                Staff Software Engineer | Systems Design & Applied AI Architecture
               </div>
             </div>
           </div>
