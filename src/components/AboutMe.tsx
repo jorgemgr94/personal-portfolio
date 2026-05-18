@@ -5,9 +5,11 @@ import {
   HoverCardContent,
   HoverCardTrigger
 } from '@/components/ui/hover-card';
+import { aboutMe } from '@/data/about-me';
 import { networks } from '@/data/networks';
 import { technologiesExperienceByStatus } from '@/data/technologies';
 import { TechnologyLearningStatus } from '@/data/types';
+import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
 import { Button } from './ui/button';
 
@@ -40,20 +42,19 @@ function AboutMe() {
           </div>
 
           <div className="text-foreground leading-relaxed space-y-4">
-            <Markdown content="I design and integrate resilient, large-scale platforms across distributed systems and production-grade, AI-driven architectures. My work focuses on building systems that scale predictably, remain observable under load, and evolve without disrupting the business." />
-            <Markdown
-              content={`* Zero-downtime migrations: Led incremental transitions from legacy monoliths to modular, frontend and service-oriented architectures.
-* Performance Optimization: Delivered up to 8× throughput improvements (7,500+ tasks/min) through system-level optimizations.
-* Applied AI: Integrating RAG patterns and multi-agent systems into production codebases with reliability and maintainability in mind.`}
-              className="space-y-2"
-            />
-            <Markdown content="My approach is pragmatic and grounded in systems engineering, ensuring emerging AI patterns remain resilient, scalable, and operable within real enterprise environments." />
+            <Markdown content={aboutMe} components={
+              {
+                ul: ({ children }) => (
+                  <ul className="list-disc list-inside space-y-1 ml-4 mt-4">{children}</ul>
+                )
+              }
+            } />
           </div>
 
           <section className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <Button asChild className="rounded-full shadow-md">
               <a href="/resume" target="_blank" rel="noopener noreferrer">
-                View Resume
+                View Resume <ExternalLink className="h-3.5 w-3.5 transition-colors" />
               </a>
             </Button>
             <div className="flex gap-2">

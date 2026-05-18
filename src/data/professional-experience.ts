@@ -21,12 +21,12 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyUrl: 'https://www.linkedin.com/company/zenbusiness-pbc',
     description: `Design and implement the company’s core distributed systems across multiple microservices, driving architectural decisions and new adoption of event-driven and microfrontend patterns, defining cross-team technical standards, and building robust third-party integrations with a focus on reliability and consistency.`,
     achievements: [
-      `Shaped frontend direction by leading a zero-downtime migration from a legacy architecture to microfrontends, establishing new standards for scalability and maintainability.`,
-      `Designed and implemented core fulfillment workflows in Go, including schema-driven validation and graph-based traversal utilities to ensure data integrity.`,
-      `Led the development of an event-driven backend service integrating with external accountant partners, enabling scalable delivery of tax-related products.`,
-      `Built and operated services integrating third-party APIs, implementing robust error handling, rate limiting, and security controls to manage external dependency failures at scale.`,
-      `Contributed to company-wide architectural standards through reusable packages and shared service patterns adopted across multiple teams.`,
-      `Supported enterprise API initiatives by designing secure, public-facing APIs that exposed internal capabilities while enforcing business constraints.`
+      `Led the zero-downtime migration of a frontend product from the legacy monolith to the new microfrontends architecture, executed incrementally without disrupting users.`,
+      `Designed core fulfillment workflows in Go, with schema-driven validation and graph-based traversal to guarantee data integrity across the order lifecycle.`,
+      `Led an event-driven backend integrating external accountant partners, unblocking the launch of the company's tax-related product line.`,
+      `Designed and built multiple third-party integrations with partner-specific rate limiting, timeouts, structured error handling, and secrets management.`,
+      `Co-created and maintain shared core packages and architectural patterns adopted across multiple teams, driving consistency in how services are built.`,
+      `Supported enterprise API initiatives by designing secure, public-facing endpoints that exposed internal capabilities while enforcing business constraints.`
     ],
     technologies: new Map([
       ...createFullExperienceTechArray('2023-09-01', null, [
@@ -56,10 +56,9 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyUrl: 'https://www.crunchbase.com/organization/ureeka',
     description: `Designed and scaled backend systems supporting the core Ureeka platform, with a focus on distributed execution, performance optimization, and operational reliability in a cloud-native, serverless environment.`,
     achievements: [
-      `Designed and implemented scalable backend features using distributed system patterns, including eventual consistency and backward compatibility, to support platform evolution without breaking existing consumers.`,
-      `Achieved an 8× throughput improvement in distributed task queues, increasing processing capacity from ~940 to ~7,500 tasks per minute per queue by addressing scheduling, execution, and contention bottlenecks.`,
-      `Built robust third-party integrations with comprehensive error handling, rate limiting, and security controls to ensure reliability under partial failure conditions.`,
-      `Implemented end-to-end observability using Cloud Trace, Cloud Logging, and Error Reporting, enabling faster incident detection through automated alerting and improved system visibility.`
+      `Designed scalable backend features using distributed system patterns (eventual consistency, backward-compatible schema evolution) so the platform could evolve without breaking existing consumers.`,
+      `Diagnosed the root cause of a throughput ceiling in distributed task queues; a surgical configuration change, validated via benchmarks, delivered an 8× throughput improvement (~940 → ~7,500 tasks/min per queue).`,
+      `Implemented end-to-end observability with Cloud Trace, Cloud Logging, and Error Reporting, shortening incident detection through automated alerting.`
     ],
     technologies: new Map([
       ['TypeScript', 23],
@@ -81,13 +80,13 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyUrl: 'https://www.linkedin.com/company/sintec',
     description: `Led small delivery teams and client-facing technical initiatives, owning system design and execution across multiple consulting engagements, with a focus on cloud adoption, scalable delivery, and establishing foundational engineering practices.`,
     achievements: [
-      `Led and mentored a small team of software engineers, driving feature delivery while supporting professional growth and technical ownership.`,
-      `Translated business requirements into technical roadmaps, architectural decisions, and delivery plans across concurrent client projects.`,
-      `Provided architectural guidance and technical oversight across multiple client solutions, ensuring consistency, security, and maintainability.`,
-      `Reduced infrastructure costs by migrating workloads from dedicated servers to serverless platforms (Cloud Functions, Cloud Run).`,
-      `Automated Node.js CI/CD pipelines using Cloud Build, improving deployment reliability and reducing manual release overhead.`,
-      `Established shared GitHub standards and code conventions adopted across teams to improve consistency and collaboration.`,
-      `Built and managed partnerships with external development providers, expanding delivery capacity while maintaining quality and delivery commitments.`
+      `Led and mentored a small engineering team across concurrent client engagements, owning feature delivery and growth conversations.`,
+      `Translated business requirements into technical roadmaps and delivery plans across multiple client projects.`,
+      `Provided architectural guidance across client solutions, ensuring consistency, security, and maintainability.`,
+      `Migrated client workloads from dedicated servers to serverless platforms (Cloud Functions, Cloud Run), reducing infrastructure cost and operational overhead.`,
+      `Automated Node.js CI/CD pipelines on Cloud Build, removing manual release steps and improving deployment reliability.`,
+      `Established shared GitHub conventions and code standards adopted across teams to improve consistency and collaboration.`,
+      `Built and managed partnerships with external development providers, expanding delivery capacity while keeping quality commitments.`
     ],
     technologies: new Map([
       ['React', 19],
@@ -114,8 +113,8 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyUrl: 'https://www.linkedin.com/company/sintec',
     description: `Designed and delivered full-stack web and mobile solutions in a consulting environment, focusing on real-time systems, emerging technologies, and maintainable architectures.`,
     achievements: [
-      `Built a real-time IoT platform tracking 150+ beacon devices using AWS Kinesis and MongoDB, enabling live analytics dashboards for distribution centers.`,
-      `Introduced serverless and modern web technologies (Node.js, Firebase) that became foundational standards for subsequent projects.`
+      `Built a real-time IoT platform tracking 150+ beacon devices with AWS Kinesis and MongoDB, powering live analytics dashboards for distribution centers.`,
+      `Introduced serverless and modern web technologies (Node.js, Firebase) that became foundational standards for subsequent client projects.`
     ],
     technologies: new Map([
       ['React', 12],
@@ -145,8 +144,8 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyUrl: 'https://www.crunchbase.com/organization/garage',
     description: `Contributed to the development of a startup platform, focusing on front-end experience, system reliability, and the introduction of modern development practices.`,
     achievements: [
-      `Simplified the product quoting workflow by introducing reactive state management with MobX, improving user experience and maintainability.`,
-      `Introduced modern development practices including containerization, CI/CD pipelines, database migrations, and automated testing, improving deployment reliability and overall code quality.`
+      `Simplified the product quoting workflow by introducing reactive state management with MobX, improving UX and maintainability.`,
+      `Introduced modern development practices (containerization, CI/CD, DB migrations, automated testing), raising deployment reliability and code quality.`
     ],
     technologies: new Map([
       ['Ruby on Rails', 5],
@@ -170,8 +169,8 @@ export const professionalExperiences: ProfessionalExperience[] = [
       'https://www.crunchbase.com/organization/sensai-empower-success',
     description: `Contributed to multi-platform product development across web and mobile, supporting backend migrations and feature delivery within an agile team.`,
     achievements: [
-      `Contributed to a rapid migration from Node.js to Ruby on Rails, stabilizing the backend and improving long-term maintainability.`,
-      `Collaborated closely with design and QA teams while adopting modern agile development workflows and delivery practices..`
+      `Contributed to a rapid backend migration from Node.js to Ruby on Rails, stabilizing the service and improving long-term maintainability.`,
+      `Collaborated closely with design and QA teams under agile delivery workflows.`
     ],
     technologies: new Map([
       ['React', 6],
@@ -195,8 +194,8 @@ export const professionalExperiences: ProfessionalExperience[] = [
     description: `Led a small engineering team delivering healthcare systems, combining technical leadership, system design, and business-domain problem solving.`,
     achievements: [
       `Led the development of new business units including laboratory systems, ambulatory surgery, and RIS/PACS platforms.`,
-      `Delivered mobile and backend systems that improved operational efficiency and patient experience across healthcare workflows.`,
-      `Introduced structured engineering practices and mentorship that strengthened team capability.`
+      `Delivered mobile and backend systems supporting clinical and administrative workflows across hospital operations.`,
+      `Introduced structured engineering practices and a mentorship cadence that strengthened the team's autonomy.`
     ],
     technologies: new Map([
       ['PHP', 21],
@@ -220,8 +219,8 @@ export const professionalExperiences: ProfessionalExperience[] = [
       'http://linkedin.com/company/hms-sistemas-de-informaci-n-sa-de-cv',
     description: `Contributed to the development of healthcare ERP systems, working across backend logic, database design, and process automation.`,
     achievements: [
-      `Developed automation workflows to streamline clinical and administrative processes, including quote generation and coordination across doctors, nurses, and administrative staff.`,
-      `Built a strong foundation in transactional systems and data consistency while implementing robust database transactions across complex healthcare workflows.`
+      `Developed automation workflows for clinical and administrative processes, including quote generation and coordination across doctors, nurses, and administrative staff.`,
+      `Implemented transactional workflows guaranteeing data consistency across complex healthcare scenarios.`
     ],
     technologies: new Map([
       ['PHP', 21],
@@ -242,7 +241,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
     description: `Contributed to the development of a digital library platform, working across backend automation, data processing, and frontend feature delivery.`,
     achievements: [
       `Automated large-scale book ingestion by building Bash-based pipelines to convert PDFs into SVG assets, upload them to AWS S3, and persist relational metadata in MySQL.`,
-      `Built a strong foundation in scripting, automation, and backend data workflows, while gaining early exposure to mobile development.`
+      `Gained early exposure to Android (Java) development while strengthening backend automation and scripting foundations.`
     ],
     technologies: new Map([
       ['PHP', 7],
