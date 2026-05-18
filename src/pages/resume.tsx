@@ -72,7 +72,7 @@ function Resume() {
                 Staff Software Engineer
               </h2>
               <div className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1.5 flex items-center gap-2">
-                Systems Design <span>·</span> Applied AI Architecture
+                Distributed Systems <span>·</span> Applied AI
               </div>
             </div>
 
@@ -121,7 +121,7 @@ function Resume() {
           </h3>
           <Markdown
             className="text-[15px] leading-relaxed text-slate-700"
-            content="**Staff Software Engineer** with 12+ years designing and scaling **resilient, large-scale platforms** across distributed systems and **production-grade AI-driven systems**. Proven track record delivering **zero-downtime platform migrations**, engineering **8× throughput improvements**, and operating high-scale systems across **IoT and enterprise platforms**, grounded in a pragmatic systems engineering approach."
+            content="**Staff Software Engineer** with 12+ years designing and scaling **resilient, large-scale platforms** across distributed systems and **AI-integrated architectures**. Proven track record delivering **zero-downtime platform migrations**, diagnosing and removing throughput bottlenecks (**8× improvement**, ~940 to ~7,500 tasks/min), and building **RAG and multi-agent systems** with a pragmatic, systems-engineering approach."
           />
         </section>
 

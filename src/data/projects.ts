@@ -71,7 +71,7 @@ export const projects: Project[] = [
       'GitHub Actions'
     ],
     project: {
-      title: 'ConectaPelu2 - Animal Welfare Ecosystem',
+      title: 'ConectaPelu2 — Animal Welfare Ecosystem',
       description:
         'Digital ecosystem connecting animal shelters and adopters. Monolithic Next.js app on PostgreSQL/Drizzle with pet management, secure auth, and audit trail; containerized and deployed via GitHub Actions to Kubernetes.',
       githubLink: 'https://github.com/jorgemgr94/conectapelu2'
