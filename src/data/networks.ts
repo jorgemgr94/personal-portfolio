@@ -1,14 +1,15 @@
 import { FaGithub, FaLinkedinIn } from 'react-icons/fa';
+import { personalInfo } from './personal-info';
 
 export const networks = [
   {
     name: 'GitHub',
     icon: FaGithub,
-    url: 'https://github.com/jorgemgr94'
+    url: personalInfo.github
   },
   {
     name: 'Linkedin',
     icon: FaLinkedinIn,
-    url: 'https://www.linkedin.com/in/jorgemgr94/'
+    url: personalInfo.linkedin
   }
 ];

@@ -7,6 +7,7 @@ import {
 } from '@/components/ui/hover-card';
 import { aboutMe } from '@/data/about-me';
 import { networks } from '@/data/networks';
+import { personalInfo } from '@/data/personal-info';
 import { technologiesExperienceByStatus } from '@/data/technologies';
 import { TechnologyLearningStatus } from '@/data/types';
 import { ExternalLink } from 'lucide-react';
@@ -33,10 +34,10 @@ function AboutMe() {
             />
             <div className="space-y-4">
               <h2 className="text-5xl font-bold text-foreground">
-                Hi, I&apos;m Jorge 👋
+                Hi, I&apos;m {personalInfo.firstName} 👋
               </h2>
               <div className="text-lg text-muted-foreground font-medium">
-                Staff Software Engineer | Distributed Systems & Applied AI
+                {personalInfo.role} | {personalInfo.focus}
               </div>
             </div>
           </div>

@@ -1,7 +1,8 @@
 import { Markdown } from '@/components/Markdown';
+import { personalInfo } from '@/data/personal-info';
 import { professionalExperiences } from '@/data/professional-experience';
 import { projects } from '@/data/projects';
-import { formatDateFromISO, formatDuration } from '@/helpers/format';
+import { displayUrl, formatDateFromISO, formatDuration } from '@/helpers/format';
 import Head from 'next/head';
 import { FaEnvelope, FaGlobe } from 'react-icons/fa';
 
@@ -53,8 +54,8 @@ function Resume() {
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 antialiased">
       <Head>
-        <title>Jorge García | Staff Software Engineer | Resume</title>
-        <meta name="author" content="Jorge García" />
+        <title>{`${personalInfo.name} | ${personalInfo.role} | Resume`}</title>
+        <meta name="author" content={personalInfo.name} />
         <meta name="keywords" content="Staff Software Engineer, Platform Engineering, Distributed Systems, Kubernetes, Go, Python, AI Architecture" />
         <meta name="description" content="Staff Software Engineer with 12+ years in distributed systems, platform engineering, and AI-driven architectures." />
       </Head>
@@ -66,49 +67,49 @@ function Resume() {
           <div className="flex flex-col md:flex-row print:flex-row justify-between items-baseline gap-4">
             <div>
               <h1 className="text-4xl font-extrabold tracking-tight text-slate-900 uppercase">
-                Jorge García
+                {personalInfo.name}
               </h1>
               <h2 className="text-xl font-medium text-blue-600 mt-1">
-                Staff Software Engineer
+                {personalInfo.role}
               </h2>
               <div className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1.5 flex items-center gap-2">
-                Distributed Systems <span>·</span> Applied AI
+                {personalInfo.focus}
               </div>
             </div>
 
             <div className="grid grid-cols-1 text-sm gap-1 text-slate-600 text-right print:text-right">
               <div className="flex items-center justify-end gap-2">
                 <a
-                  href="mailto:jorgemgr94@gmail.com"
+                  href={`mailto:${personalInfo.email}`}
                   className="hover:text-blue-600"
                 >
-                  jorgemgr94@gmail.com
+                  {personalInfo.email}
                 </a>
                 <FaEnvelope className="text-slate-300" />
               </div>
               <div className="flex items-center justify-end gap-2">
                 <a
-                  href="https://jorgemgr.com"
+                  href={personalInfo.website}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-blue-600"
                 >
-                  jorgemgr.com
+                  {displayUrl(personalInfo.website)}
                 </a>
                 <FaGlobe className="text-slate-300" />
               </div>
               <div className="flex flex-col items-end gap-1 text-xs font-medium mt-2">
                 <a
-                  href="https://linkedin.com/in/jorgemgr94"
+                  href={personalInfo.linkedin}
                   className="hover:text-blue-600"
                 >
-                  linkedin.com/in/jorgemgr94
+                  {displayUrl(personalInfo.linkedin)}
                 </a>
                 <a
-                  href="https://github.com/jorgemgr94"
+                  href={personalInfo.github}
                   className="hover:text-blue-600"
                 >
-                  github.com/jorgemgr94
+                  {displayUrl(personalInfo.github)}
                 </a>
               </div>
             </div>
@@ -121,7 +122,7 @@ function Resume() {
           </h3>
           <Markdown
             className="text-[15px] leading-relaxed text-slate-700"
-            content="**Staff Software Engineer** with 12+ years designing and scaling **resilient, large-scale platforms** across distributed systems and **AI-integrated architectures**. Proven track record delivering **zero-downtime platform migrations**, diagnosing and removing throughput bottlenecks (**8× improvement**, ~940 to ~7,500 tasks/min), and building **RAG and multi-agent systems** with a pragmatic, systems-engineering approach."
+            content={personalInfo.summary}
           />
         </section>
 
@@ -221,13 +222,15 @@ function Resume() {
           <p className="text-xs text-slate-500 font-medium">
             Detailed case studies, full professional history, and technical
             references available at{' '}
-            <strong className="text-slate-900">jorgemgr.com</strong>
+            <strong className="text-slate-900">
+              {displayUrl(personalInfo.website)}
+            </strong>
           </p>
           <button
             onClick={handlePrint}
-            className="mt-6 px-6 py-2.5 bg-slate-900 text-white text-[11px] font-bold uppercase tracking-widest rounded shadow-sm hover:bg-slate-800 transition-all active:scale-95 print:hidden"
+            className="cursor-pointer mt-6 px-6 py-2.5 bg-slate-900 text-white text-[11px] font-bold uppercase tracking-widest rounded shadow-sm hover:bg-slate-800 transition-all active:scale-95 print:hidden"
           >
-            Download Official CV (PDF)
+            Download CV
           </button>
         </footer>
       </main>

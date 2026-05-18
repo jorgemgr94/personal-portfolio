@@ -55,3 +55,11 @@ export function formatDateFromISO(dateString?: string): string {
   // Automatically uses viewer's timezone
   return DateTime.fromISO(dateString).toFormat('MMM yyyy');
 }
+
+/**
+ * Format URL for display by removing protocol and optional www prefix.
+ * Keeps the canonical URL untouched for href usage.
+ */
+export function displayUrl(url: string): string {
+  return url.replace(/^https?:\/\/(www\.)?/, '');
+}
