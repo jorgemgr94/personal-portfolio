@@ -13,6 +13,7 @@ function createFullExperienceTechArray(
 export const professionalExperiences: ProfessionalExperience[] = [
   {
     id: '01996961-47be-7a79-a66f-12e7b13eec86',
+    showInResume: true,
     jobTitle: 'Staff Software Engineer',
     startDate: '2023-09-01',
     endDate: null,
@@ -48,6 +49,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
   },
   {
     id: '01996961-47be-7a79-a66f-12e7b13eec87',
+    showInResume: true,
     jobTitle: 'Senior Software Engineer',
     startDate: '2021-09-06',
     endDate: '2023-09-01',
@@ -72,6 +74,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
   },
   {
     id: '01996961-47c6-78ea-a2d3-902613c6a28e',
+    showInResume: true,
     jobTitle: 'Tech Lead / Digital Solutions Manager',
     startDate: '2020-02-01',
     endDate: '2021-09-03',
@@ -105,6 +108,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
   },
   {
     id: '01996961-47c6-78ea-a2d3-9027820077e9',
+    showInResume: true,
     jobTitle: 'Full-stack Engineer / Consultant',
     startDate: '2019-02-01',
     endDate: '2020-02-01',

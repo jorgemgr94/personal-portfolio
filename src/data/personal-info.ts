@@ -15,3 +15,41 @@ export const personalInfo = {
   summary:
     '**Staff Software Engineer** with 12+ years designing and scaling **resilient, large-scale platforms** across distributed systems and **AI-integrated architectures**. Proven track record delivering **zero-downtime platform migrations**, diagnosing and removing throughput bottlenecks (**8× improvement**, ~940 to ~7,500 tasks/min), and building **RAG and multi-agent systems** with a pragmatic, systems-engineering approach.'
 };
+
+
+export const resumeConfig = {
+  skillsCategories: {
+    'Cloud & Platform Engineering': [
+      'GCP',
+      'Kubernetes',
+      'Docker',
+      'Terraform',
+      'CI/CD',
+      'PostgreSQL',
+      'Redis'
+    ],
+    'Backend & Systems Design': [
+      'Node.js',
+      'Python',
+      'Go',
+      'Design Patterns',
+      'IoT Systems',
+      'Microservices'
+    ],
+    'Frontend & Full-Stack Development': [
+      'React',
+      'TypeScript',
+      'Next.js',
+      'State Management',
+      'API Design'
+    ],
+    'AI & Distributed Systems': [
+      'Multi-Agent Orchestration',
+      'RAG Pipelines',
+      'LLM Infrastructure',
+      'Event-Driven Systems',
+      'Micro-Frontends',
+      'Task Queues'
+    ]
+  }
+} as const;

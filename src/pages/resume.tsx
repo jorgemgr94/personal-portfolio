@@ -1,5 +1,5 @@
 import { Markdown } from '@/components/Markdown';
-import { personalInfo } from '@/data/personal-info';
+import { personalInfo, resumeConfig } from '@/data/personal-info';
 import { professionalExperiences } from '@/data/professional-experience';
 import { projects } from '@/data/projects';
 import { displayUrl, formatDateFromISO, formatDuration } from '@/helpers/format';
@@ -13,43 +13,7 @@ import { FaEnvelope, FaGlobe } from 'react-icons/fa';
 function Resume() {
   const handlePrint = () => window.print();
 
-  // Group skills locally to maintain the narrative without polluting shared data
-  const skillsCategories: Record<string, string[]> = {
-    'Cloud & Platform Engineering': [
-      'GCP',
-      'Kubernetes',
-      'Docker',
-      'Terraform',
-      'CI/CD',
-      'PostgreSQL',
-      'Redis'
-    ],
-    'Backend & Systems Design': [
-      'Node.js',
-      'Python',
-      'Go',
-      'Design Patterns',
-      'IoT Systems',
-      'Microservices'
-    ],
-    'Frontend & Full-Stack Development': [
-      'React',
-      'TypeScript',
-      'Next.js',
-      'State Management',
-      'API Design'
-    ],
-    'AI & Distributed Systems': [
-      'Multi-Agent Orchestration',
-      'RAG Pipelines',
-      'LLM Infrastructure',
-      'Event-Driven Systems',
-      'Micro-Frontends',
-      'Task Queues'
-    ]
-  };
-
-  const categoryOrder = Object.keys(skillsCategories);
+  const categoryOrder = Object.keys(resumeConfig.skillsCategories);
 
   return (
     <div className="min-h-screen bg-white text-slate-900 selection:bg-blue-100 antialiased">
@@ -138,7 +102,7 @@ function Resume() {
                   {category}
                 </h4>
                 <p className="text-slate-600 leading-relaxed font-medium">
-                  {skillsCategories[category].join(', ')}
+                  {resumeConfig.skillsCategories[category as keyof typeof resumeConfig.skillsCategories].join(', ')}
                 </p>
               </div>
             ))}
@@ -151,7 +115,7 @@ function Resume() {
             Experience
           </h3>
           <div className="space-y-10">
-            {professionalExperiences.slice(0, 4).map((exp) => (
+            {professionalExperiences.filter((exp) => exp.showInResume).map((exp) => (
               <div key={exp.id} className="group">
                 <div className="flex justify-between items-baseline mb-3">
                   <div>
@@ -195,7 +159,7 @@ function Resume() {
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 print:grid-cols-2 gap-10 text-[14px]">
             {projects
-              .filter((p) => [1, 8].includes(p.id))
+              .filter((p) => p.showInResume)
               .map((project) => (
                 <div key={project.id}>
                   <h4 className="font-bold text-slate-900 mb-1">

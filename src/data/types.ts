@@ -1,6 +1,7 @@
 // == Projects ==================================================
 export type Project = {
   id: number;
+  showInResume?: boolean;
   icon: string;
   area: string;
   topics: string[];
@@ -71,6 +72,7 @@ export type TechnologyDetails = {
 // == Professional Experience =====================================================
 export type ProfessionalExperience = {
   id: string;
+  showInResume?: boolean;
   jobTitle: string;
   startDate: string;
   endDate: string | null;

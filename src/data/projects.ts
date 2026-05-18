@@ -3,6 +3,7 @@ import type { Project } from '@/data/types';
 export const projects: Project[] = [
   {
     id: 1,
+    showInResume: true,
     icon: '/assets/images/projects/deal-intelligence.png',
     area: 'AI Reasoning & Strategic Intelligence',
     topics: [
@@ -60,6 +61,7 @@ export const projects: Project[] = [
   },
   {
     id: 8,
+    showInResume: true,
     icon: '/assets/images/projects/conectapelu.png',
     area: 'Full-Stack Product Architecture',
     topics: [
