@@ -10,16 +10,15 @@ export const projects: Project[] = [
       'LangChain',
       'LLMs',
       'GraphRAG',
-      'Multi-Modal AI',
-      'Agentic Orchestration',
+      'Whisper + Vision',
+      'LangGraph',
       'Vector Search',
-      'Strategic Synthesis'
+      'LangSmith Evals'
     ],
     project: {
       title: 'Deal Intelligence Platform',
-      description: `A cognitive engine that synthesizes strategic intelligence from complex, unstructured data.
-      It orchestrates specialist agents for market research, competitor analysis, and institutional knowledge retrieval,
-       using an advanced RAG architecture with multimodal inputs (sales calls, financial visuals).`,
+      description:
+        'Multimodal RAG over sales calls (Whisper) and financial documents (vision). 5 specialized agents orchestrated with LangGraph; hybrid retrieval (BM25 + embeddings); evaluation with LangSmith.',
       githubLink: 'https://github.com/jorgemgr94/multi-agent-rag-system'
     }
   },
@@ -38,9 +37,8 @@ export const projects: Project[] = [
     ],
     project: {
       title: 'Distributed Orders Platform',
-      description: `Production-grade microservices system designed for high availability and fault tolerance.
-                    Orchestrates synchronous gRPC for critical paths and asynchronous events for eventual consistency,
-                    using advanced resilience patterns like Circuit Breakers and Distributed Locking to handle failure modes in a distributed ecosystem.`,
+      description:
+        'Personal project demonstrating production-grade microservices patterns: synchronous gRPC on critical paths, async events for eventual consistency, and resilience primitives (Circuit Breakers, Distributed Locking with Redis Redlock, DLQ) deployed via GitOps on GKE.',
       githubLink: 'https://github.com/jorgemgr94/distributed-orders'
     }
   },
@@ -49,18 +47,14 @@ export const projects: Project[] = [
     icon: '/assets/images/projects/routes-engine.png',
     area: 'Advanced Algorithms',
     topics: [
-      'AVL Trees, B-Trees',
-      'Tries',
+      'Spatial Indexing (QuadTrees)',
       'Advanced Graph Algorithms (A*, Dijkstra)',
-      'Recursion',
-      'Dynamic Programming',
-      'Greedy Strategy',
-      'Backtracking (VRP Solver)',
-      'Divide & Conquer'
+      'Backtracking (VRP Solver)'
     ],
     project: {
       title: 'Urban Logistics Engine',
-      description: `High-performance logistics core for solving the Vehicle Routing Problem (VRP) at city scale. Optimized for 50+ vehicle fleets using custom spatial indexing (QuadTrees) and hybrid pathfinding algorithms to minimize delivery costs and latency.`,
+      description:
+        'Personal project — high-performance logistics core for solving the Vehicle Routing Problem (VRP) at city scale. Optimized for 50+ vehicle fleets using custom spatial indexing (QuadTrees) and hybrid pathfinding algorithms to minimize delivery costs and latency.',
       githubLink: 'https://github.com/jorgemgr94/urban-logistics-engine'
     }
   },
@@ -74,12 +68,12 @@ export const projects: Project[] = [
       'PostgreSQL',
       'Docker',
       'Kubernetes',
-      'GitHub Actions',
+      'GitHub Actions'
     ],
     project: {
       title: 'ConectaPelu2 - Animal Welfare Ecosystem',
-      description: `Digital ecosystem connecting animal shelters and adopters through automated workflows.
-      Currently architected as a robust monolith supporting pet management, secure authentication, and institutional memory tracking. The roadmap includes integrated micro-donations, social media automation, and a multi-platform mobile presence.`,
+      description:
+        'Digital ecosystem connecting animal shelters and adopters. Monolithic Next.js app on PostgreSQL/Drizzle with pet management, secure auth, and audit trail; containerized and deployed via GitHub Actions to Kubernetes.',
       githubLink: 'https://github.com/jorgemgr94/conectapelu2'
     }
   }
