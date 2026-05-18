@@ -19,7 +19,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyName: 'ZenBusiness',
     companyLogo: '/assets/images/companies/zenbusiness.png',
     companyUrl: 'https://www.linkedin.com/company/zenbusiness-pbc',
-    description: `Design and implement the company’s core distributed systems across multiple microservices, driving architectural decisions and new adoption of event-driven and microfrontend patterns, defining cross-team technical standards, and building robust third-party integrations with a focus on reliability and consistency.`,
+    description: `Design and implement the company’s core distributed systems across multiple microservices. Contribute to architectural decisions, adopt event-driven and microfrontend patterns, define cross-team standards, and own third-party integrations with a focus on reliability and consistency.`,
     achievements: [
       `Led the zero-downtime migration of a frontend product from the legacy monolith to the new microfrontends architecture, executed incrementally without disrupting users.`,
       `Designed core fulfillment workflows in Go, with schema-driven validation and graph-based traversal to guarantee data integrity across the order lifecycle.`,
@@ -136,7 +136,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
   },
   {
     id: '01996961-47c6-78ea-a2d3-9028104b5c42',
-    jobTitle: 'Full-stack Engineer',
+    jobTitle: 'Full-stack Engineer (Contract)',
     startDate: '2019-07-01',
     endDate: '2019-12-31',
     companyName: 'Garage',
