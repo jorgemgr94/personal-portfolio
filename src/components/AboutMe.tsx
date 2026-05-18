@@ -22,7 +22,7 @@ function AboutMe() {
         <section className="col-span-1 md:col-span-3 space-y-8">
           <div className="flex items-start gap-6">
             <Image
-              src="/assets/images/me.jpg"
+              src="/assets/images/me.webp"
               alt="Profile picture"
               width={120}
               height={120}
@@ -34,7 +34,7 @@ function AboutMe() {
                 Hi, I&apos;m Jorge 👋
               </h2>
               <div className="text-lg text-muted-foreground font-medium">
-                Staff Software Engineer | Systems Design & Applied AI Architecture
+                Staff Software Engineer | Distributed Systems & Applied AI
               </div>
             </div>
           </div>
@@ -43,19 +43,20 @@ function AboutMe() {
             <Markdown content="I design and integrate resilient, large-scale platforms across distributed systems and production-grade, AI-driven architectures. My work focuses on building systems that scale predictably, remain observable under load, and evolve without disrupting the business." />
             <Markdown
               content={`* Zero-downtime migrations: Led incremental transitions from legacy monoliths to modular, frontend and service-oriented architectures.
-* Performance engineering: Delivered up to 8× throughput improvements (7,500+ tasks/min) through system-level optimizations.
-* IoT at scale: Supported 150k+ concurrent devices.
+* Performance Optimization: Delivered up to 8× throughput improvements (7,500+ tasks/min) through system-level optimizations.
 * Applied AI: Integrating RAG patterns and multi-agent systems into production codebases with reliability and maintainability in mind.`}
               className="space-y-2"
             />
             <Markdown content="My approach is pragmatic and grounded in systems engineering, ensuring emerging AI patterns remain resilient, scalable, and operable within real enterprise environments." />
           </div>
 
-          <section className="mt-6">
-            <h3 className="text-lg font-semibold text-foreground">
-              Let&apos;s Connect
-            </h3>
-            <div className="flex gap-2 mt-3">
+          <section className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
+            <Button asChild className="rounded-full shadow-md">
+              <a href="/resume" target="_blank" rel="noopener noreferrer">
+                View Resume
+              </a>
+            </Button>
+            <div className="flex gap-2">
               {networks.map((social, index) => (
                 <a
                   key={index}
