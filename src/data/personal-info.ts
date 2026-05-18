@@ -13,7 +13,7 @@ export const personalInfo = {
    * Used in the Resume PDF / page; not the long-form `aboutMe` narrative.
    */
   summary:
-    '**Staff Software Engineer** with 12+ years designing and scaling **resilient, large-scale platforms** across distributed systems and **AI-integrated architectures**. Proven track record delivering **zero-downtime platform migrations**, diagnosing and removing throughput bottlenecks (**8× improvement**, ~940 to ~7,500 tasks/min), and building **RAG and multi-agent systems** with a pragmatic, systems-engineering approach.'
+    '**Staff Software Engineer** with 12+ years designing and scaling **resilient, large-scale platforms** across distributed systems and **AI-integrated architectures**. **Zero-downtime migrations**: Led incremental transitions from legacy monoliths to microfrontends and event-driven services. **Performance optimization**: Diagnosed the root cause of a throughput ceiling in distributed task queues; a surgical configuration change, validated via benchmarks, delivered 8× throughput (940 → 7,500 tasks/min). **Applied AI**: Building RAG patterns and multi-agent systems with the same engineering discipline as production services (orchestration, evaluation, observability).'
 };
 
 
