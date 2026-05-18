@@ -16,7 +16,6 @@ function ExperienceCardDetail({
         </h4>
         <Markdown
           content={description}
-          className="text-sm space-y-1"
         />
       </div>
 
@@ -30,7 +29,6 @@ function ExperienceCardDetail({
             content={achievements
               .map((r, index) => `${index + 1}. ${r}`)
               .join('\n')}
-            className="text-sm space-y-1"
           />
         </div>
       ) : null}

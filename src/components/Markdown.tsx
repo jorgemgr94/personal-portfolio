@@ -4,7 +4,6 @@ import remarkGfm from 'remark-gfm';
 
 interface MarkdownProps {
   content: string;
-  className?: string;
   /**
    * Optional: Overwrite standard styles for specific tags
    * Example: { strong: ({node, ...props}) => <strong className="text-primary" {...props} /> }
@@ -16,7 +15,7 @@ interface MarkdownProps {
  * Shared Markdown Renderer
  * Standardizes how we handle text formatting across the portfolio and resume.
  */
-export function Markdown({ content, className, components }: MarkdownProps) {
+export function Markdown({ content, components }: MarkdownProps) {
 
   return (
     <ReactMarkdown

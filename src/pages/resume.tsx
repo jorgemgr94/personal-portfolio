@@ -85,7 +85,6 @@ function Resume() {
             Summary
           </h3>
           <Markdown
-            className="text-[15px] leading-relaxed text-slate-700"
             content={personalInfo.summary}
           />
         </section>
