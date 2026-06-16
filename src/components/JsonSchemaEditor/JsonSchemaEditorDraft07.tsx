@@ -2157,8 +2157,7 @@ function JsonSchemaEditor({ initialSchema, onChange }: JsonSchemaEditorProps) {
                 <JsonSchemaFormRenderer
                   schema={generateJsonSchema()}
                   onSubmit={(data) => {
-                    console.log('Form submitted with data:', data);
-                    alert('Form submitted! Check console for data.');
+                    alert('Form submitted!');
                   }}
                 />
               </div>
