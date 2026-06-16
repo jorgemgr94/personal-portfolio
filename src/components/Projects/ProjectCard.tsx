@@ -2,35 +2,34 @@ import { Markdown } from '@/components/Markdown';
 import { Badge } from '@/components/ui/badge';
 import type { Project } from '@/data/types';
 import Image from 'next/image';
+import { useState } from 'react';
 import BlurIn from '../BlurIn';
 
 function ProjectCard({ icon, area, topics, project }: Project) {
+  const [imageError, setImageError] = useState(false);
+
   return (
     <li className="relative flex items-start space-x-6 pb-8 last:pb-0">
       <div className="relative shrink-0">
         <BlurIn>
           <div className="w-16 h-16 bg-neutral-900 rounded-full border border-neutral-800 flex items-center justify-center shadow-2xl overflow-hidden group">
-            <Image
-              src={icon}
-              alt={`${project.title} logo`}
-              width={64}
-              height={64}
-              className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
-              onError={(e) => {
-                const wrapper = e.currentTarget.parentElement;
-                if (wrapper) {
-                  wrapper.style.display = 'none';
-                  const fallback = wrapper.nextElementSibling;
-                  if (fallback) fallback.classList.remove('hidden');
-                }
-              }}
-            />
-            <div className="hidden text-xs font-bold text-neutral-400 text-center">
-              {project.title
-                .split(' ')
-                .map((word) => word[0])
-                .join('')}
-            </div>
+            {!imageError ? (
+              <Image
+                src={icon}
+                alt={`${project.title} logo`}
+                width={64}
+                height={64}
+                className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
+                onError={() => setImageError(true)}
+              />
+            ) : (
+              <div className="text-xs font-bold text-neutral-400 text-center">
+                {project.title
+                  .split(' ')
+                  .map((word) => word[0])
+                  .join('')}
+              </div>
+            )}
           </div>
         </BlurIn>
       </div>
@@ -50,9 +49,9 @@ function ProjectCard({ icon, area, topics, project }: Project) {
             {topics?.length ? (
               <div className="mt-4">
                 <div className="flex flex-wrap gap-2">
-                  {topics.map((tech, index) => (
+                  {topics.map((tech) => (
                     <Badge
-                      key={index}
+                      key={tech}
                       variant="secondary"
                       className="text-xs whitespace-break-spaces"
                     >

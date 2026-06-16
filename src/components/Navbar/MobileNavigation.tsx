@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { ExternalLink, Menu } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -38,15 +38,15 @@ function MobileNavigation() {
           <div className="flex items-center space-x-3 px-4 pb-6 border-b">
             <div className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-primary/20">
               <Image
-                src="/assets/images/me.jpg"
+                src="/assets/images/me.webp"
                 alt="Logo"
                 fill
                 className="object-cover"
               />
             </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold leading-none">Jorge García</span>
-              <span className="text-xs text-muted-foreground mt-1">Software Engineer</span>
+              <SheetTitle className="text-lg font-bold leading-none">Jorge García</SheetTitle>
+              <SheetDescription className="text-xs text-muted-foreground mt-1">Software Engineer</SheetDescription>
             </div>
           </div>
 

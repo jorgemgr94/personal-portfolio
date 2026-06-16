@@ -28,15 +28,12 @@ function ExperienceCard({
             onClick={onToggle}
           >
             {/* Left side */}
-            <section
-              className="flex items-center space-x-2 min-w-7/12 cursor-pointer"
-              onClick={onToggle}
-            >
+            <section className="flex items-center space-x-2 min-w-7/12 cursor-pointer">
               <a
                 href={companyUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="min-w-16 min-h-16 bg-white rounded-full bg-gradient-to-b flex items-center justify-center shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200"
+                className="min-w-16 min-h-16 bg-white rounded-full bg-gradient-to-b flex items-center justify-center shadow-sm hover:shadow-md hover:scale-105 transition-all duration-200 print:hidden"
                 onClick={(e) => e.stopPropagation()}
               >
                 <Image
@@ -56,9 +53,8 @@ function ExperienceCard({
                   <h3 className="text-lg font-semibold ">{companyName}</h3>
 
                   {/* Chevron Icon */}
-                  <button
-                    onClick={onToggle}
-                    className="flex items-center space-x-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 transition-colors duration-200"
+                  <span
+                    className="flex items-center space-x-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 transition-colors duration-200"
                   >
                     <span>{isExpanded ? 'Show Less' : 'Show More'}</span>
                     <svg
@@ -74,7 +70,7 @@ function ExperienceCard({
                         d="M19 9l-7 7-7-7"
                       />
                     </svg>
-                  </button>
+                  </span>
                 </div>
                 {/* Job Title */}
                 <p className="text-sm mb-2">{jobTitle}</p>

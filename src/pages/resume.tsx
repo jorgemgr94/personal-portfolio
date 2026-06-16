@@ -222,7 +222,7 @@ function Resume() {
             print-color-adjust: exact !important;
           }
           button,
-          .print\:hidden {
+          .print\\:hidden {
             display: none !important;
           }
           h1,

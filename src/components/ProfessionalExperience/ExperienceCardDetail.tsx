@@ -40,8 +40,8 @@ function ExperienceCardDetail({
             Tech Stack
           </h4>
           <div className="flex flex-wrap gap-2">
-            {Array.from(technologies.keys()).map((tech, index) => (
-              <Badge key={index} variant="secondary" className="text-xs">
+            {Array.from(technologies.keys()).map((tech) => (
+              <Badge key={tech} variant="secondary" className="text-xs">
                 {tech}
               </Badge>
             ))}

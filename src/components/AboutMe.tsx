@@ -12,7 +12,7 @@ import { technologiesExperienceByStatus } from '@/data/technologies';
 import { TechnologyLearningStatus } from '@/data/types';
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
-import { Button } from './ui/button';
+import { Button } from '@/components/ui/button';
 
 function AboutMe() {
   return (

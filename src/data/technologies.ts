@@ -100,12 +100,12 @@ const technologiesExperience: Record<TechnologiesNames, TechnologyDetails> = {
   },
   'Design Patterns': {
     ...technologyBaseConfig,
-    icon: iconsBasePath + '/bash/bash-original.svg',
+    icon: undefined,
     learningStatus: TechnologyLearningStatus.Used
   },
   'Domain Driven Design (DDD)': {
     ...technologyBaseConfig,
-    icon: iconsBasePath + '/bash/bash-original.svg',
+    icon: undefined,
     learningStatus: TechnologyLearningStatus.Used
   },
   Terraform: {
@@ -131,7 +131,7 @@ const technologiesExperience: Record<TechnologiesNames, TechnologyDetails> = {
   },
   'React Native': {
     ...technologyBaseConfig,
-    icon: iconsBasePath + '/reactnative/reactnative-original.svg',
+    icon: undefined,
     learningStatus: TechnologyLearningStatus.Used
   },
   Heroku: {
@@ -196,7 +196,7 @@ const technologiesExperience: Record<TechnologiesNames, TechnologyDetails> = {
   },
   'Systems Design': {
     ...technologyBaseConfig,
-    icon: iconsBasePath + '/bash/bash-original.svg',
+    icon: undefined,
     learningStatus: TechnologyLearningStatus.Current
   },
   Redis: {

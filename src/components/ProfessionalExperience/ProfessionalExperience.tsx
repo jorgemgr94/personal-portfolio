@@ -6,10 +6,7 @@ import ExperienceCard from './ExperienceCard';
 
 function ProfessionalExperience() {
   const [expandedItems, setExpandedItems] = useState<Set<string>>(
-    new Set([
-      '01996961-47be-7a79-a66f-12e7b13eec86',
-      '01996961-47be-7a79-a66f-12e7b13eec87'
-    ])
+    () => new Set(professionalExperiences.slice(0, 2).map((e) => e.id))
   );
 
   const toggleExpanded = (id: string) => {
