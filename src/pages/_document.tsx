@@ -20,7 +20,7 @@ export default function Document() {
         <meta property="og:url" content="https://jorgemgr.com/" />
         <meta
           property="og:image"
-          content="https://jorgemgr.com/assets/images/me.jpg"
+          content="https://jorgemgr.com/assets/images/me.webp"
         />
         <meta
           property="og:description"
@@ -40,7 +40,7 @@ export default function Document() {
         />
         <meta
           name="twitter:image"
-          content="https://jorgemgr.com/assets/images/me.jpg"
+          content="https://jorgemgr.com/assets/images/me.webp"
         />
 
         {/* Canonical */}
