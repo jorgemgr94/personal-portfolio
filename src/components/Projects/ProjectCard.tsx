@@ -17,8 +17,12 @@ function ProjectCard({ icon, area, topics, project }: Project) {
               height={64}
               className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
               onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.nextElementSibling?.classList.remove('hidden');
+                const wrapper = e.currentTarget.parentElement;
+                if (wrapper) {
+                  wrapper.style.display = 'none';
+                  const fallback = wrapper.nextElementSibling;
+                  if (fallback) fallback.classList.remove('hidden');
+                }
               }}
             />
             <div className="hidden text-xs font-bold text-neutral-400 text-center">

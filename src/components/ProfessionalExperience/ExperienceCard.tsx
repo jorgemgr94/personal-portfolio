@@ -46,11 +46,7 @@ function ExperienceCard({
                   width={52}
                   height={52}
                   onError={(e) => {
-                    // Fallback to company initials if image fails to load
                     e.currentTarget.style.display = 'none';
-                    e.currentTarget.nextElementSibling?.classList.remove(
-                      'hidden'
-                    );
                   }}
                 />
               </a>
