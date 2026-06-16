@@ -29,7 +29,7 @@ export default function Document() {
 
         {/* X (Twitter) */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://metatags.io/" />
+        <meta property="twitter:url" content="https://jorgemgr.com/" />
         <meta
           property="twitter:title"
           content="Jorge García - Software Engineer"

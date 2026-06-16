@@ -245,7 +245,7 @@ function Resume() {
 
 export default Resume;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   return {
     props: { forcedTheme: 'light' }
   };
