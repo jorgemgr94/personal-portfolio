@@ -20,9 +20,12 @@ export default function PageNotFound404 () {
               "We are very sorry for inconvenience. It looks like you're trying to access a page that has been deleted or never even existed."
             }
           </p>
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-            <Link href={'/'}>Back to home</Link>
-          </button>
+          <Link
+            href="/"
+            className="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full"
+          >
+            Back to home
+          </Link>
         </div>
         <div className="max-w-lg">
           <Image
