@@ -1,28 +1,6 @@
 import { DateTime } from 'luxon';
 
 /**
- * Format months number to years and months
- * @param months number
- * @returns string
- */
-export function formatMonthsToYears(months: number): string {
-  const years = Math.floor(months / 12);
-  const remainingMonths = months % 12;
-
-  const parts = [];
-
-  if (years > 0) {
-    parts.push(`${years}yr${years > 1 ? 's' : ''}`);
-  }
-
-  if (remainingMonths > 0) {
-    parts.push(`${remainingMonths}mo${remainingMonths > 1 ? 's' : ''}`);
-  }
-
-  return parts.join(' ');
-}
-
-/**
  * Format duration between two dates into a human-readable string
  * @param startDate - The start date in ISO format
  * @param endDate - The end date in ISO format, or null for current date
