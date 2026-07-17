@@ -1,8 +1,6 @@
-export const aboutMe = `I design and integrate resilient, large-scale platforms across distributed systems and AI-integrated architectures. My work focuses on building systems that scale predictably, remain observable under load, and evolve without breaking existing consumers.
+export const aboutMe = `I design and integrate backend platforms across distributed systems, event-driven architectures, and third-party integrations. My work focuses on building systems that remain observable under load and evolve through incremental, backward-compatible changes without breaking existing consumers.
 
-* **Zero-downtime migrations**: Led incremental transitions from legacy monoliths to microfrontends and event-driven services.
-* **Performance optimization**: Diagnosed the root cause of a throughput ceiling in distributed task queues; a surgical configuration change, validated via benchmarks, delivered 8× throughput (940 → 7,500 tasks/min).
-* **Applied AI**: Building RAG patterns and multi-agent systems with the same engineering discipline as production services (orchestration, evaluation, observability).
-* **Technical leadership**: Driving cross-team standards, design reviews, and mentorship across backend and frontend guilds.
-
-My approach is pragmatic and grounded in systems engineering, ensuring emerging AI patterns are deployed with the same operational rigor as any other critical system.`;
+* **Zero-downtime migrations**: Led an incremental migration of a product from a legacy monolith to microfrontends, with no user-facing downtime.
+* **Performance optimization**: Found a throughput limit in distributed task queues and changed their configuration. Benchmarks showed an 8× increase, from ~940 to ~7,500 tasks/min per queue.
+* **Applied AI**: In personal projects, I’m building RAG and multi-agent systems. The working code currently includes document retrieval and four specialist agents coordinated by an orchestrator.
+* **Technical leadership**: Maintain packages used by multiple teams, define shared standards, review designs, and mentor backend and frontend engineers.`;

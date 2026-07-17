@@ -36,9 +36,6 @@ function Resume() {
               <h2 className="text-xl font-medium text-blue-600 mt-1">
                 {personalInfo.role}
               </h2>
-              <div className="text-[11px] font-bold text-slate-400 uppercase tracking-[0.2em] mt-1.5 flex items-center gap-2">
-                {personalInfo.focus}
-              </div>
             </div>
 
             <div className="grid grid-cols-1 text-sm gap-1 text-slate-600 text-right print:text-right">

@@ -1,5 +1,6 @@
 import { Markdown } from '@/components/Markdown';
 import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
 import {
   HoverCard,
   HoverCardContent,
@@ -12,7 +13,6 @@ import { technologiesExperienceByStatus } from '@/data/technologies';
 import { TechnologyLearningStatus } from '@/data/types';
 import { ExternalLink } from 'lucide-react';
 import Image from 'next/image';
-import { Button } from '@/components/ui/button';
 
 function AboutMe() {
   return (
@@ -37,25 +37,29 @@ function AboutMe() {
                 Hi, I&apos;m {personalInfo.firstName} 👋
               </h2>
               <div className="text-lg text-muted-foreground font-medium">
-                {personalInfo.role} | {personalInfo.focus}
+                {personalInfo.role}
               </div>
             </div>
           </div>
 
           <div className="text-foreground leading-relaxed space-y-4">
-            <Markdown content={aboutMe} components={
-              {
+            <Markdown
+              content={aboutMe}
+              components={{
                 ul: ({ children }) => (
-                  <ul className="list-disc list-inside space-y-1 ml-4 mt-4">{children}</ul>
+                  <ul className="list-disc list-inside space-y-1 ml-4 mt-4">
+                    {children}
+                  </ul>
                 )
-              }
-            } />
+              }}
+            />
           </div>
 
           <section className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
             <Button asChild className="rounded-full shadow-md">
               <a href="/resume" target="_blank" rel="noopener noreferrer">
-                View Resume <ExternalLink className="h-3.5 w-3.5 transition-colors" />
+                View Resume{' '}
+                <ExternalLink className="h-3.5 w-3.5 transition-colors" />
               </a>
             </Button>
             <div className="flex gap-2">
@@ -123,7 +127,7 @@ function AboutMe() {
                 <div className="flex flex-wrap gap-1.5">
                   {Array.from(
                     technologiesExperienceByStatus[
-                    TechnologyLearningStatus.Used
+                      TechnologyLearningStatus.Used
                     ]
                   ).map(([name, tech]) => (
                     <Badge key={name} variant="secondary" className="text-xs">

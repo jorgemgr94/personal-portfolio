@@ -2,7 +2,6 @@ export const personalInfo = {
   firstName: 'Jorge',
   name: 'Jorge García',
   role: 'Staff Software Engineer',
-  focus: 'Distributed Systems & Applied AI',
   email: 'jorgemgr94@gmail.com',
   website: 'https://jorgemgr.com',
   linkedin: 'https://linkedin.com/in/jorgemgr94',
@@ -15,7 +14,6 @@ export const personalInfo = {
   summary:
     'Staff Software Engineer with 12+ years designing and scaling resilient, large-scale platforms across distributed systems and AI-integrated architectures. Led zero-downtime migrations from legacy monoliths to microfrontends and event-driven services. Diagnosed and resolved a throughput ceiling in distributed task queues, delivering an 8x improvement from 940 to 7,500 tasks per minute through benchmark-validated optimization. Build RAG and multi-agent systems with production engineering discipline focused on orchestration, evaluation, and observability.'
 };
-
 
 export const resumeConfig = {
   skillsCategories: {

@@ -9,7 +9,7 @@ export default function Index() {
   return (
     <main className="font-light text-pretty">
       <Head>
-        <title>Jorge García - Software Engineer</title>
+        <title>Jorge García — Staff Software Engineer</title>
       </Head>
       <Navbar />
 

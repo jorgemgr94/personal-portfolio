@@ -1,43 +1,35 @@
 import { Head, Html, Main, NextScript } from 'next/document';
 
+const siteTitle = 'Jorge García — Staff Software Engineer';
+const siteDescription =
+  'Staff Software Engineer building distributed backend systems, event-driven workflows, third-party integrations, and product migrations.';
+
 export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <meta name="title" content="Jorge García - Software Engineer" />
-        <meta
-          name="description"
-          content="Passionate software engineer with over 11 years of experience architecting and delivering scalable solutions across diverse industries. Expert in backend development with a strong foundation in distributed systems, cloud-native architectures, and modern DevOps practices. Proven track record of leading technical initiatives and mentoring teams while maintaining high code quality standards and fostering collaborative environments."
-        />
+        <meta name="title" content={siteTitle} />
+        <meta name="description" content={siteDescription} />
         <meta
           name="keywords"
-          content="Software Engineer, Web Development, React, Node.js, TypeScript"
+          content="Staff Software Engineer, Distributed Systems, Event-Driven Systems, Third-Party Integrations, Go, TypeScript, GCP"
         />
 
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="Jorge García - Software Engineer" />
+        <meta property="og:title" content={siteTitle} />
         <meta property="og:url" content="https://jorgemgr.com/" />
         <meta
           property="og:image"
           content="https://jorgemgr.com/assets/images/me.webp"
         />
-        <meta
-          property="og:description"
-          content="Passionate software engineer with over 11 years of experience architecting and delivering scalable solutions across diverse industries. Expert in backend development with a strong foundation in distributed systems, cloud-native architectures, and modern DevOps practices. Proven track record of leading technical initiatives and mentoring teams while maintaining high code quality standards and fostering collaborative environments."
-        />
+        <meta property="og:description" content={siteDescription} />
 
         {/* X (Twitter) */}
         <meta property="twitter:card" content="summary_large_image" />
         <meta property="twitter:url" content="https://jorgemgr.com/" />
-        <meta
-          property="twitter:title"
-          content="Jorge García - Software Engineer"
-        />
-        <meta
-          property="twitter:description"
-          content="Passionate software engineer with over 11 years of experience architecting and delivering scalable solutions across diverse industries. Expert in backend development with a strong foundation in distributed systems, cloud-native architectures, and modern DevOps practices. Proven track record of leading technical initiatives and mentoring teams while maintaining high code quality standards and fostering collaborative environments."
-        />
+        <meta property="twitter:title" content={siteTitle} />
+        <meta property="twitter:description" content={siteDescription} />
         <meta
           name="twitter:image"
           content="https://jorgemgr.com/assets/images/me.webp"
