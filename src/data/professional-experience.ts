@@ -59,7 +59,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
     description: `Designed and scaled backend systems supporting the core Ureeka platform, with a focus on distributed execution, performance optimization, and operational reliability in a cloud-native, serverless environment.`,
     achievements: [
       `Designed scalable backend features using distributed system patterns (eventual consistency, backward-compatible schema evolution) so the platform could evolve without breaking existing consumers.`,
-      `Diagnosed the root cause of a throughput ceiling in distributed task queues; a surgical configuration change, validated via benchmarks, delivered an 8× throughput improvement (~940 → ~7,500 tasks/min per queue).`,
+      `Investigated a throughput ceiling in distributed task queues and traced it to the SDK’s HTTP transport. Switching the client to gRPC and validating the result with benchmarks increased task creation throughput 8× (~940 → ~7,500 tasks/min per queue).`,
       `Implemented end-to-end observability with Cloud Trace, Cloud Logging, and Error Reporting, shortening incident detection through automated alerting.`
     ],
     technologies: new Map([
