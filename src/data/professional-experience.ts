@@ -20,14 +20,14 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyName: 'ZenBusiness',
     companyLogo: '/assets/images/companies/zenbusiness.png',
     companyUrl: 'https://www.linkedin.com/company/zenbusiness-pbc',
-    description: `Design and implement the company’s core distributed systems across multiple microservices. Contribute to architectural decisions, adopt event-driven and microfrontend patterns, define cross-team standards, and own third-party integrations with a focus on reliability and consistency.`,
+    description: `Design and implement backend services, event-driven workflows, and third-party integrations across ZenBusiness products. Contribute to architecture decisions and define shared patterns used by backend and frontend teams.`,
     achievements: [
-      `Led the zero-downtime migration of a frontend product from the legacy monolith to the new microfrontends architecture, executed incrementally without disrupting users.`,
-      `Designed core fulfillment workflows in Go, with schema-driven validation and graph-based traversal to guarantee data integrity across the order lifecycle.`,
+      `Led an incremental migration of a frontend product from the legacy monolith to microfrontends with no user-facing downtime.`,
+      `Designed core fulfillment workflows in Go, including a reusable depth-first JSON Schema traversal utility with visitor-style callbacks. It standardized schema sanitization, strict property validation, and field inspection across fulfillment use cases.`,
       `Led an event-driven backend integrating external accountant partners, unblocking the launch of the company's tax-related product line.`,
       `Designed and built multiple third-party integrations with partner-specific rate limiting, timeouts, structured error handling, and secrets management.`,
-      `Co-created and maintain shared core packages and architectural patterns adopted across multiple teams, driving consistency in how services are built.`,
-      `Supported enterprise API initiatives by designing secure, public-facing endpoints that exposed internal capabilities while enforcing business constraints.`
+      `Co-created and maintain shared core packages and service patterns used by multiple teams.`,
+      `Helped design and build ZenBusiness’s first public API for enterprise customers, implementing endpoints that exposed internal capabilities while enforcing business rules.`
     ],
     technologies: new Map([
       ...createFullExperienceTechArray('2023-09-01', null, [
@@ -56,11 +56,11 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyName: 'Ureeka',
     companyLogo: '/assets/images/companies/ureeka.png',
     companyUrl: 'https://www.crunchbase.com/organization/ureeka',
-    description: `Designed and scaled backend systems supporting the core Ureeka platform, with a focus on distributed execution, performance optimization, and operational reliability in a cloud-native, serverless environment.`,
+    description: `Built backend systems for the core Ureeka platform in a serverless GCP environment, focusing on distributed execution, performance, and production observability.`,
     achievements: [
-      `Designed scalable backend features using distributed system patterns (eventual consistency, backward-compatible schema evolution) so the platform could evolve without breaking existing consumers.`,
+      `Built backend features around eventual consistency and backward-compatible schema changes, allowing the platform to evolve without breaking existing consumers.`,
       `Investigated a throughput ceiling in distributed task queues and traced it to the SDK’s HTTP transport. Switching the client to gRPC and validating the result with benchmarks increased task creation throughput 8× (~940 → ~7,500 tasks/min per queue).`,
-      `Implemented end-to-end observability with Cloud Trace, Cloud Logging, and Error Reporting, shortening incident detection through automated alerting.`
+      `Implemented production observability with Cloud Trace, Cloud Logging, Error Reporting, and automated alerts used by the team to detect and investigate incidents.`
     ],
     technologies: new Map([
       ['TypeScript', 23],
@@ -81,15 +81,13 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyName: 'Sintec',
     companyLogo: '/assets/images/companies/sintec.png',
     companyUrl: 'https://www.linkedin.com/company/sintec',
-    description: `Led small delivery teams and client-facing technical initiatives, owning system design and execution across multiple consulting engagements, with a focus on cloud adoption, scalable delivery, and establishing foundational engineering practices.`,
+    description: `Led a four-person engineering team and owned technical delivery across multiple client engagements, from solution design and cloud migrations to shared engineering practices and external delivery partnerships.`,
     achievements: [
-      `Led and mentored a small engineering team across concurrent client engagements, owning feature delivery and growth conversations.`,
-      `Translated business requirements into technical roadmaps and delivery plans across multiple client projects.`,
-      `Provided architectural guidance across client solutions, ensuring consistency, security, and maintainability.`,
-      `Migrated client workloads from dedicated servers to serverless platforms (Cloud Functions, Cloud Run), reducing infrastructure cost and operational overhead.`,
-      `Automated Node.js CI/CD pipelines on Cloud Build, removing manual release steps and improving deployment reliability.`,
-      `Established shared GitHub conventions and code standards adopted across teams to improve consistency and collaboration.`,
-      `Built and managed partnerships with external development providers, expanding delivery capacity while keeping quality commitments.`
+      `Led and mentored a four-person engineering team across concurrent client engagements, coordinating delivery and individual growth conversations.`,
+      `Translated client requirements into solution architectures, technical roadmaps, and delivery plans.`,
+      `Migrated client applications from two Compute Engine VMs to Cloud Run and Cloud SQL, reducing monthly infrastructure costs from roughly USD 3,000 to about USD 40 while simplifying deployments and server maintenance.`,
+      `Automated Node.js deployments with Cloud Build and established shared GitHub conventions and code standards, removing manual release steps across projects.`,
+      `Managed partnerships with external development providers to expand delivery capacity across client engagements.`
     ],
     technologies: new Map([
       ['React', 19],
@@ -115,10 +113,10 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyName: 'Sintec',
     companyLogo: '/assets/images/companies/sintec.png',
     companyUrl: 'https://www.linkedin.com/company/sintec',
-    description: `Designed and delivered full-stack web and mobile solutions in a consulting environment, focusing on real-time systems, emerging technologies, and maintainable architectures.`,
+    description: `Built web and mobile products across consulting engagements, including real-time IoT systems and client applications on AWS and GCP.`,
     achievements: [
       `Built a real-time IoT platform tracking 150+ beacon devices with AWS Kinesis and MongoDB, powering live analytics dashboards for distribution centers.`,
-      `Introduced serverless and modern web technologies (Node.js, Firebase) that became foundational standards for subsequent client projects.`
+      `Established Node.js and Firebase as the default stack for general web projects.`
     ],
     technologies: new Map([
       ['React', 12],
@@ -146,10 +144,10 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyName: 'Garage',
     companyLogo: '/assets/images/companies/garage.png',
     companyUrl: 'https://www.crunchbase.com/organization/garage',
-    description: `Contributed to the development of a startup platform, focusing on front-end experience, system reliability, and the introduction of modern development practices.`,
+    description: `Worked on a startup’s quoting platform across React and Ruby on Rails, focusing on frontend state management and delivery tooling.`,
     achievements: [
-      `Simplified the product quoting workflow by introducing reactive state management with MobX, improving UX and maintainability.`,
-      `Introduced modern development practices (containerization, CI/CD, DB migrations, automated testing), raising deployment reliability and code quality.`
+      `Reworked the product quoting workflow with MobX, reducing state-management boilerplate and making the flow easier to extend and maintain.`,
+      `Added containerized development, CI/CD, database migrations, and automated tests to the delivery workflow.`
     ],
     technologies: new Map([
       ['Ruby on Rails', 5],
@@ -171,10 +169,9 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyLogo: '/assets/images/companies/sensai.jpg',
     companyUrl:
       'https://www.crunchbase.com/organization/sensai-empower-success',
-    description: `Contributed to multi-platform product development across web and mobile, supporting backend migrations and feature delivery within an agile team.`,
+    description: `Worked on web and mobile product features across React, React Native, Node.js, and Ruby on Rails.`,
     achievements: [
-      `Contributed to a rapid backend migration from Node.js to Ruby on Rails, stabilizing the service and improving long-term maintainability.`,
-      `Collaborated closely with design and QA teams under agile delivery workflows.`
+      `Implemented API endpoints during a backend migration from Node.js to Ruby on Rails, a change intended to make future features easier for the team to build.`
     ],
     technologies: new Map([
       ['React', 6],
@@ -195,11 +192,11 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyLogo: '/assets/images/companies/hms.png',
     companyUrl:
       'http://linkedin.com/company/hms-sistemas-de-informaci-n-sa-de-cv',
-    description: `Led a small engineering team delivering healthcare systems, combining technical leadership, system design, and business-domain problem solving.`,
+    description: `Led a small engineering team building healthcare systems and launching new business lines from initial discovery through on-site deployment.`,
     achievements: [
-      `Led the development of new business units including laboratory systems, ambulatory surgery, and RIS/PACS platforms.`,
-      `Delivered mobile and backend systems supporting clinical and administrative workflows across hospital operations.`,
-      `Introduced structured engineering practices and a mentorship cadence that strengthened the team's autonomy.`
+      `Led the development of new business lines for laboratory operations, ambulatory surgery, and RIS/PACS, taking each from requirements discovery through database and interface design, implementation, testing, and on-site rollout.`,
+      `Introduced Git-based workflows and React, reviewed code, and mentored engineers as the team adopted new development practices.`,
+      `Coordinated scope, implementation, testing, and delivery schedules across concurrent healthcare projects.`
     ],
     technologies: new Map([
       ['PHP', 21],
@@ -221,10 +218,10 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyLogo: '/assets/images/companies/hms.png',
     companyUrl:
       'http://linkedin.com/company/hms-sistemas-de-informaci-n-sa-de-cv',
-    description: `Contributed to the development of healthcare ERP systems, working across backend logic, database design, and process automation.`,
+    description: `Built healthcare ERP features across PHP, MySQL, and JavaScript, focusing on clinical and administrative workflows and process automation.`,
     achievements: [
       `Developed automation workflows for clinical and administrative processes, including quote generation and coordination across doctors, nurses, and administrative staff.`,
-      `Implemented transactional workflows guaranteeing data consistency across complex healthcare scenarios.`
+      `Implemented multi-step healthcare workflows using MySQL transactions, rollbacks, validations, and stored procedures to keep clinical and administrative updates consistent.`
     ],
     technologies: new Map([
       ['PHP', 21],
@@ -242,10 +239,10 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyName: 'Ingeniat',
     companyLogo: '/assets/images/companies/ingeniat.svg',
     companyUrl: 'https://www.linkedin.com/company/ingeniat/',
-    description: `Contributed to the development of a digital library platform, working across backend automation, data processing, and frontend feature delivery.`,
+    description: `Worked on a digital library platform across backend automation, data processing, and Android development.`,
     achievements: [
-      `Automated large-scale book ingestion by building Bash-based pipelines to convert PDFs into SVG assets, upload them to AWS S3, and persist relational metadata in MySQL.`,
-      `Gained early exposure to Android (Java) development while strengthening backend automation and scripting foundations.`
+      `Built an on-demand Bash pipeline that replaced manual processing for batches of books, converting PDFs into SVG assets, uploading them to AWS S3, and storing metadata in MySQL.`,
+      `Implemented resilient book downloads in Android with Java, persisting chunks locally so interrupted transfers could resume.`
     ],
     technologies: new Map([
       ['PHP', 7],
