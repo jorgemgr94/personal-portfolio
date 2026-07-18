@@ -18,11 +18,11 @@ export default function Index() {
       </SlideIn>
 
       <SlideIn>
-        <Projects />
+        <WorkExperience />
       </SlideIn>
 
       <SlideIn>
-        <WorkExperience />
+        <Projects />
       </SlideIn>
     </main>
   );

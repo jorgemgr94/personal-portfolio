@@ -9,8 +9,8 @@ function Projects() {
       className="py-16 px-4 max-w-4xl min-h-screen mx-auto"
     >
       <SectionTitle
-        title="Projects"
-        description="Selected projects focused on applied AI systems and resilient, cloud-native platform architectures."
+        title="Personal Projects"
+        description="Projects where I explore distributed systems, applied AI, algorithms, and product ideas through prototypes."
       />
 
       <div className="relative">

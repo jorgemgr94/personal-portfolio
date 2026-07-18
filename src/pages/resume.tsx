@@ -165,9 +165,7 @@ function Resume() {
                     {project.area}
                   </p>
                   <p className="text-slate-700 mb-3 leading-relaxed">
-                    {project.project.description.charAt(0).toUpperCase() +
-                      project.project.description.slice(1)}
-                    .
+                    {project.project.description}
                   </p>
                   <p className="text-[11px] text-slate-500 font-medium">
                     <strong>Tech:</strong> {project.topics.slice(0, 5).join(', ')}

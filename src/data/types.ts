@@ -1,8 +1,16 @@
 // == Projects ==================================================
+export const ProjectStatus = {
+  FunctionalPrototype: 'Functional prototype',
+  EarlyPrototype: 'Early prototype',
+  PlannedLearningProject: 'Planned learning project'
+} as const;
+export type ProjectStatus = (typeof ProjectStatus)[keyof typeof ProjectStatus];
+
 export type Project = {
   id: number;
   showInResume?: boolean;
   icon: string;
+  status: ProjectStatus;
   area: string;
   topics: string[];
   project: {
