@@ -1,8 +1,8 @@
 # Personal Portfolio
 
 Source for [jorgemgr.com](https://jorgemgr.com), Jorge García's software
-engineering portfolio and résumé. The site presents professional experience,
-selected projects, technical skills, and a print-friendly résumé.
+engineering portfolio and resume. The site presents professional experience,
+selected projects, technical skills, and a print-friendly resume.
 
 ## Technology
 
@@ -66,7 +66,7 @@ choice before adding the first test suite.
 ## Repository map
 
 - `src/components/`: feature and reusable UI components.
-- `src/data/`: portfolio, résumé, project, and technology content.
+- `src/data/`: portfolio, resume, project, and technology content.
 - `src/helpers/`: date and display formatting helpers.
 - `src/pages/`: Next.js routes and application setup.
 - `src/styles/`: global Tailwind styles.

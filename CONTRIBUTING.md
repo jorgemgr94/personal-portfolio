@@ -66,7 +66,7 @@ ci: add production build gate
 ## Development rules
 
 - Keep visitor-facing copy in English unless the product direction changes.
-- Keep résumé and portfolio facts in `src/data/`, not embedded in components.
+- Keep resume and portfolio facts in `src/data/`, not embedded in components.
 - Use semantic HTML and label icon-only interactive controls.
 - Provide useful alternative text for images.
 - Preserve keyboard navigation, visible focus, and responsive layouts.
