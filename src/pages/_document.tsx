@@ -2,7 +2,7 @@ import { Head, Html, Main, NextScript } from 'next/document';
 
 const siteTitle = 'Jorge García — Staff Software Engineer';
 const siteDescription =
-  '12+ years in software engineering. Since 2021, focused on backend platforms and distributed systems.';
+  'I’ve been building software for over 12 years, with a focus on backend platforms and distributed systems since 2021.';
 
 export default function Document() {
   return (
