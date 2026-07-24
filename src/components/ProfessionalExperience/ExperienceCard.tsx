@@ -53,9 +53,7 @@ function ExperienceCard({
                   <h3 className="text-lg font-semibold ">{companyName}</h3>
 
                   {/* Chevron Icon */}
-                  <span
-                    className="flex items-center space-x-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 transition-colors duration-200"
-                  >
+                  <span className="flex items-center space-x-1 px-2 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 transition-colors duration-200">
                     <span>{isExpanded ? 'Show Less' : 'Show More'}</span>
                     <svg
                       className={`w-4 h-4 transition-transform duration-200 ${isExpanded ? 'rotate-180' : ''}`}

@@ -6,7 +6,10 @@ import { DateTime } from 'luxon';
  * @param endDate - The end date in ISO format, or null for current date
  * @returns A formatted string representing the duration (e.g., "2 years 3 months")
  */
-export function formatDuration(startDate: string, endDate: string | null): string {
+export function formatDuration(
+  startDate: string,
+  endDate: string | null
+): string {
   endDate = endDate || new Date().toISOString();
   const d1 = DateTime.fromISO(startDate);
   const d2 = DateTime.fromISO(endDate);
@@ -17,9 +20,10 @@ export function formatDuration(startDate: string, endDate: string | null): strin
   const months = Math.floor(diff.months);
 
   const yearsPart = years === 0 ? '' : `${years} year${years > 1 ? 's' : ''}`;
-  const monthsPart = months === 0 ? '' : `${months} month${months > 1 ? 's' : ''}`;
+  const monthsPart =
+    months === 0 ? '' : `${months} month${months > 1 ? 's' : ''}`;
 
-  const parts = [yearsPart, monthsPart].filter(part => part !== '');
+  const parts = [yearsPart, monthsPart].filter((part) => part !== '');
   return parts.join(' ');
 }
 

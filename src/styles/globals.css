@@ -28,10 +28,10 @@
 }
 
 @layer base {
-	h1 {
-		@apply text-4xl;
-		@apply dark:text-yellow-500;
-	}
+  h1 {
+    @apply text-4xl;
+    @apply dark:text-yellow-500;
+  }
 }
 
 /*

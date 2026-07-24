@@ -11,12 +11,8 @@ function ExperienceCardDetail({
     <div className="mt-4 space-y-4">
       {/* Overview */}
       <div className="space-y-2">
-        <h4 className="text-sm font-semibold flex items-center">
-          Overview
-        </h4>
-        <Markdown
-          content={description}
-        />
+        <h4 className="text-sm font-semibold flex items-center">Overview</h4>
+        <Markdown content={description} />
       </div>
 
       {/* Achievements */}

@@ -9,7 +9,10 @@ This document provides guidelines for agentic coding assistants working in this 
 - `npm run dev` - Start development server with Turbopack
 - `npm run build` - Build the production application
 - `npm run start` - Start production server
-- `npm run lint` - Run ESLint
+- `npm run lint` - Run Oxlint
+- `npm run format:check` - Verify Prettier formatting
+- `npm run typecheck` - Run TypeScript without emitting files
+- `npm run check` - Run formatting, lint, and type-check gates
 
 ### Testing
 
@@ -38,7 +41,8 @@ This document provides guidelines for agentic coding assistants working in this 
   - Semicolons: required
   - Tab width: 2 spaces
   - Use tabs: false
-- Always run `npm run lint` before completing tasks
+- Always run `npm run check` before completing tasks
+- Run `npm run build` when application or build configuration changes
 
 ### TypeScript
 
@@ -116,11 +120,11 @@ This document provides guidelines for agentic coding assistants working in this 
 
 ## Project Configuration
 
-- Next.js 15.5.3 with App Router (src/pages/ structure)
+- Next.js 15 with the Pages Router (`src/pages/`)
 - React 19.1.0
-- TypeScript 5.2.0
-- Tailwind CSS 4.1.10
-- ESLint extends `next/core-web-vitals` and `next/typescript`
+- TypeScript 5.9
+- Tailwind CSS 4
+- Oxlint for linting and Prettier for formatting
 
 ## Key Aliases (components.json)
 

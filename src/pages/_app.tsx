@@ -9,7 +9,7 @@ const Analytics = dynamic(
   { ssr: false }
 );
 
-export default function App ({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       {process.env.NEXT_PUBLIC_GA_ID && (

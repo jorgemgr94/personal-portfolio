@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
-export default function PageNotFound404 () {
+export default function PageNotFound404() {
   return (
     <div className="flex items-center justify-center w-full min-h-screen bg-gray-100">
       <div className="flex flex-col items-center text-gray-700 lg:flex-row lg:space-x-16 lg:space-x-reverse">
