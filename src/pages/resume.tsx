@@ -7,7 +7,7 @@ import {
   formatDuration
 } from '@/helpers/format';
 import Head from 'next/head';
-import { FaEnvelope, FaGlobe } from 'react-icons/fa';
+import { FaEnvelope, FaGlobe, FaMapMarkerAlt } from 'react-icons/fa';
 
 /**
  * Minimalist, Recruiter-Optimized Resume
@@ -29,7 +29,7 @@ function Resume() {
         />
         <meta
           name="description"
-          content="Staff Software Engineer with 12+ years building backend services, event-driven workflows, third-party integrations, and backward-compatible migrations."
+          content="12+ years in software engineering. Since 2021, focused on backend platforms and distributed systems."
         />
       </Head>
 
@@ -48,6 +48,21 @@ function Resume() {
             </div>
 
             <div className="grid grid-cols-1 text-sm gap-1 text-slate-600 text-right print:text-right">
+              <div className="flex items-center justify-end gap-2">
+                <span>
+                  <a
+                    href={personalInfo.locationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-dotted underline-offset-2 hover:text-blue-600"
+                    aria-label={`View ${personalInfo.location} on Google Maps`}
+                  >
+                    {personalInfo.location}
+                  </a>{' '}
+                  · {personalInfo.availability}
+                </span>
+                <FaMapMarkerAlt className="text-slate-300" />
+              </div>
               <div className="flex items-center justify-end gap-2">
                 <a
                   href={`mailto:${personalInfo.email}`}

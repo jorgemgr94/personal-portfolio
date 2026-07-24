@@ -11,7 +11,7 @@ import { networks } from '@/data/networks';
 import { personalInfo } from '@/data/personal-info';
 import { technologiesExperienceByStatus } from '@/data/technologies';
 import { TechnologyLearningStatus } from '@/data/types';
-import { ExternalLink } from 'lucide-react';
+import { ChevronDown, ExternalLink, Mail, MapPin } from 'lucide-react';
 import Image from 'next/image';
 
 function AboutMe() {
@@ -20,68 +20,111 @@ function AboutMe() {
       id="about"
       className="py-16 px-4 max-w-4xl min-h-[calc(100vh-4rem)] mx-auto flex items-center"
     >
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-8 items-start">
-        {/* Bio section */}
-        <section className="col-span-1 md:col-span-3 space-y-8">
-          <div className="flex items-start gap-6">
+      <div className="grid grid-cols-1 items-start gap-8 md:grid-cols-4 md:gap-y-4">
+        {/* Identity */}
+        <div className="md:col-span-3 md:row-start-1">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-6">
             <Image
               src="/assets/images/me.webp"
               alt="Profile picture"
               width={120}
               height={120}
-              className="rounded-full object-cover flex-shrink-0"
+              className="h-24 w-24 flex-shrink-0 rounded-full object-cover sm:h-[120px] sm:w-[120px]"
               priority
             />
-            <div className="space-y-4">
-              <h2 className="text-5xl font-bold text-foreground">
+            <div className="min-w-0 space-y-3 sm:space-y-4">
+              <h2 className="text-4xl font-bold text-foreground sm:text-5xl">
                 Hi, I&apos;m {personalInfo.firstName} 👋
               </h2>
-              <div className="text-lg text-muted-foreground font-medium">
+              <div className="text-lg font-medium text-muted-foreground">
                 {personalInfo.role}
+              </div>
+              <div className="flex items-start gap-1.5 text-sm text-muted-foreground sm:items-center">
+                <MapPin
+                  className="mt-0.5 h-4 w-4 shrink-0 sm:mt-0"
+                  aria-hidden="true"
+                />
+                <span>
+                  <a
+                    href={personalInfo.locationUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="underline decoration-dotted underline-offset-4 transition-colors hover:text-foreground"
+                    aria-label={`View ${personalInfo.location} on Google Maps`}
+                  >
+                    {personalInfo.location}
+                  </a>{' '}
+                  · {personalInfo.availability}
+                </span>
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="text-foreground leading-relaxed space-y-4">
-            <Markdown
-              content={aboutMe}
-              components={{
-                ul: ({ children }) => (
-                  <ul className="list-disc list-inside space-y-1 ml-4 mt-4">
-                    {children}
-                  </ul>
-                )
-              }}
-            />
-          </div>
+        {/* Contact */}
+        <section
+          aria-labelledby="contact-heading"
+          className="space-y-4 md:col-start-4 md:row-start-1"
+        >
+          <h3
+            id="contact-heading"
+            className="mb-1 text-lg font-semibold text-foreground"
+          >
+            Contact
+          </h3>
+          <div className="flex flex-col items-start gap-3">
+            <a
+              href={`mailto:${personalInfo.email}`}
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+            >
+              <Mail className="h-4 w-4" aria-hidden="true" />
+              Email me
+            </a>
 
-          <section className="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-6">
-            <Button asChild className="rounded-full shadow-md">
-              <a href="/resume" target="_blank" rel="noopener noreferrer">
-                View Resume{' '}
-                <ExternalLink className="h-3.5 w-3.5 transition-colors" />
-              </a>
-            </Button>
-            <div className="flex gap-2">
-              {networks.map((social, index) => (
+            <a
+              href="/resume"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline"
+            >
+              <ExternalLink className="h-3.5 w-3.5" aria-hidden="true" />
+              View Resume
+            </a>
+
+            <div className="flex gap-0.5">
+              {networks.map((social) => (
                 <a
-                  key={index}
+                  key={social.name}
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-center p-2 hover:scale-110 transition-all duration-200"
+                  className="group flex items-center justify-center rounded-full p-1.5 transition-all duration-200 hover:scale-110 hover:bg-accent"
                   aria-label={`Visit my ${social.name} profile`}
                 >
-                  <social.icon className="w-6 h-6 text-muted-foreground group-hover:text-primary transition-colors" />
+                  <social.icon className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
                 </a>
               ))}
             </div>
-          </section>
+          </div>
         </section>
 
+        {/* Bio */}
+        <div className="space-y-4 text-foreground leading-relaxed md:col-span-3 md:row-start-2">
+          <Markdown
+            content={aboutMe}
+            components={{
+              ul: ({ children }) => (
+                <ul className="list-disc list-inside space-y-1 ml-4 mt-4">
+                  {children}
+                </ul>
+              )
+            }}
+          />
+        </div>
+
         {/* Tech Stack */}
-        <section className="col-span-1 md:col-span-1 space-y-4">
-          <h3 className="text-lg font-semibold text-foreground mb-1">
+        <section className="space-y-4 md:col-start-4 md:row-start-2 md:mt-4">
+          <h3 className="mb-1 text-lg font-semibold text-foreground">
             Current Stack
           </h3>
           <p className="text-sm text-muted-foreground">
@@ -121,6 +164,7 @@ function AboutMe() {
               <HoverCardTrigger asChild>
                 <Button variant="link">
                   Technologies I&apos;ve worked with
+                  <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
                 </Button>
               </HoverCardTrigger>
               <HoverCardContent className="w-80">

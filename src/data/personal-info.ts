@@ -3,6 +3,9 @@ export const personalInfo = {
   name: 'Jorge García',
   role: 'Staff Software Engineer',
   email: 'jorgemgr94@gmail.com',
+  location: 'Monterrey, Mexico',
+  locationUrl: 'https://maps.app.goo.gl/aMEAw8meUdQyLSGf6',
+  availability: 'Open to remote opportunities',
   website: 'https://jorgemgr.com',
   linkedin: 'https://linkedin.com/in/jorgemgr94',
   github: 'https://github.com/jorgemgr94',
@@ -12,7 +15,7 @@ export const personalInfo = {
    * Used in the Resume PDF / page; not the long-form `aboutMe` narrative.
    */
   summary:
-    'Staff Software Engineer with 12+ years building backend services, event-driven workflows, third-party integrations, and incremental migrations that preserve backward compatibility. Recent work includes leading a product migration with no user-facing downtime and tracing an SDK transport bottleneck that increased task creation throughput 8×, from ~940 to ~7,500 tasks/min per queue. In personal projects, I build RAG and multi-agent prototypes with document retrieval and orchestrated specialist agents.'
+    '12+ years in software engineering. Since 2021, focused on backend platforms and distributed systems. Recent work includes leading a product migration with no user-facing downtime and tracing an SDK transport bottleneck that increased task creation throughput 8×, from ~940 to ~7,500 tasks/min per queue. In personal projects, I build RAG and multi-agent prototypes with document retrieval and orchestrated specialist agents.'
 };
 
 export const resumeConfig = {

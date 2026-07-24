@@ -6,7 +6,7 @@ import {
   SheetTitle,
   SheetTrigger
 } from '@/components/ui/sheet';
-import { ExternalLink, Menu } from 'lucide-react';
+import { Menu } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
@@ -61,25 +61,18 @@ function MobileNavigation() {
           </div>
 
           <nav className="flex flex-col px-2 py-4 space-y-1">
-            {navigationItems.map((item) => {
-              const isExternal = 'href' in item && item.target === '_blank';
-
-              return (
-                <button
-                  key={item.name}
-                  onClick={() => handleNavClick(item)}
-                  className="flex items-center justify-between px-4 py-3 rounded-xl text-lg font-medium transition-all duration-200 hover:bg-secondary/80 hover:text-primary active:scale-[0.98] cursor-pointer group text-left"
-                >
-                  <span className="relative">
-                    {item.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                  </span>
-                  {isExternal && (
-                    <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-                  )}
-                </button>
-              );
-            })}
+            {navigationItems.map((item) => (
+              <button
+                key={item.name}
+                onClick={() => handleNavClick(item)}
+                className="flex items-center justify-between px-4 py-3 rounded-xl text-lg font-medium transition-all duration-200 hover:bg-secondary/80 hover:text-primary active:scale-[0.98] cursor-pointer group text-left"
+              >
+                <span className="relative">
+                  {item.name}
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+                </span>
+              </button>
+            ))}
           </nav>
         </div>
       </SheetContent>
