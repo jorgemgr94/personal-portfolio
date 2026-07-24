@@ -19,6 +19,23 @@ This document provides guidelines for agentic coding assistants working in this 
 - No test framework is currently configured in this project.
 - When adding tests, check with the user for their preferred framework (Jest, Vitest, etc.)
 
+## Git and Pull Request Workflow
+
+- Use Conventional Commits for every commit subject and pull request title:
+  `<type>(<scope>): <description>`.
+- Use one of the types accepted by `.github/workflows/pr-title.yml`: `feat`,
+  `fix`, `docs`, `style`, `refactor`, `perf`, `test`, `build`, `ci`, `chore`,
+  or `revert`. Keep scopes lowercase when present.
+- Before committing, inspect the staged diff and recent commit history. Stage
+  only files that belong to the requested change.
+- Before creating or updating a pull request, read
+  `.github/pull_request_template.md` and preserve all of its headings and
+  ordering. Do not replace the template with a custom PR body.
+- Complete every applicable PR template field. Use `None` with a brief reason
+  when a section does not apply, and check only validations that actually ran.
+- After publishing, verify the PR base branch, title, body, and status checks.
+  Fix any failure from the `Conventional title` check before handing off.
+
 ## Code Style Guidelines
 
 ### Imports

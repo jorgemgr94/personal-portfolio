@@ -15,7 +15,7 @@ export const personalInfo = {
    * Used in the Resume PDF / page; not the long-form `aboutMe` narrative.
    */
   summary:
-    '12+ years in software engineering. Since 2021, focused on backend platforms and distributed systems. Recent work includes leading a product migration with no user-facing downtime and tracing an SDK transport bottleneck that increased task creation throughput 8×, from ~940 to ~7,500 tasks/min per queue. In personal projects, I build RAG and multi-agent prototypes with document retrieval and orchestrated specialist agents.'
+    'I’ve been building software for over 12 years, with a focus on backend platforms and distributed systems since 2021. I specialize in event-driven architectures and third-party integrations, building systems that remain observable under load and can evolve incrementally without breaking existing consumers. Recent work includes leading a product migration with no user-facing downtime and tracing an SDK transport bottleneck that increased task creation throughput 8×, from ~940 to ~7,500 tasks/min per queue. In personal projects, I build RAG and multi-agent prototypes with document retrieval and orchestrated specialist agents.'
 };
 
 export const resumeConfig = {

@@ -29,7 +29,7 @@ function Resume() {
         />
         <meta
           name="description"
-          content="12+ years in software engineering. Since 2021, focused on backend platforms and distributed systems."
+          content="I’ve been building software for over 12 years, with a focus on backend platforms and distributed systems since 2021."
         />
       </Head>
 
