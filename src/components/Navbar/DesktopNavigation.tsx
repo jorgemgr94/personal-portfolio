@@ -18,7 +18,7 @@ function DesktopNavigation() {
       <nav className="hidden md:flex items-center space-x-8">
         {navigationItems.map((item) => {
           const isExternal = 'href' in item && item.target === '_blank';
-          
+
           return (
             <button
               key={item.name}

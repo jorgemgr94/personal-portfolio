@@ -16,7 +16,6 @@ interface MarkdownProps {
  * Standardizes how we handle text formatting across the portfolio and resume.
  */
 export function Markdown({ content, components }: MarkdownProps) {
-
   return (
     <ReactMarkdown
       remarkPlugins={[remarkGfm]}
@@ -35,9 +34,7 @@ export function Markdown({ content, components }: MarkdownProps) {
           </ol>
         ),
         li: ({ children }) => (
-          <li className="text-foreground leading-relaxed">
-            {children}
-          </li>
+          <li className="text-foreground leading-relaxed">{children}</li>
         ),
         ...components
       }}

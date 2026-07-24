@@ -9,7 +9,7 @@ interface SlideInProps {
   duration?: number;
   delay?: number;
   distance?: number;
-  inViewMargin?: `${number}${"px" | "%"}`;
+  inViewMargin?: `${number}${'px' | '%'}`;
   className?: string;
   once?: boolean;
 }
@@ -22,12 +22,12 @@ export default function SlideIn({
   distance = 50,
   inViewMargin = '-20px',
   className = '',
-  once = true,
+  once = true
 }: SlideInProps) {
   const ref = useRef(null);
   const isInView = useInView(ref, {
     margin: inViewMargin,
-    once: once,
+    once: once
   });
 
   const variants = useMemo(() => {
@@ -48,13 +48,13 @@ export default function SlideIn({
     return {
       hidden: {
         opacity: 0,
-        ...getInitialPosition(),
+        ...getInitialPosition()
       },
       visible: {
         opacity: 1,
         x: 0,
-        y: 0,
-      },
+        y: 0
+      }
     };
   }, [direction, distance]);
 
@@ -67,7 +67,7 @@ export default function SlideIn({
       transition={{
         delay: 0.04 + delay,
         duration,
-        ease: 'easeOut',
+        ease: 'easeOut'
       }}
       className={className}
     >

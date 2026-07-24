@@ -12,9 +12,7 @@ export default function ThemeToggler() {
   }, []);
 
   if (!mounted) {
-    return (
-      <div className="h-10 w-10 rounded-full" aria-hidden />
-    );
+    return <div className="h-10 w-10 rounded-full" aria-hidden />;
   }
 
   return (

@@ -6,7 +6,10 @@ import { DateTime } from 'luxon';
  * @param endDate 'yyyy-MM-dd' format or null
  * @returns number
  */
-export function calculateMonthsBetween(startDate: string, endDate: string | null): number {
+export function calculateMonthsBetween(
+  startDate: string,
+  endDate: string | null
+): number {
   const start = DateTime.fromISO(startDate);
   const end = endDate ? DateTime.fromISO(endDate) : DateTime.now();
 

@@ -1,5 +1,11 @@
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetDescription, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetTitle,
+  SheetTrigger
+} from '@/components/ui/sheet';
 import { ExternalLink, Menu } from 'lucide-react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
@@ -45,15 +51,19 @@ function MobileNavigation() {
               />
             </div>
             <div className="flex flex-col">
-              <SheetTitle className="text-lg font-bold leading-none">Jorge García</SheetTitle>
-              <SheetDescription className="text-xs text-muted-foreground mt-1">Software Engineer</SheetDescription>
+              <SheetTitle className="text-lg font-bold leading-none">
+                Jorge García
+              </SheetTitle>
+              <SheetDescription className="text-xs text-muted-foreground mt-1">
+                Software Engineer
+              </SheetDescription>
             </div>
           </div>
 
           <nav className="flex flex-col px-2 py-4 space-y-1">
             {navigationItems.map((item) => {
               const isExternal = 'href' in item && item.target === '_blank';
-              
+
               return (
                 <button
                   key={item.name}
