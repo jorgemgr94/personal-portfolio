@@ -29,14 +29,16 @@ nvm use
 npm ci
 ```
 
-The site works without local environment variables. To enable Google Analytics,
-copy the example file and provide a measurement ID:
+The site works without local environment variables. Google Analytics uses the
+production measurement ID by default. To send local or preview traffic to a
+different data stream, copy the example file and provide its measurement ID:
 
 ```bash
 cp .env.example .env.local
 ```
 
-Never commit analytics credentials or production configuration.
+Google Analytics measurement IDs are public identifiers. Never place API
+secrets or other credentials in `NEXT_PUBLIC_*` variables.
 
 Start the development server:
 
