@@ -106,7 +106,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
   },
   {
     id: '01996961-47c6-78ea-a2d3-9027820077e9',
-    showInResume: true,
+    showInResume: false,
     jobTitle: 'Full-stack Engineer / Consultant',
     startDate: '2019-02-01',
     endDate: '2020-02-01',
