@@ -20,14 +20,14 @@ export const professionalExperiences: ProfessionalExperience[] = [
     companyName: 'ZenBusiness',
     companyLogo: '/assets/images/companies/zenbusiness.png',
     companyUrl: 'https://www.linkedin.com/company/zenbusiness-pbc',
-    description: `Design and implement backend services, event-driven workflows, and third-party integrations across ZenBusiness products. Contribute to architecture decisions and define shared patterns used by backend and frontend teams.`,
+    description: `Own backend services, event-driven workflows, and third-party integrations across ZenBusiness products, with end-to-end ownership of Enterprise API capabilities and the communications platform. Contribute to architecture decisions and define shared patterns used by backend and frontend teams.`,
     achievements: [
+      `Own end-to-end delivery of Enterprise API capabilities, ZenBusiness’s first public API, from API design and business rules through cross-service integration and production rollout, enabling multiple enterprise products.`,
+      `Took ownership of the communications platform (email, push, and SMS), setting its technical direction and leading its evolution: idempotent notification delivery that prevents duplicate sends and allows safe retries, clearer API contracts, enterprise policy enforcement, and observability.`,
+      `Led the form publishing workflow in the Go service that defines what each business filing requires per state and product: publish requests, review and approval, and cross-state consistency checks before release. Also built the pipeline that promotes form definitions across environments and turned a single-purpose schema traversal into a shared utility used for validation, sanitization, and field inspection.`,
+      `Led an event-driven backend integrating external accountant partners, unblocking the launch of the company’s tax product line.`,
       `Led an incremental migration of a frontend product from the legacy monolith to microfrontends with no user-facing downtime.`,
-      `Designed core fulfillment workflows in Go, including a reusable depth-first JSON Schema traversal utility with visitor-style callbacks. It standardized schema sanitization, strict property validation, and field inspection across fulfillment use cases.`,
-      `Led an event-driven backend integrating external accountant partners, unblocking the launch of the company's tax-related product line.`,
-      `Designed and built multiple third-party integrations with partner-specific rate limiting, timeouts, structured error handling, and secrets management.`,
-      `Co-created and maintain shared core packages and service patterns used by multiple teams.`,
-      `Helped design and build ZenBusiness’s first public API for enterprise customers, implementing endpoints that exposed internal capabilities while enforcing business rules.`
+      `Co-created and maintain shared core packages and service patterns used by multiple teams.`
     ],
     technologies: new Map([
       ...createFullExperienceTechArray('2023-09-01', null, [
@@ -40,9 +40,11 @@ export const professionalExperiences: ProfessionalExperience[] = [
         'GraphQL',
         'PostgreSQL'
       ]),
-      ['Python', 12],
-      ['Golang', 12],
-      ['Django', 6],
+      ...createFullExperienceTechArray('2025-09-01', null, [
+        'Golang',
+        'Python'
+      ]),
+      ...createFullExperienceTechArray('2026-04-01', null, ['Django']),
       ['Firebase', 6],
       ['Terraform', 6]
     ])
@@ -171,7 +173,7 @@ export const professionalExperiences: ProfessionalExperience[] = [
       'https://www.crunchbase.com/organization/sensai-empower-success',
     description: `Worked on web and mobile product features across React, React Native, Node.js, and Ruby on Rails.`,
     achievements: [
-      `Implemented API endpoints during a backend migration from Node.js to Ruby on Rails, a change intended to make future features easier for the team to build.`
+      `Implemented API endpoints during the backend migration from Node.js to Ruby on Rails.`
     ],
     technologies: new Map([
       ['React', 6],
