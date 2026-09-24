@@ -133,7 +133,7 @@ function Resume() {
               .filter((exp) => exp.showInResume)
               .map((exp) => (
                 <div key={exp.id} className="experience-entry group">
-                  <div className="flex justify-between items-baseline mb-3">
+                  <div className="experience-header flex justify-between items-baseline mb-3">
                     <div>
                       <h4 className="text-lg font-bold text-slate-900 group-hover:text-blue-600 transition-colors">
                         {exp.jobTitle}
@@ -224,11 +224,31 @@ function Resume() {
             page-break-inside: auto;
           }
           .experience-entry {
+            break-inside: auto;
+            page-break-inside: auto;
+          }
+          .experience-header {
+            break-inside: avoid;
+            break-after: avoid;
+            page-break-inside: avoid;
+            page-break-after: avoid;
+          }
+          li {
             break-inside: avoid;
             page-break-inside: avoid;
           }
-          li {
-            page-break-inside: avoid;
+          ul,
+          p {
+            orphans: 3;
+            widows: 3;
+          }
+          .min-h-screen {
+            min-height: auto !important;
+          }
+          footer {
+            margin-top: 1.5rem !important;
+            padding-top: 1rem !important;
+            break-inside: avoid;
           }
         }
       `}</style>
